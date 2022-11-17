@@ -25,10 +25,17 @@ class PopupCustom: UIViewController {
     @IBOutlet weak var stvContent       : UIStackView!
     @IBOutlet weak var stvTop           : UIStackView!
     @IBOutlet weak var stvBot           : UIStackView!
-    @IBOutlet weak var vLottie          : AnimationView!
+    @IBOutlet weak var vLottie          : LottieAnimationView!
+    
+    @IBOutlet weak var lblTitle         : UILabel!
+    @IBOutlet weak var lblContent       : UILabel!
     
     let rxPopupCustomMode               = BehaviorRelay<PopupCustomType>(value: .Loading)
     let disposeBag                      = DisposeBag()
+    @IBOutlet weak var vLeftBtn         : UIView!
+    @IBOutlet weak var vRightBtn        : UIView!
+    @IBOutlet weak var btnLeft          : UIButton!
+    @IBOutlet weak var btnRight         : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +46,32 @@ class PopupCustom: UIViewController {
         self.setupView()
         self.handlerAction()
         self.setupBinding()
+        self.vLottie.contentMode        = .scaleAspectFill
+        self.vLottie.loopMode           = .loop
+        self.vLottie.animationSpeed     = 1.0
+        self.vLottie.play()
     }
     
     private func setupView() {
+        self.vContent.backgroundColor       = .white
+        self.vContent.layer.shadowColor     = Constant.Color.black_opa_25.cgColor
+        self.vContent.layer.shadowOpacity   = 1
+        self.vContent.layer.shadowOffset    = CGSize(width: 0, height: 2)
+        self.vContent.layer.shadowRadius    = 0.0
+        self.vContent.layer.masksToBounds   = false
+        self.vContent.layer.cornerRadius    = 20
+        self.lblTitle.textColor             = Constant.Color.dark_blue
+        self.lblContent.textColor           = Constant.Color.dark_blue
+        self.lblTitle.font                  = UIFont.getOpenSansSemiBoldFontTitle()
+        self.lblContent.font                = UIFont.getOpenSansRegularFontDefault()
         
+        self.vLeftBtn.layer.cornerRadius    = 10
+        self.vLeftBtn.layer.borderWidth     = 2
+        self.vLeftBtn.layer.borderColor     = Constant.Color.hex_2D74E7.cgColor
+        self.vRightBtn.layer.cornerRadius   = 10
+        self.vLeftBtn.clipsToBounds         = true
+        self.vRightBtn.clipsToBounds        = true
+        self.vLeftBtn.layer.borderColor = Constant.Color.hex_2D74E7.cgColor
     }
     
     private func handlerAction() {

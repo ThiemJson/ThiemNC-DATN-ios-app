@@ -19,12 +19,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupCustom" customModule="datn_app" customModuleProvider="target">
             <connections>
+                <outlet property="btnLeft" destination="Y93-kV-2Tt" id="68N-p9-YzK"/>
+                <outlet property="btnRight" destination="slc-gJ-IM5" id="Ljg-0D-4aN"/>
+                <outlet property="lblContent" destination="u2s-M8-ZE6" id="2B3-7r-nhf"/>
+                <outlet property="lblTitle" destination="tSB-0u-PQV" id="6jb-fU-E6F"/>
                 <outlet property="stvBot" destination="sL4-CB-vHc" id="Cd5-yR-zAs"/>
                 <outlet property="stvContent" destination="g4P-QL-LDk" id="E5B-1x-OE1"/>
                 <outlet property="stvTop" destination="ehO-Ap-UXk" id="NkE-vU-L1F"/>
                 <outlet property="vBlackBackground" destination="Hjm-Dr-iIa" id="7uk-ls-d2t"/>
                 <outlet property="vContent" destination="ddc-ww-Ynt" id="wrK-on-Hbx"/>
+                <outlet property="vLeftBtn" destination="Stb-oM-nvh" id="4Ar-Cr-Vkd"/>
                 <outlet property="vLottie" destination="zcp-8g-kJA" id="W8e-9W-miB"/>
+                <outlet property="vRightBtn" destination="RAg-cv-Pta" id="aTZ-wY-S8U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,38 +44,38 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-ww-Ynt" userLabel="vContent">
-                    <rect key="frame" x="41.5" y="341" width="331" height="224"/>
+                    <rect key="frame" x="72.5" y="342" width="269" height="222.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g4P-QL-LDk" userLabel="stvContent">
-                            <rect key="frame" x="10" y="10" width="311" height="204"/>
+                            <rect key="frame" x="10" y="10" width="249" height="192.5"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ehO-Ap-UXk" userLabel="stvTop">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="149"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ehO-Ap-UXk" userLabel="stvTop">
+                                    <rect key="frame" x="0.0" y="0.0" width="249" height="192.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-pJ-Fly" userLabel="vLottieWrapper">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="249" height="104"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcp-8g-kJA" userLabel="vLottie" customClass="AnimationView" customModule="Lottie">
-                                                    <rect key="frame" x="130.5" y="10" width="50" height="50"/>
+                                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcp-8g-kJA" userLabel="vLottie" customClass="LottieAnimationView" customModule="Lottie">
+                                                    <rect key="frame" x="74.5" y="2" width="100" height="100"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="FfK-l5-tni"/>
                                                         <constraint firstAttribute="width" secondItem="zcp-8g-kJA" secondAttribute="height" id="Yip-aH-Viv"/>
-                                                        <constraint firstAttribute="width" constant="50" id="xud-k9-UEl"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lottie_loading"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lottie_error"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="zcp-8g-kJA" firstAttribute="top" secondItem="vIx-pJ-Fly" secondAttribute="top" constant="10" id="A7L-8Q-n3v"/>
+                                                <constraint firstItem="zcp-8g-kJA" firstAttribute="top" secondItem="vIx-pJ-Fly" secondAttribute="top" constant="2" id="A7L-8Q-n3v"/>
                                                 <constraint firstItem="zcp-8g-kJA" firstAttribute="centerX" secondItem="vIx-pJ-Fly" secondAttribute="centerX" id="F3c-F8-ylR"/>
-                                                <constraint firstAttribute="bottom" secondItem="zcp-8g-kJA" secondAttribute="bottom" constant="10" id="xWY-IL-7Y4"/>
+                                                <constraint firstAttribute="bottom" secondItem="zcp-8g-kJA" secondAttribute="bottom" constant="2" id="xWY-IL-7Y4"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông báo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSB-0u-PQV" userLabel="lblTitle">
-                                            <rect key="frame" x="0.0" y="90" width="311" height="19"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng nhập trên thiết bị lạ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSB-0u-PQV" userLabel="lblTitle">
+                                            <rect key="frame" x="0.0" y="114" width="249" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -80,8 +86,8 @@
                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="20"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cập nhật thông tin thành công" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-M8-ZE6" userLabel="lblContent">
-                                            <rect key="frame" x="0.0" y="129" width="311" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng liên hệ với Quản lý để được hỗ trợ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-M8-ZE6" userLabel="lblContent">
+                                            <rect key="frame" x="0.0" y="146" width="249" height="46.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="taG-eg-KeW"/>
                                             </constraints>
@@ -97,14 +103,14 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="sL4-CB-vHc" userLabel="stvBot">
-                                    <rect key="frame" x="0.0" y="169" width="311" height="35"/>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sL4-CB-vHc" userLabel="stvBot">
+                                    <rect key="frame" x="0.0" y="0.0" width="249" height="35"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Stb-oM-nvh" userLabel="vLeftBtn">
-                                            <rect key="frame" x="0.0" y="0.0" width="135.5" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="114.5" height="35"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y93-kV-2Tt" userLabel="btnLeft">
-                                                    <rect key="frame" x="0.0" y="0.0" width="135.5" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="114.5" height="35"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                     <state key="normal" title="Huỷ"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
@@ -124,10 +130,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAg-cv-Pta" userLabel="vRightBtn">
-                                            <rect key="frame" x="175.5" y="0.0" width="135.5" height="35"/>
+                                            <rect key="frame" x="134.5" y="0.0" width="114.5" height="35"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slc-gJ-IM5" userLabel="btnRight">
-                                                    <rect key="frame" x="0.0" y="0.0" width="135.5" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="114.5" height="35"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                     <state key="normal" title="Đồng ý">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,7 +167,7 @@
                         <constraint firstItem="g4P-QL-LDk" firstAttribute="leading" secondItem="ddc-ww-Ynt" secondAttribute="leading" constant="10" id="BAm-B3-ups"/>
                         <constraint firstAttribute="trailing" secondItem="g4P-QL-LDk" secondAttribute="trailing" constant="10" id="I1T-Qc-pAd"/>
                         <constraint firstAttribute="width" constant="400" id="MYU-E1-YK4"/>
-                        <constraint firstAttribute="bottom" secondItem="g4P-QL-LDk" secondAttribute="bottom" constant="10" id="Vh7-IB-fbg"/>
+                        <constraint firstAttribute="bottom" secondItem="g4P-QL-LDk" secondAttribute="bottom" constant="20" id="Vh7-IB-fbg"/>
                         <constraint firstItem="g4P-QL-LDk" firstAttribute="top" secondItem="ddc-ww-Ynt" secondAttribute="top" constant="10" id="eun-E2-IDg"/>
                     </constraints>
                     <variation key="default">
@@ -182,7 +188,7 @@
                 <constraint firstItem="ddc-ww-Ynt" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="1U6-ba-DDm"/>
                 <constraint firstAttribute="bottom" secondItem="Hjm-Dr-iIa" secondAttribute="bottom" id="GcW-bi-yUp"/>
                 <constraint firstAttribute="trailing" secondItem="Hjm-Dr-iIa" secondAttribute="trailing" id="HCx-Yg-3rG"/>
-                <constraint firstItem="ddc-ww-Ynt" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="bll-5C-KFz"/>
+                <constraint firstItem="ddc-ww-Ynt" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.65" id="bll-5C-KFz"/>
                 <constraint firstItem="Hjm-Dr-iIa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eEV-oI-WsN"/>
                 <constraint firstItem="Hjm-Dr-iIa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gxI-e3-xqC"/>
                 <constraint firstItem="ddc-ww-Ynt" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="vWv-GN-tWY"/>
