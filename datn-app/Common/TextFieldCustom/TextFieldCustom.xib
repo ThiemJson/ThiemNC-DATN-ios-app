@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldCustom" customModule="datn_app" customModuleProvider="target">
+            <connections>
+                <outlet property="btnShow" destination="xwJ-j2-ilm" id="wQ8-FS-6m2"/>
+                <outlet property="mainView" destination="iN0-l3-epB" id="caR-e2-8pb"/>
+                <outlet property="tfTextField" destination="EQg-Hk-eLM" id="AGe-7I-Uzs"/>
+                <outlet property="vContentView" destination="QMI-W3-0LG" id="3Qz-dc-8YY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMI-W3-0LG" userLabel="vContentView">
+                    <rect key="frame" x="2" y="2" width="410" height="84"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EeS-h3-cC6">
+                            <rect key="frame" x="10" y="2" width="390" height="80"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQg-Hk-eLM" userLabel="tfTextField">
+                                    <rect key="frame" x="0.0" y="17.5" width="345" height="45"/>
+                                    <color key="tintColor" systemColor="linkColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="u3w-5t-vxB"/>
+                                    </constraints>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    </variation>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwJ-j2-ilm" userLabel="btnShow">
+                                    <rect key="frame" x="350" y="20" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="aDw-zi-T4W">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                            <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                        </constraint>
+                                        <constraint firstAttribute="width" secondItem="xwJ-j2-ilm" secondAttribute="height" multiplier="1:1" id="bhQ-Zh-c6i"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="10" minY="12" maxX="10" maxY="12"/>
+                                    <state key="normal" image="icon_eye_crossed"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="EeS-h3-cC6" secondAttribute="trailing" constant="10" id="PGy-Oj-aZR"/>
+                        <constraint firstAttribute="bottom" secondItem="EeS-h3-cC6" secondAttribute="bottom" constant="2" id="jNr-jc-aJI"/>
+                        <constraint firstItem="EeS-h3-cC6" firstAttribute="top" secondItem="QMI-W3-0LG" secondAttribute="top" constant="2" id="pb9-WM-aVw"/>
+                        <constraint firstItem="EeS-h3-cC6" firstAttribute="leading" secondItem="QMI-W3-0LG" secondAttribute="leading" constant="10" id="vad-D5-heZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QMI-W3-0LG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="DJj-zN-uPq"/>
+                <constraint firstAttribute="bottom" secondItem="QMI-W3-0LG" secondAttribute="bottom" constant="2" id="Kdm-sO-TTx"/>
+                <constraint firstAttribute="trailing" secondItem="QMI-W3-0LG" secondAttribute="trailing" constant="2" id="aDB-Cj-eji"/>
+                <constraint firstItem="QMI-W3-0LG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="ze4-e9-7UK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="377.00892857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_eye_crossed" width="56" height="45"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

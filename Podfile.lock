@@ -112,6 +112,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.6.0):
     - GoogleUtilities/Logger
+  - Hero (1.6.2)
   - IQKeyboardManagerSwift (6.5.9)
   - KDCalendar (1.8.9):
     - KDCalendar/EventManager (= 1.8.9)
@@ -172,6 +173,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - FittedSheets
   - FSCalendar
+  - Hero
   - IQKeyboardManagerSwift
   - KDCalendar
   - lottie-ios
@@ -212,6 +214,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - Hero
     - IQKeyboardManagerSwift
     - KDCalendar
     - lottie-ios
@@ -255,6 +258,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 837649ad3987936c232f6717c5680216f6243d24
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
+  Hero: c69009dbc9e2f0472e081adc644dba05fcedae72
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   KDCalendar: a587bc486b992d82ef94bd04001fce9baf45e518
   lottie-ios: 6bbc53eef6957e4744a50321507015fba72d8ca6
@@ -278,6 +282,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: f8f7b2149902b0e5a4697a94cc3b32c93beebd61
+PODFILE CHECKSUM: 19697f8eb81af1734e69b04b2673e9f94b4078b5
 
 COCOAPODS: 1.11.2

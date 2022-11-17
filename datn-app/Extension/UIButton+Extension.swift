@@ -39,8 +39,8 @@ extension UIButton {
         self.layer.add(rotation, forKey: "rotationAnimation")
     }
     
-    func setBorderButton(_ tittle: String = "", _ color: UIColor = Constant.Color.hex_2D74E7) {
-        self.layer.cornerRadius = self.frame.size.height/2
+    func setBorderButton(_ tittle: String = "", _ borderRadus: CGFloat? = nil, _ color: UIColor = Constant.Color.hex_2D74E7) {
+        self.layer.cornerRadius = borderRadus ?? self.frame.size.height/2
         self.backgroundColor = color
         if tittle != "" {
             self.setTitle(tittle, for: .normal)

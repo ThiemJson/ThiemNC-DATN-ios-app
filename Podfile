@@ -37,4 +37,5 @@ target 'datn-app' do
   pod 'CryptoSwift', '~> 1.0'
   pod 'FittedSheets'
   pod 'lottie-ios'
+  pod 'Hero'
 end
