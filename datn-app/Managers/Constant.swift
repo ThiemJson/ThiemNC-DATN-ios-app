@@ -28,6 +28,7 @@ var connectionFlagDefault:Int32 = 0
 struct Constant {
     
     struct Values {
+        static let commonRadius = 10
         static let currentTimeZone = "Asia/Ho_Chi_Minh"
         static let scaledUIWidth: CGFloat = UIScreen.main.bounds.width / 1440
         static let scaledUIHeight: CGFloat = UIScreen.main.bounds.height / 2910

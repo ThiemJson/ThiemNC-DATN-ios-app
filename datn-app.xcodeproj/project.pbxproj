@@ -100,6 +100,14 @@
 		F8312DC92927198F00FC6073 /* LearningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8312DC72927198E00FC6073 /* LearningViewController.xib */; };
 		F8312DCD292726B100FC6073 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8312DCB292726B100FC6073 /* SplashViewController.swift */; };
 		F8312DCE292726B100FC6073 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8312DCC292726B100FC6073 /* SplashViewController.xib */; };
+		F8312DD22927448300FC6073 /* DefaultHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8312DD02927448300FC6073 /* DefaultHomeTableViewCell.swift */; };
+		F8312DD32927448300FC6073 /* DefaultHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8312DD12927448300FC6073 /* DefaultHomeTableViewCell.xib */; };
+		F8312DD8292744CE00FC6073 /* PopularFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8312DD6292744CE00FC6073 /* PopularFeatureCell.swift */; };
+		F8312DD9292744CE00FC6073 /* PopularFeatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8312DD7292744CE00FC6073 /* PopularFeatureCell.xib */; };
+		F8312DDD292745A500FC6073 /* HotNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8312DDB292745A500FC6073 /* HotNewsCell.swift */; };
+		F8312DDE292745A500FC6073 /* HotNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8312DDC292745A500FC6073 /* HotNewsCell.xib */; };
+		F8312DE2292765D200FC6073 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8312DE0292765D200FC6073 /* HeaderCell.swift */; };
+		F8312DE3292765D200FC6073 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8312DE1292765D200FC6073 /* HeaderCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,6 +208,14 @@
 		F8312DC72927198E00FC6073 /* LearningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearningViewController.xib; sourceTree = "<group>"; };
 		F8312DCB292726B100FC6073 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F8312DCC292726B100FC6073 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		F8312DD02927448300FC6073 /* DefaultHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeTableViewCell.swift; sourceTree = "<group>"; };
+		F8312DD12927448300FC6073 /* DefaultHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultHomeTableViewCell.xib; sourceTree = "<group>"; };
+		F8312DD6292744CE00FC6073 /* PopularFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularFeatureCell.swift; sourceTree = "<group>"; };
+		F8312DD7292744CE00FC6073 /* PopularFeatureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularFeatureCell.xib; sourceTree = "<group>"; };
+		F8312DDB292745A500FC6073 /* HotNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotNewsCell.swift; sourceTree = "<group>"; };
+		F8312DDC292745A500FC6073 /* HotNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotNewsCell.xib; sourceTree = "<group>"; };
+		F8312DE0292765D200FC6073 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		F8312DE1292765D200FC6073 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +475,7 @@
 		F8312DB62927188700FC6073 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F8312DCF2927445B00FC6073 /* Cell */,
 				F8312DBA292718EE00FC6073 /* HomeViewController.swift */,
 				F8312DBB292718EE00FC6073 /* HomeViewController.xib */,
 			);
@@ -499,6 +516,53 @@
 				F8312DCC292726B100FC6073 /* SplashViewController.xib */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		F8312DCF2927445B00FC6073 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F8312DDF292765BD00FC6073 /* HeaderCell */,
+				F8312DDA2927459400FC6073 /* HotNews */,
+				F8312DD52927449900FC6073 /* PopularFeatureCell */,
+				F8312DD42927448B00FC6073 /* DefaultHomeTableViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F8312DD42927448B00FC6073 /* DefaultHomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F8312DD02927448300FC6073 /* DefaultHomeTableViewCell.swift */,
+				F8312DD12927448300FC6073 /* DefaultHomeTableViewCell.xib */,
+			);
+			path = DefaultHomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		F8312DD52927449900FC6073 /* PopularFeatureCell */ = {
+			isa = PBXGroup;
+			children = (
+				F8312DD6292744CE00FC6073 /* PopularFeatureCell.swift */,
+				F8312DD7292744CE00FC6073 /* PopularFeatureCell.xib */,
+			);
+			path = PopularFeatureCell;
+			sourceTree = "<group>";
+		};
+		F8312DDA2927459400FC6073 /* HotNews */ = {
+			isa = PBXGroup;
+			children = (
+				F8312DDB292745A500FC6073 /* HotNewsCell.swift */,
+				F8312DDC292745A500FC6073 /* HotNewsCell.xib */,
+			);
+			path = HotNews;
+			sourceTree = "<group>";
+		};
+		F8312DDF292765BD00FC6073 /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				F8312DE0292765D200FC6073 /* HeaderCell.swift */,
+				F8312DE1292765D200FC6073 /* HeaderCell.xib */,
+			);
+			path = HeaderCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8312D9829260CA000FC6073 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				F8312DD9292744CE00FC6073 /* PopularFeatureCell.xib in Resources */,
 				F8312D9D29260CA000FC6073 /* Roboto-BlackItalic.ttf in Resources */,
 				F8312D9629260CA000FC6073 /* OpenSans-Bold.ttf in Resources */,
 				F8312DBD292718EE00FC6073 /* HomeViewController.xib in Resources */,
@@ -573,8 +638,10 @@
 				F8312D8E29260CA000FC6073 /* OpenSans-Light.ttf in Resources */,
 				F8312D8F29260CA000FC6073 /* OpenSans-Italic.ttf in Resources */,
 				F8312D8929260CA000FC6073 /* RobotoCondensed-Light.ttf in Resources */,
+				F8312DD32927448300FC6073 /* DefaultHomeTableViewCell.xib in Resources */,
 				F8312D9129260CA000FC6073 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				F8312D9E29260CA000FC6073 /* OpenSans-Regular.ttf in Resources */,
+				F8312DDE292745A500FC6073 /* HotNewsCell.xib in Resources */,
 				F8312D9F29260CA000FC6073 /* OpenSans-BoldItalic.ttf in Resources */,
 				F8312DC12927193C00FC6073 /* NotificationViewController.xib in Resources */,
 				F8312D9A29260CA000FC6073 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
@@ -583,6 +650,7 @@
 				F8312D9029260CA000FC6073 /* Apache License.txt in Resources */,
 				F8312D8A29260CA000FC6073 /* Roboto-Regular.ttf in Resources */,
 				F8312D9529260CA000FC6073 /* RobotoCondensed-Regular.ttf in Resources */,
+				F8312DE3292765D200FC6073 /* HeaderCell.xib in Resources */,
 				F8312DC52927196400FC6073 /* IndividualViewController.xib in Resources */,
 				F8312D632925D43600FC6073 /* LoginViewController.xib in Resources */,
 				F8312D8829260CA000FC6073 /* RobotoCondensed-Bold.ttf in Resources */,
@@ -674,8 +742,10 @@
 				F8258F4829223AE2004F81D9 /* Observable+Operators.swift in Sources */,
 				F8312DAB2926272D00FC6073 /* LAContext+Extension.swift in Sources */,
 				F8258F3729223AE2004F81D9 /* PaddingLabelExtension.swift in Sources */,
+				F8312DDD292745A500FC6073 /* HotNewsCell.swift in Sources */,
 				F8258F4629223AE2004F81D9 /* Date+Extension.swift in Sources */,
 				F8258F4129223AE2004F81D9 /* UIFont+Extension.swift in Sources */,
+				F8312DD22927448300FC6073 /* DefaultHomeTableViewCell.swift in Sources */,
 				F8312DBC292718EE00FC6073 /* HomeViewController.swift in Sources */,
 				F8312DC82927198E00FC6073 /* LearningViewController.swift in Sources */,
 				F8258F3829223AE2004F81D9 /* ReactiveUIControl+Extension.swift in Sources */,
@@ -683,6 +753,7 @@
 				F8258F4A29223AE2004F81D9 /* UIView+Extension.swift in Sources */,
 				F8258F6A29223D41004F81D9 /* ReachabilityService.swift in Sources */,
 				F8258F3D29223AE2004F81D9 /* NavigationController+Extension.swift in Sources */,
+				F8312DE2292765D200FC6073 /* HeaderCell.swift in Sources */,
 				F8258F6329223C62004F81D9 /* TargetType.swift in Sources */,
 				F8258F3F29223AE2004F81D9 /* CollectionView+Extension.swift in Sources */,
 				F8258F4329223AE2004F81D9 /* Array+Extension.swift in Sources */,
@@ -696,6 +767,7 @@
 				F8258F3A29223AE2004F81D9 /* UIBarButtonItem+Extension.swift in Sources */,
 				F8258F4B29223AE2004F81D9 /* Switch+Extension.swift in Sources */,
 				F8258F3429223AE2004F81D9 /* Data+Extension.swift in Sources */,
+				F8312DD8292744CE00FC6073 /* PopularFeatureCell.swift in Sources */,
 				F8258F3329223AE2004F81D9 /* UIImageView+Extension.swift in Sources */,
 				F8258F4429223AE2004F81D9 /* ReactiveTextfield+Extension.swift in Sources */,
 				F8258F4229223AE2004F81D9 /* Int64+Extension.swift in Sources */,
