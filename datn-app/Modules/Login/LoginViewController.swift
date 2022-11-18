@@ -106,17 +106,15 @@ class LoginViewController: UIViewController {
     private func handlerAction() {
         self.btnLogin.rx.tap.asDriver().drive(onNext: { [weak self] (_) in
             guard let `self` = self else { return }
-            
-            let loadingPopup    = PopupCustom()
-            loadingPopup.modalPresentationStyle     = .overFullScreen
-            loadingPopup.modalTransitionStyle       = .crossDissolve
-            self.present(loadingPopup, animated: true)
-            
+            self.navigationController?.pushViewController(SplashViewController(), animated: true)
         }).disposed(by: self.disposeBag)
         
         self.vImgFastLogin.rx.tap().asObservable().observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
             guard let `self` = self else { return }
-            self.rxLoginMode.accept(.Choose)
+            let loadingPopup                        = PopupCustom()
+            loadingPopup.modalPresentationStyle     = .overFullScreen
+            loadingPopup.modalTransitionStyle       = .crossDissolve
+            self.present(loadingPopup, animated: true)
         }).disposed(by: self.disposeBag)
         
         self.btnBack.rx.tap.asDriver().drive(onNext: { [weak self] _ in

@@ -25,7 +25,7 @@ class PopupCustom: UIViewController {
     @IBOutlet weak var stvContent       : UIStackView!
     @IBOutlet weak var stvTop           : UIStackView!
     @IBOutlet weak var stvBot           : UIStackView!
-    @IBOutlet weak var vLottie          : LottieAnimationView!
+    @IBOutlet weak var vLottie          : AnimationView!
     
     @IBOutlet weak var lblTitle         : UILabel!
     @IBOutlet weak var lblContent       : UILabel!

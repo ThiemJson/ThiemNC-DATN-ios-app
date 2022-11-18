@@ -161,6 +161,9 @@ struct Constant {
         static let hex_orange_F3AB1D    = UIColor(red: 243/255, green: 171/255, blue: 29/255, alpha: 1)
         static let hex_gray_9EB6C3      = UIColor(red: 158/255, green: 182/255, blue: 195/255, alpha: 1)
         static let hex_30_163255      = UIColor(red: 22/255, green: 50/255, blue: 85/255, alpha: 0.3)
+        
+        static let hex_707D85_tabbar_disable    = UIColor(red: 112/255, green: 125/255, blue: 133/255, alpha: 1)
+        static let hex_2D74E7_tabbar_enable     = UIColor(red: 45/255, green: 116/255, blue: 231/255, alpha: 1)
     }
 }
 
