@@ -40,10 +40,7 @@ class HeaderCell: UITableViewCell {
     }
     
     func updateUI() {
-        self.imgAvatar.layer.borderWidth      = 2
-        self.imgAvatar.layer.borderColor      = Constant.Color.hex_green_19C285.cgColor
-        self.imgAvatar.layer.cornerRadius     = CGFloat(self.vAvatar.frame.height / 2)
-        self.imgAvatar.clipsToBounds          = true
+        self.imgAvatar.image                = UIImage(named: "user_placeholder")?.circleMask
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

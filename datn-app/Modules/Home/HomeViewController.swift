@@ -55,6 +55,7 @@ class HomeViewController: UIViewController {
         self.tbvContent.dataSource      = self
         self.tbvContent.separatorStyle  = .none
         self.tbvContent.alwaysBounceVertical    = false
+        self.tbvContent.register(UINib(nibName: "PopularFeatureCell", bundle: nil), forCellReuseIdentifier: "PopularFeatureCell")
         self.tbvContent.register(UINib(nibName: "DefaultHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "DefaultHomeTableViewCell")
         self.tbvContent.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "HeaderCell")
     }
@@ -76,8 +77,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // Header
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as? HeaderCell else { return HeaderCell()}
+            cell.updateUI()
+            return cell
+        }
+        
+        // Popular Feature
+        if indexPath.row == 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PopularFeatureCell", for: indexPath) as? PopularFeatureCell else { return PopularFeatureCell()}
             cell.updateUI()
             return cell
         }
@@ -92,6 +101,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return self.tbvContent.frame.height * (130 / 663)
+        }
+        
+        if indexPath.row == 1 {
+            return self.tbvContent.frame.height * (140 / 490)
         }
         
         return UITableView.automaticDimension

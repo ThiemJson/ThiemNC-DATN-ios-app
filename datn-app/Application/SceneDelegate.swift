@@ -23,6 +23,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let loginVC = LoginViewController()
         let navViewController = UINavigationController(rootViewController: loginVC)
         window?.rootViewController = navViewController
+        
+        //        if let rootWindow = window {
+        //            rootWindow.rootViewController   = RootTabBarViewController()
+        //            let options: UIView.AnimationOptions = .transitionFlipFromRight
+        //            let duration: TimeInterval = 0.5
+        //            UIView.transition(with: rootWindow, duration: duration, options: options, animations: {}, completion:
+        //            { completed in
+        //                // maybe do something on completion here
+        //            })
+        //        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

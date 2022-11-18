@@ -42,8 +42,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-zS-Uq5" userLabel="vAvatar">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-K3-DIB" userLabel="imgAvatar">
-                                                <rect key="frame" x="2" y="2" width="59" height="59"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-K3-DIB" userLabel="imgAvatar">
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="uy6-K3-DIB" secondAttribute="height" id="HFL-ph-aPg"/>
                                                 </constraints>
@@ -51,10 +51,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="uy6-K3-DIB" firstAttribute="top" secondItem="ncC-zS-Uq5" secondAttribute="top" constant="2" id="1f7-ir-Blt"/>
-                                            <constraint firstItem="uy6-K3-DIB" firstAttribute="leading" secondItem="ncC-zS-Uq5" secondAttribute="leading" constant="2" id="9V6-js-brY"/>
-                                            <constraint firstAttribute="trailing" secondItem="uy6-K3-DIB" secondAttribute="trailing" constant="2" id="bj6-q7-NGI"/>
-                                            <constraint firstAttribute="bottom" secondItem="uy6-K3-DIB" secondAttribute="bottom" constant="2" id="hcJ-ja-PR4"/>
+                                            <constraint firstItem="uy6-K3-DIB" firstAttribute="top" secondItem="ncC-zS-Uq5" secondAttribute="top" id="1f7-ir-Blt"/>
+                                            <constraint firstItem="uy6-K3-DIB" firstAttribute="leading" secondItem="ncC-zS-Uq5" secondAttribute="leading" id="9V6-js-brY"/>
+                                            <constraint firstAttribute="trailing" secondItem="uy6-K3-DIB" secondAttribute="trailing" id="bj6-q7-NGI"/>
+                                            <constraint firstAttribute="bottom" secondItem="uy6-K3-DIB" secondAttribute="bottom" id="hcJ-ja-PR4"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVx-2j-qK9" userLabel="vInfo">
@@ -64,19 +64,19 @@
                                                 <rect key="frame" x="15" y="5" width="151" height="53"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Cao Thiêm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JU-xy-0SQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mã sinh viên: 1851061743" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crJ-tF-HIq">
-                                                        <rect key="frame" x="0.0" y="22" width="151" height="15.5"/>
+                                                        <rect key="frame" x="0.0" y="31" width="151" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lớp học phần: 60TH3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeD-vX-Qdh" userLabel="lblClass">
-                                                        <rect key="frame" x="0.0" y="37.5" width="151" height="15.5"/>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lớp học phần: 60TH3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeD-vX-Qdh" userLabel="lblClass">
+                                                        <rect key="frame" x="0.0" y="53" width="151" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
