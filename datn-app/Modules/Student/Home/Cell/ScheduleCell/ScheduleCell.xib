@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="287" id="KGk-i7-Jjw" customClass="ScheduleCell" customModule="datn_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DkZ-FC-8NC" userLabel="stvContent">
+                        <rect key="frame" x="20" y="5" width="280" height="175.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZoH-7c-O0u" userLabel="stvHeader">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chức năng phổ biến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgu-ro-v86" userLabel="lblTitle">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="cTj-n6-haW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnD-Eg-BR6" userLabel="vContentSchedule">
+                                <rect key="frame" x="0.0" y="25.5" width="280" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ma2-cp-Jn4" userLabel="stvBtn">
+                                        <rect key="frame" x="20" y="10" width="250" height="35"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPq-Aq-KDz" userLabel="vBtnCurrentday">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="35"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hôm nay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sz1-rK-Dxc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="sz1-rK-Dxc" firstAttribute="top" secondItem="NPq-Aq-KDz" secondAttribute="top" id="P1v-iD-XTG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sz1-rK-Dxc" secondAttribute="bottom" id="i3G-sh-1Re"/>
+                                                    <constraint firstAttribute="height" constant="35" id="mf5-PC-anj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sz1-rK-Dxc" secondAttribute="trailing" id="mpR-g3-VlT"/>
+                                                    <constraint firstItem="sz1-rK-Dxc" firstAttribute="leading" secondItem="NPq-Aq-KDz" secondAttribute="leading" id="wE5-y2-bX6"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mD-Aa-YJe" userLabel="vBtnTomorrow">
+                                                <rect key="frame" x="65" y="0.0" width="55" height="35"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày mai" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="la8-nO-QUK" userLabel="Ngày mai">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="la8-nO-QUK" firstAttribute="top" secondItem="5mD-Aa-YJe" secondAttribute="top" id="9VM-2u-gjo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="la8-nO-QUK" secondAttribute="trailing" id="CNc-Nh-fvL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="la8-nO-QUK" secondAttribute="bottom" id="IUX-VZ-KNO"/>
+                                                    <constraint firstItem="la8-nO-QUK" firstAttribute="leading" secondItem="5mD-Aa-YJe" secondAttribute="leading" id="O3e-cM-65A"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOc-np-Q7o" userLabel="vBtnAfterTomorrow">
+                                                <rect key="frame" x="130" y="0.0" width="55" height="35"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày kia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwd-6e-OSL" userLabel="Ngày kia">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Nwd-6e-OSL" firstAttribute="top" secondItem="jOc-np-Q7o" secondAttribute="top" id="YUY-1S-aA5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Nwd-6e-OSL" secondAttribute="bottom" id="h6N-FE-3rO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Nwd-6e-OSL" secondAttribute="trailing" id="hRg-mu-ORi"/>
+                                                    <constraint firstItem="Nwd-6e-OSL" firstAttribute="leading" secondItem="jOc-np-Q7o" secondAttribute="leading" id="oM6-mP-1PZ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-09-PgT">
+                                                <rect key="frame" x="195" y="0.0" width="55" height="35"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMO-F0-oX6" userLabel="vNodata">
+                                        <rect key="frame" x="0.0" y="45" width="280" height="105"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có lịch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-8w-e7E" userLabel="lblNodata">
+                                                <rect key="frame" x="88.5" y="42.5" width="103.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="dh3-8w-e7E" firstAttribute="centerY" secondItem="pMO-F0-oX6" secondAttribute="centerY" id="IEg-Sk-1o2"/>
+                                            <constraint firstItem="dh3-8w-e7E" firstAttribute="centerX" secondItem="pMO-F0-oX6" secondAttribute="centerX" id="e9b-V7-pAP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pMO-F0-oX6" firstAttribute="top" secondItem="Ma2-cp-Jn4" secondAttribute="bottom" id="UC4-gv-QeW"/>
+                                    <constraint firstItem="pMO-F0-oX6" firstAttribute="leading" secondItem="TnD-Eg-BR6" secondAttribute="leading" id="X3m-ZB-Je4"/>
+                                    <constraint firstAttribute="bottom" secondItem="pMO-F0-oX6" secondAttribute="bottom" id="cb7-jD-CtF"/>
+                                    <constraint firstAttribute="trailing" secondItem="pMO-F0-oX6" secondAttribute="trailing" id="dKr-mk-sUq"/>
+                                    <constraint firstItem="Ma2-cp-Jn4" firstAttribute="top" secondItem="TnD-Eg-BR6" secondAttribute="top" constant="10" id="n38-ab-zty"/>
+                                    <constraint firstItem="Ma2-cp-Jn4" firstAttribute="leading" secondItem="TnD-Eg-BR6" secondAttribute="leading" constant="20" id="vIC-rj-V3t"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ma2-cp-Jn4" secondAttribute="trailing" constant="10" id="xVh-lI-8MP"/>
+                                    <constraint firstAttribute="height" constant="150" id="zG3-A3-bTb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="DkZ-FC-8NC" secondAttribute="trailing" constant="20" id="Jgl-J3-MBQ"/>
+                    <constraint firstAttribute="bottom" secondItem="DkZ-FC-8NC" secondAttribute="bottom" constant="10" id="S26-X1-mdP"/>
+                    <constraint firstItem="DkZ-FC-8NC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="dTM-bO-hke"/>
+                    <constraint firstItem="DkZ-FC-8NC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="t26-HA-bI9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblAfterTomorrow" destination="Nwd-6e-OSL" id="3d3-Sg-0WJ"/>
+                <outlet property="lblCurrent" destination="sz1-rK-Dxc" id="5cK-Rf-sxi"/>
+                <outlet property="lblNoSchedule" destination="dh3-8w-e7E" id="lue-SA-Fo0"/>
+                <outlet property="lblTitle" destination="Bgu-ro-v86" id="FIw-yC-PMl"/>
+                <outlet property="lblTomorrow" destination="la8-nO-QUK" id="2PG-yu-Cqj"/>
+                <outlet property="vBtnAfterTomorrow" destination="jOc-np-Q7o" id="VGR-FO-TtS"/>
+                <outlet property="vBtnCurrentDay" destination="NPq-Aq-KDz" id="ozo-BD-PWL"/>
+                <outlet property="vBtnTomorrow" destination="5mD-Aa-YJe" id="AQv-d9-Nf9"/>
+                <outlet property="vContentSchedule" destination="TnD-Eg-BR6" id="fzG-Pa-zCm"/>
+                <outlet property="vContentView" destination="H2p-sc-9uM" id="kxk-Uc-GIl"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="112.16517857142857"/>
+        </tableViewCell>
+    </objects>
+</document>

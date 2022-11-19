@@ -58,6 +58,7 @@ class HomeViewController: UIViewController {
         self.tbvContent.register(UINib(nibName: "PopularFeatureCell", bundle: nil), forCellReuseIdentifier: "PopularFeatureCell")
         self.tbvContent.register(UINib(nibName: "DefaultHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "DefaultHomeTableViewCell")
         self.tbvContent.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "HeaderCell")
+        self.tbvContent.register(UINib(nibName: "ScheduleCell", bundle: nil), forCellReuseIdentifier: "ScheduleCell")
     }
     
     private func handlerAction() {
@@ -88,6 +89,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PopularFeatureCell", for: indexPath) as? PopularFeatureCell else { return PopularFeatureCell()}
             cell.updateUI()
+            return cell
+        }
+        
+        // Schedule
+        if indexPath.row == 2 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as? ScheduleCell else { return ScheduleCell()}
+            cell.updateUI()
+            cell.rxChooseDay.accept(.Current)
             return cell
         }
         
