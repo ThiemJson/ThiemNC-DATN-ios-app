@@ -21,6 +21,7 @@
                 <outlet property="lblStudent" destination="5Pn-c0-uME" id="dLW-KO-fyK"/>
                 <outlet property="lblTitle" destination="Y1t-Zl-PhX" id="ddA-Ba-wkB"/>
                 <outlet property="vBack" destination="Gjx-dH-YEH" id="hep-E2-FOs"/>
+                <outlet property="vBotomImage" destination="iIZ-Qs-5XD" id="rIj-DS-yhD"/>
                 <outlet property="vContent" destination="TW6-uE-sAn" id="LNN-PZ-Gkd"/>
                 <outlet property="vImgFastLogin" destination="MTh-R9-xb2" id="yGx-86-y57"/>
                 <outlet property="vLecture" destination="hrD-o9-ZOf" id="18C-GV-9yx"/>
@@ -320,17 +321,35 @@
                                 <constraint firstAttribute="bottom" secondItem="Gjx-dH-YEH" secondAttribute="bottom" id="yoR-yF-0ci"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIZ-Qs-5XD" userLabel="vBotImgWrapper">
+                            <rect key="frame" x="0.0" y="257" width="414" height="325.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="mak-M1-DTm" userLabel="imgBottom">
+                                    <rect key="frame" x="124" y="-437.5" width="166" height="1200"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="mak-M1-DTm" firstAttribute="centerX" secondItem="iIZ-Qs-5XD" secondAttribute="centerX" id="85p-lM-XB4"/>
+                                <constraint firstItem="mak-M1-DTm" firstAttribute="centerY" secondItem="iIZ-Qs-5XD" secondAttribute="centerY" id="LwY-2A-l1W"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="hyh-RP-LmB" firstAttribute="width" secondItem="TW6-uE-sAn" secondAttribute="width" multiplier="0.15" id="65n-QR-zYF"/>
+                        <constraint firstItem="iIZ-Qs-5XD" firstAttribute="leading" secondItem="TW6-uE-sAn" secondAttribute="leading" id="7UV-Nz-YuM"/>
+                        <constraint firstAttribute="bottom" secondItem="iIZ-Qs-5XD" secondAttribute="bottom" id="9g4-xx-TGr"/>
                         <constraint firstItem="hQQ-EM-hWf" firstAttribute="centerX" secondItem="TW6-uE-sAn" secondAttribute="centerX" id="Btu-Uw-BMS"/>
                         <constraint firstItem="8St-2E-lq8" firstAttribute="height" secondItem="TW6-uE-sAn" secondAttribute="height" multiplier="0.35" id="CWL-VA-57j"/>
                         <constraint firstItem="vJ4-fy-uyp" firstAttribute="centerX" secondItem="TW6-uE-sAn" secondAttribute="centerX" id="Ls0-ch-IEJ"/>
+                        <constraint firstAttribute="trailing" secondItem="iIZ-Qs-5XD" secondAttribute="trailing" id="Mi5-gc-mwg"/>
                         <constraint firstItem="myP-fG-U4U" firstAttribute="top" secondItem="vJ4-fy-uyp" secondAttribute="top" id="VLX-Mu-GpW"/>
                         <constraint firstItem="myP-fG-U4U" firstAttribute="centerX" secondItem="TW6-uE-sAn" secondAttribute="centerX" id="f7b-XI-OBl"/>
                         <constraint firstItem="vJ4-fy-uyp" firstAttribute="top" secondItem="hQQ-EM-hWf" secondAttribute="bottom" constant="15" id="hiX-9y-ZfG"/>
                         <constraint firstItem="myP-fG-U4U" firstAttribute="width" secondItem="vJ4-fy-uyp" secondAttribute="width" id="mtV-7D-6MK"/>
+                        <constraint firstItem="iIZ-Qs-5XD" firstAttribute="top" secondItem="vJ4-fy-uyp" secondAttribute="bottom" id="srS-Ki-0W2"/>
+                        <constraint firstItem="mak-M1-DTm" firstAttribute="width" secondItem="vJ4-fy-uyp" secondAttribute="width" multiplier="0.5" id="tIm-EG-WCb"/>
                         <constraint firstItem="hQQ-EM-hWf" firstAttribute="top" secondItem="TW6-uE-sAn" secondAttribute="top" constant="15" id="tKy-D3-quv"/>
                         <constraint firstItem="vJ4-fy-uyp" firstAttribute="width" secondItem="TW6-uE-sAn" secondAttribute="width" multiplier="0.8" id="wdW-Oq-v5z"/>
                     </constraints>
@@ -366,6 +385,7 @@
         <image name="icon_splash_background" width="1125" height="2436"/>
         <image name="icon_splash_background_bottom" width="1125" height="641"/>
         <image name="icon_splash_background_top" width="1058" height="420"/>
+        <image name="login_bottom" width="1200" height="1200"/>
         <image name="logo_circle_png" width="3333" height="3333"/>
         <image name="student" width="35" height="35"/>
         <image name="teacher" width="35" height="35"/>

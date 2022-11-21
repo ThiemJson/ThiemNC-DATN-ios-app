@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnBack              : UIButton!
     @IBOutlet weak var vBack                : UIView!
     
+    @IBOutlet weak var vBotomImage          : UIView!
     let disposeBag                          = DisposeBag()
     let rxLoginMode                         = BehaviorRelay<LoginViewControllerMode>(value: .Choose)
     
@@ -140,14 +141,17 @@ class LoginViewController: UIViewController {
             case .Choose:
                 self.vLoginSite.isHidden    = true
                 self.vPerson.isHidden       = false
+                self.vBotomImage.isHidden   = false
             case .Lecture:
                 self.vLoginSite.isHidden    = false
                 self.vPerson.isHidden       = true
+                self.vBotomImage.isHidden   = true
                 self.imgUserMode.image      = UIImage(named: "teacher")
 
             case .Student:
                 self.vLoginSite.isHidden    = false
                 self.vPerson.isHidden       = true
+                self.vBotomImage.isHidden   = true
                 self.imgUserMode.image      = UIImage(named: "student")
             }
             

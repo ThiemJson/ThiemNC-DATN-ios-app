@@ -5,12 +5,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IndividualViewController" customModule="datn_app" customModuleProvider="target">
             <connections>
+                <outlet property="tbvContent" destination="Idc-VJ-UoN" id="Rvo-Il-PIe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,25 +19,50 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Individual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsv-Jd-esC">
-                    <rect key="frame" x="171" y="437.5" width="72.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="X0h-Rf-QiO">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="38F-sr-HV1">
+                    <rect key="frame" x="0.0" y="696" width="414" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="5A0-Pw-nxk"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background_top" translatesAutoresizingMaskIntoConstraints="NO" id="ov5-vD-QiP">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="t8h-wo-ji1"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idc-VJ-UoN" userLabel="tbvContent">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="dsv-Jd-esC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UlK-Uv-Z3a"/>
-                <constraint firstItem="dsv-Jd-esC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bh9-T2-Ahg"/>
+                <constraint firstItem="ov5-vD-QiP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0DH-8b-Idv"/>
+                <constraint firstItem="X0h-Rf-QiO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="285-9q-v6E"/>
+                <constraint firstItem="X0h-Rf-QiO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AOI-z1-G5U"/>
+                <constraint firstItem="Idc-VJ-UoN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kfa-Yu-LiF"/>
+                <constraint firstItem="Idc-VJ-UoN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Mpj-zb-Veb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Idc-VJ-UoN" secondAttribute="trailing" id="RM2-d6-phj"/>
+                <constraint firstItem="ov5-vD-QiP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rnz-Sp-ygs"/>
+                <constraint firstItem="ov5-vD-QiP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Tmx-qH-Ked"/>
+                <constraint firstItem="Idc-VJ-UoN" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ben-KF-Yt4"/>
+                <constraint firstAttribute="bottom" secondItem="X0h-Rf-QiO" secondAttribute="bottom" id="h6B-6i-gIC"/>
+                <constraint firstAttribute="trailing" secondItem="X0h-Rf-QiO" secondAttribute="trailing" id="hpr-Kh-RwF"/>
+                <constraint firstItem="38F-sr-HV1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="s1D-hB-Sgl"/>
+                <constraint firstAttribute="trailing" secondItem="38F-sr-HV1" secondAttribute="trailing" id="taq-li-C2v"/>
+                <constraint firstAttribute="bottom" secondItem="38F-sr-HV1" secondAttribute="bottom" id="woq-ue-qv6"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="107"/>
+            <point key="canvasLocation" x="131.8840579710145" y="106.47321428571428"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="icon_splash_background" width="1125" height="2436"/>
+        <image name="icon_splash_background_bottom" width="1125" height="641"/>
+        <image name="icon_splash_background_top" width="1058" height="420"/>
     </resources>
 </document>

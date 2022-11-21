@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01910EBB292BC97B00C705B5 /* IndivitualHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01910EB9292BC97B00C705B5 /* IndivitualHeaderCell.swift */; };
+		01910EBC292BC97B00C705B5 /* IndivitualHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01910EBA292BC97B00C705B5 /* IndivitualHeaderCell.xib */; };
+		01910EBF292BC99600C705B5 /* IndivitualBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01910EBD292BC99600C705B5 /* IndivitualBodyCell.swift */; };
+		01910EC0292BC99600C705B5 /* IndivitualBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01910EBE292BC99600C705B5 /* IndivitualBodyCell.xib */; };
 		6D060D1465623CCD19318B69 /* Pods_datn_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C89562E6BC4AE74F9CFE79 /* Pods_datn_app.framework */; };
 		F8258F03292231E3004F81D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8258F01292231E3004F81D9 /* Main.storyboard */; };
 		F8258F05292231ED004F81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8258F04292231ED004F81D9 /* Assets.xcassets */; };
@@ -116,9 +120,15 @@
 		F8AC1D73292B7904005D36D5 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D71292B7904005D36D5 /* NewsCell.xib */; };
 		F8AC1D7B292B8D79005D36D5 /* UrgenNotiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D79292B8D79005D36D5 /* UrgenNotiCell.swift */; };
 		F8AC1D7C292B8D79005D36D5 /* UrgenNotiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D7A292B8D79005D36D5 /* UrgenNotiCell.xib */; };
+		F8AC1D82292C723A005D36D5 /* OverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D80292C723A005D36D5 /* OverviewCell.swift */; };
+		F8AC1D83292C723A005D36D5 /* OverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D81292C723A005D36D5 /* OverviewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01910EB9292BC97B00C705B5 /* IndivitualHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndivitualHeaderCell.swift; sourceTree = "<group>"; };
+		01910EBA292BC97B00C705B5 /* IndivitualHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndivitualHeaderCell.xib; sourceTree = "<group>"; };
+		01910EBD292BC99600C705B5 /* IndivitualBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndivitualBodyCell.swift; sourceTree = "<group>"; };
+		01910EBE292BC99600C705B5 /* IndivitualBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndivitualBodyCell.xib; sourceTree = "<group>"; };
 		3F8B446687BD2A76E3C9EE67 /* Pods-datn-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datn-app.release.xcconfig"; path = "Target Support Files/Pods-datn-app/Pods-datn-app.release.xcconfig"; sourceTree = "<group>"; };
 		65C89562E6BC4AE74F9CFE79 /* Pods_datn_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_datn_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267E7EEB3F002C59F250738 /* Pods-datn-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datn-app.debug.xcconfig"; path = "Target Support Files/Pods-datn-app/Pods-datn-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +242,8 @@
 		F8AC1D71292B7904005D36D5 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		F8AC1D79292B8D79005D36D5 /* UrgenNotiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgenNotiCell.swift; sourceTree = "<group>"; };
 		F8AC1D7A292B8D79005D36D5 /* UrgenNotiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UrgenNotiCell.xib; sourceTree = "<group>"; };
+		F8AC1D80292C723A005D36D5 /* OverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCell.swift; sourceTree = "<group>"; };
+		F8AC1D81292C723A005D36D5 /* OverviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +258,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01910EB8292BC95500C705B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC1D7F292C7225005D36D5 /* Overview */,
+				F8AC1D7E292C71F1005D36D5 /* Body */,
+				F8AC1D7D292C71E1005D36D5 /* Header */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		0BEC448F20FD63502F694708 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +527,7 @@
 		F8312DB8292718B800FC6073 /* Individual */ = {
 			isa = PBXGroup;
 			children = (
+				01910EB8292BC95500C705B5 /* Cell */,
 				F8312DC22927196400FC6073 /* IndividualViewController.swift */,
 				F8312DC32927196400FC6073 /* IndividualViewController.xib */,
 			);
@@ -621,6 +644,33 @@
 			path = UrgenNoti;
 			sourceTree = "<group>";
 		};
+		F8AC1D7D292C71E1005D36D5 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				01910EB9292BC97B00C705B5 /* IndivitualHeaderCell.swift */,
+				01910EBA292BC97B00C705B5 /* IndivitualHeaderCell.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		F8AC1D7E292C71F1005D36D5 /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				01910EBD292BC99600C705B5 /* IndivitualBodyCell.swift */,
+				01910EBE292BC99600C705B5 /* IndivitualBodyCell.xib */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
+		F8AC1D7F292C7225005D36D5 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC1D80292C723A005D36D5 /* OverviewCell.swift */,
+				F8AC1D81292C723A005D36D5 /* OverviewCell.xib */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -705,11 +755,13 @@
 				F8312DC12927193C00FC6073 /* NotificationViewController.xib in Resources */,
 				F8312D9A29260CA000FC6073 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				F8312D9B29260CA000FC6073 /* Roboto-Italic.ttf in Resources */,
+				01910EC0292BC99600C705B5 /* IndivitualBodyCell.xib in Resources */,
 				F8312DA029260CA000FC6073 /* Roboto-Bold.ttf in Resources */,
 				F8312D9029260CA000FC6073 /* Apache License.txt in Resources */,
 				F8312D8A29260CA000FC6073 /* Roboto-Regular.ttf in Resources */,
 				F8312D9529260CA000FC6073 /* RobotoCondensed-Regular.ttf in Resources */,
 				F8312DE3292765D200FC6073 /* HeaderCell.xib in Resources */,
+				01910EBC292BC97B00C705B5 /* IndivitualHeaderCell.xib in Resources */,
 				F8312DC52927196400FC6073 /* IndividualViewController.xib in Resources */,
 				F8312D632925D43600FC6073 /* LoginViewController.xib in Resources */,
 				F8312D8829260CA000FC6073 /* RobotoCondensed-Bold.ttf in Resources */,
@@ -723,6 +775,7 @@
 				F8312D8629260CA000FC6073 /* Roboto-Light.ttf in Resources */,
 				F8312DA929260E7A00FC6073 /* TextFieldCustom.xib in Resources */,
 				F8312DC92927198F00FC6073 /* LearningViewController.xib in Resources */,
+				F8AC1D83292C723A005D36D5 /* OverviewCell.xib in Resources */,
 				F8258F08292231ED004F81D9 /* LaunchScreen.storyboard in Resources */,
 				F8AC1D73292B7904005D36D5 /* NewsCell.xib in Resources */,
 				F8312D9329260CA000FC6073 /* OpenSans-LightItalic.ttf in Resources */,
@@ -784,6 +837,7 @@
 			files = (
 				F8312D622925D43600FC6073 /* LoginViewController.swift in Sources */,
 				F8312DC42927196400FC6073 /* IndividualViewController.swift in Sources */,
+				01910EBF292BC99600C705B5 /* IndivitualBodyCell.swift in Sources */,
 				F8258F4C29223AE2004F81D9 /* Textfield+Extension.swift in Sources */,
 				F8312DCD292726B100FC6073 /* SplashViewController.swift in Sources */,
 				F8AC1D72292B7904005D36D5 /* NewsCell.swift in Sources */,
@@ -817,6 +871,7 @@
 				F8258F3D29223AE2004F81D9 /* NavigationController+Extension.swift in Sources */,
 				F8312DE2292765D200FC6073 /* HeaderCell.swift in Sources */,
 				F8258F6329223C62004F81D9 /* TargetType.swift in Sources */,
+				F8AC1D82292C723A005D36D5 /* OverviewCell.swift in Sources */,
 				F8AC1D6E292B6ADC005D36D5 /* HotNewsCollectionViewCell.swift in Sources */,
 				F8258F3F29223AE2004F81D9 /* CollectionView+Extension.swift in Sources */,
 				F8258F4329223AE2004F81D9 /* Array+Extension.swift in Sources */,
@@ -837,6 +892,7 @@
 				F8258F4229223AE2004F81D9 /* Int64+Extension.swift in Sources */,
 				F8258F7229224143004F81D9 /* SceneDelegate.swift in Sources */,
 				F8258F4729223AE2004F81D9 /* NSLayoutConstraint+Extension.swift in Sources */,
+				01910EBB292BC97B00C705B5 /* IndivitualHeaderCell.swift in Sources */,
 				F8258F5529223BE6004F81D9 /* AppMessagesManager.swift in Sources */,
 				F8258F3929223AE2004F81D9 /* TabbarController+Extension.swift in Sources */,
 				F8258F3529223AE2004F81D9 /* NSObject+Extension.swift in Sources */,

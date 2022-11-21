@@ -44,13 +44,13 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-ww-Ynt" userLabel="vContent">
-                    <rect key="frame" x="72.5" y="346.5" width="269" height="213"/>
+                    <rect key="frame" x="72.5" y="342" width="269" height="222.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g4P-QL-LDk" userLabel="stvContent">
-                            <rect key="frame" x="10" y="10" width="249" height="183"/>
+                            <rect key="frame" x="10" y="10" width="249" height="192.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ehO-Ap-UXk" userLabel="stvTop">
-                                    <rect key="frame" x="0.0" y="0.0" width="249" height="183"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="249" height="192.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-pJ-Fly" userLabel="vLottieWrapper">
                                             <rect key="frame" x="0.0" y="0.0" width="249" height="104"/>
@@ -75,7 +75,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng nhập trên thiết bị lạ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSB-0u-PQV" userLabel="lblTitle">
-                                            <rect key="frame" x="0.0" y="114" width="249" height="19"/>
+                                            <rect key="frame" x="0.0" y="114" width="249" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng liên hệ với Quản lý để được hỗ trợ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-M8-ZE6" userLabel="lblContent">
-                                            <rect key="frame" x="0.0" y="143" width="249" height="40"/>
+                                            <rect key="frame" x="0.0" y="146" width="249" height="46.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="taG-eg-KeW"/>
                                             </constraints>
@@ -196,6 +196,9 @@
             <point key="canvasLocation" x="132" y="124"/>
         </view>
     </objects>
+    <designables>
+        <designable name="zcp-8g-kJA"/>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

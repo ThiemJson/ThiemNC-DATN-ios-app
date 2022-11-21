@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="119" id="KGk-i7-Jjw" customClass="OverviewCell" customModule="datn_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-M9-Omj" userLabel="stvContent">
+                        <rect key="frame" x="20" y="24.5" width="280" height="70"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKh-oa-2s4" userLabel="vLearningYear">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XgD-tW-kdx">
+                                        <rect key="frame" x="0.0" y="11.5" width="80" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VE-qc-q8r" userLabel="9/9">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="23.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kỳ đã học" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y8-Vt-GTI" userLabel="Kỳ đã học">
+                                                <rect key="frame" x="0.0" y="23.5" width="80" height="23.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XgD-tW-kdx" firstAttribute="centerY" secondItem="xKh-oa-2s4" secondAttribute="centerY" id="9kf-hF-Fv4"/>
+                                    <constraint firstAttribute="trailing" secondItem="XgD-tW-kdx" secondAttribute="trailing" id="Qxo-S5-h9i"/>
+                                    <constraint firstItem="XgD-tW-kdx" firstAttribute="leading" secondItem="xKh-oa-2s4" secondAttribute="leading" id="RJW-FM-Rkt"/>
+                                    <constraint firstItem="XgD-tW-kdx" firstAttribute="height" secondItem="xKh-oa-2s4" secondAttribute="height" multiplier="2/3" id="aLn-ia-ipe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-s3-vay" userLabel="vTinchi">
+                                <rect key="frame" x="100" y="0.0" width="80" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mVB-3U-7Hn">
+                                        <rect key="frame" x="0.0" y="11.5" width="80" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="158 / 158" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-0p-yJD" userLabel="lblTinchi">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="23.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tín chỉ tích lũy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKZ-ij-REO" userLabel="lblTinchiTitle">
+                                                <rect key="frame" x="0.0" y="23.5" width="80" height="23.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mVB-3U-7Hn" firstAttribute="centerY" secondItem="q4y-s3-vay" secondAttribute="centerY" id="3s3-V5-g3g"/>
+                                    <constraint firstAttribute="trailing" secondItem="mVB-3U-7Hn" secondAttribute="trailing" id="B2M-bq-M6G"/>
+                                    <constraint firstItem="mVB-3U-7Hn" firstAttribute="leading" secondItem="q4y-s3-vay" secondAttribute="leading" id="PQd-oS-elc"/>
+                                    <constraint firstItem="mVB-3U-7Hn" firstAttribute="height" secondItem="q4y-s3-vay" secondAttribute="height" multiplier="2/3" id="nVn-NC-KtQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xY3-oZ-uxM" userLabel="vGPA">
+                                <rect key="frame" x="200" y="0.0" width="80" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Of6-UY-js0">
+                                        <rect key="frame" x="0.0" y="11.5" width="80" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.67 / 4.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtO-qp-xN9" userLabel="lblGPA">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="23.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm GPA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2G-cM-dTf" userLabel="lblGPATitle">
+                                                <rect key="frame" x="0.0" y="23.5" width="80" height="23.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Of6-UY-js0" firstAttribute="centerY" secondItem="xY3-oZ-uxM" secondAttribute="centerY" id="Kqu-DX-neK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Of6-UY-js0" secondAttribute="trailing" id="h2K-7s-fgQ"/>
+                                    <constraint firstItem="Of6-UY-js0" firstAttribute="height" secondItem="xY3-oZ-uxM" secondAttribute="height" multiplier="2/3" id="kgk-nv-wvm"/>
+                                    <constraint firstItem="Of6-UY-js0" firstAttribute="leading" secondItem="xY3-oZ-uxM" secondAttribute="leading" id="sYz-5l-9TJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Dta-M9-Omj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="KoL-n3-4eK"/>
+                    <constraint firstAttribute="trailing" secondItem="Dta-M9-Omj" secondAttribute="trailing" constant="20" id="NQE-kV-x6b"/>
+                    <constraint firstItem="Dta-M9-Omj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oL4-Dw-hfd"/>
+                    <constraint firstItem="Dta-M9-Omj" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="53 / 90" id="ruY-zG-8X5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lblGPA" destination="BtO-qp-xN9" id="MG3-IY-t3g"/>
+                <outlet property="lblGPATitle" destination="T2G-cM-dTf" id="eix-i0-pn0"/>
+                <outlet property="lblKyhoc" destination="0VE-qc-q8r" id="BBh-c0-iel"/>
+                <outlet property="lblKyhocTitle" destination="9Y8-Vt-GTI" id="0hr-Qf-XKc"/>
+                <outlet property="lblTinchi" destination="tK6-0p-yJD" id="xJu-Xo-2a5"/>
+                <outlet property="lblTinchiTitle" destination="xKZ-ij-REO" id="To2-Ax-8cg"/>
+                <outlet property="vContentView" destination="H2p-sc-9uM" id="sl9-xr-KR0"/>
+                <outlet property="vGPA" destination="xY3-oZ-uxM" id="VFO-AU-G9i"/>
+                <outlet property="vKyhoc" destination="xKh-oa-2s4" id="fAK-VU-ABE"/>
+                <outlet property="vTinchi" destination="q4y-s3-vay" id="Dvz-oT-zGL"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="131.58482142857142"/>
+        </tableViewCell>
+    </objects>
+</document>

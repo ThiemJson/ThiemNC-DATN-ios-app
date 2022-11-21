@@ -26,6 +26,27 @@ extension UIImage {
             return UIGraphicsGetImageFromCurrentImageContext()
         }
     
+    var circleMaskWithShadow: UIImage? {
+            let square = CGSize(width: min(size.width, size.height), height: min(size.width, size.height))
+            let imageView = UIImageView(frame: .init(origin: .init(x: 0, y: 0), size: square))
+            imageView.contentMode = .scaleAspectFill
+            imageView.image = self
+            imageView.layer.cornerRadius = square.width/2
+            imageView.layer.borderColor = UIColor.white.cgColor
+            imageView.layer.borderWidth = 5
+            imageView.layer.masksToBounds = true
+            imageView.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+            imageView.layer.shadowOffset  = CGSize(width: 2, height: 5)
+            imageView.layer.shadowRadius  = 3
+            imageView.layer.shadowOpacity = 0.8
+            imageView.clipsToBounds         = true
+            UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+            defer { UIGraphicsEndImageContext() }
+            guard let context = UIGraphicsGetCurrentContext() else { return nil }
+            imageView.layer.render(in: context)
+            return UIGraphicsGetImageFromCurrentImageContext()
+        }
+    
     func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
         let cgimage = image.cgImage!
         let contextImage: UIImage = UIImage(cgImage: cgimage)
