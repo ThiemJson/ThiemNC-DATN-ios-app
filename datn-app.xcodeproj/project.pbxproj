@@ -110,6 +110,12 @@
 		F8312DE3292765D200FC6073 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8312DE1292765D200FC6073 /* HeaderCell.xib */; };
 		F8312DE92928814700FC6073 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8312DE72928814700FC6073 /* ScheduleCell.swift */; };
 		F8312DEA2928814700FC6073 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8312DE82928814700FC6073 /* ScheduleCell.xib */; };
+		F8AC1D6E292B6ADC005D36D5 /* HotNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D6C292B6ADC005D36D5 /* HotNewsCollectionViewCell.swift */; };
+		F8AC1D6F292B6ADC005D36D5 /* HotNewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D6D292B6ADC005D36D5 /* HotNewsCollectionViewCell.xib */; };
+		F8AC1D72292B7904005D36D5 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D70292B7904005D36D5 /* NewsCell.swift */; };
+		F8AC1D73292B7904005D36D5 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D71292B7904005D36D5 /* NewsCell.xib */; };
+		F8AC1D7B292B8D79005D36D5 /* UrgenNotiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D79292B8D79005D36D5 /* UrgenNotiCell.swift */; };
+		F8AC1D7C292B8D79005D36D5 /* UrgenNotiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D7A292B8D79005D36D5 /* UrgenNotiCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,6 +226,12 @@
 		F8312DE1292765D200FC6073 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		F8312DE72928814700FC6073 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		F8312DE82928814700FC6073 /* ScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
+		F8AC1D6C292B6ADC005D36D5 /* HotNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotNewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8AC1D6D292B6ADC005D36D5 /* HotNewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotNewsCollectionViewCell.xib; sourceTree = "<group>"; };
+		F8AC1D70292B7904005D36D5 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		F8AC1D71292B7904005D36D5 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		F8AC1D79292B8D79005D36D5 /* UrgenNotiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgenNotiCell.swift; sourceTree = "<group>"; };
+		F8AC1D7A292B8D79005D36D5 /* UrgenNotiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UrgenNotiCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -520,6 +532,7 @@
 		F8312DCF2927445B00FC6073 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F8AC1D74292B8D39005D36D5 /* UrgenNoti */,
 				F8312DE62928812D00FC6073 /* ScheduleCell */,
 				F8312DDF292765BD00FC6073 /* HeaderCell */,
 				F8312DDA2927459400FC6073 /* HotNews */,
@@ -550,6 +563,7 @@
 		F8312DDA2927459400FC6073 /* HotNews */ = {
 			isa = PBXGroup;
 			children = (
+				F8AC1D6B292B6AB2005D36D5 /* Cell */,
 				F8312DDB292745A500FC6073 /* HotNewsCell.swift */,
 				F8312DDC292745A500FC6073 /* HotNewsCell.xib */,
 			);
@@ -585,6 +599,26 @@
 				F8312DE82928814700FC6073 /* ScheduleCell.xib */,
 			);
 			path = ScheduleCell;
+			sourceTree = "<group>";
+		};
+		F8AC1D6B292B6AB2005D36D5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC1D6C292B6ADC005D36D5 /* HotNewsCollectionViewCell.swift */,
+				F8AC1D6D292B6ADC005D36D5 /* HotNewsCollectionViewCell.xib */,
+				F8AC1D70292B7904005D36D5 /* NewsCell.swift */,
+				F8AC1D71292B7904005D36D5 /* NewsCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F8AC1D74292B8D39005D36D5 /* UrgenNoti */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC1D79292B8D79005D36D5 /* UrgenNotiCell.swift */,
+				F8AC1D7A292B8D79005D36D5 /* UrgenNotiCell.xib */,
+			);
+			path = UrgenNoti;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,8 +695,10 @@
 				F8312D8F29260CA000FC6073 /* OpenSans-Italic.ttf in Resources */,
 				F8312D8929260CA000FC6073 /* RobotoCondensed-Light.ttf in Resources */,
 				F8312DD32927448300FC6073 /* DefaultHomeTableViewCell.xib in Resources */,
+				F8AC1D7C292B8D79005D36D5 /* UrgenNotiCell.xib in Resources */,
 				F8312DEA2928814700FC6073 /* ScheduleCell.xib in Resources */,
 				F8312D9129260CA000FC6073 /* RobotoCondensed-LightItalic.ttf in Resources */,
+				F8AC1D6F292B6ADC005D36D5 /* HotNewsCollectionViewCell.xib in Resources */,
 				F8312D9E29260CA000FC6073 /* OpenSans-Regular.ttf in Resources */,
 				F8312DDE292745A500FC6073 /* HotNewsCell.xib in Resources */,
 				F8312D9F29260CA000FC6073 /* OpenSans-BoldItalic.ttf in Resources */,
@@ -688,6 +724,7 @@
 				F8312DA929260E7A00FC6073 /* TextFieldCustom.xib in Resources */,
 				F8312DC92927198F00FC6073 /* LearningViewController.xib in Resources */,
 				F8258F08292231ED004F81D9 /* LaunchScreen.storyboard in Resources */,
+				F8AC1D73292B7904005D36D5 /* NewsCell.xib in Resources */,
 				F8312D9329260CA000FC6073 /* OpenSans-LightItalic.ttf in Resources */,
 				F8258F05292231ED004F81D9 /* Assets.xcassets in Resources */,
 				F8312D8B29260CA000FC6073 /* Roboto-MediumItalic.ttf in Resources */,
@@ -749,6 +786,7 @@
 				F8312DC42927196400FC6073 /* IndividualViewController.swift in Sources */,
 				F8258F4C29223AE2004F81D9 /* Textfield+Extension.swift in Sources */,
 				F8312DCD292726B100FC6073 /* SplashViewController.swift in Sources */,
+				F8AC1D72292B7904005D36D5 /* NewsCell.swift in Sources */,
 				F8312DC02927193C00FC6073 /* NotificationViewController.swift in Sources */,
 				F8312DB5292717DC00FC6073 /* RootTabBarViewController.swift in Sources */,
 				F8312DA729260E5D00FC6073 /* TextFieldCustom.swift in Sources */,
@@ -779,6 +817,7 @@
 				F8258F3D29223AE2004F81D9 /* NavigationController+Extension.swift in Sources */,
 				F8312DE2292765D200FC6073 /* HeaderCell.swift in Sources */,
 				F8258F6329223C62004F81D9 /* TargetType.swift in Sources */,
+				F8AC1D6E292B6ADC005D36D5 /* HotNewsCollectionViewCell.swift in Sources */,
 				F8258F3F29223AE2004F81D9 /* CollectionView+Extension.swift in Sources */,
 				F8258F4329223AE2004F81D9 /* Array+Extension.swift in Sources */,
 				F8258F6529223C6D004F81D9 /* ClientAPI.swift in Sources */,
@@ -788,6 +827,7 @@
 				F8258F5F29223C11004F81D9 /* UserDefaultUtils.swift in Sources */,
 				F8258F4D29223AE2004F81D9 /* AVPlayer+Ext.swift in Sources */,
 				F8258F5329223BA0004F81D9 /* PingManager.swift in Sources */,
+				F8AC1D7B292B8D79005D36D5 /* UrgenNotiCell.swift in Sources */,
 				F8258F3A29223AE2004F81D9 /* UIBarButtonItem+Extension.swift in Sources */,
 				F8258F4B29223AE2004F81D9 /* Switch+Extension.swift in Sources */,
 				F8258F3429223AE2004F81D9 /* Data+Extension.swift in Sources */,

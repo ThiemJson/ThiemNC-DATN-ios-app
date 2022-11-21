@@ -9,7 +9,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tbvContent       : UITableView!
-    let dumbData                        = ["1","2", "3","1","2", "3","1","2", "31","2", "3","1","2", "3","1","2", "3"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initalizedContent()
@@ -51,6 +50,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupTableView() {
+        self.tbvContent.alwaysBounceVertical    = false
         self.tbvContent.delegate        = self
         self.tbvContent.dataSource      = self
         self.tbvContent.separatorStyle  = .none
@@ -59,6 +59,8 @@ class HomeViewController: UIViewController {
         self.tbvContent.register(UINib(nibName: "DefaultHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "DefaultHomeTableViewCell")
         self.tbvContent.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "HeaderCell")
         self.tbvContent.register(UINib(nibName: "ScheduleCell", bundle: nil), forCellReuseIdentifier: "ScheduleCell")
+        self.tbvContent.register(UINib(nibName: "HotNewsCell", bundle: nil), forCellReuseIdentifier: "HotNewsCell")
+        self.tbvContent.register(UINib(nibName: "UrgenNotiCell", bundle: nil), forCellReuseIdentifier: "UrgenNotiCell")
     }
     
     private func handlerAction() {
@@ -73,7 +75,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dumbData.count
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,38 +84,66 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as? HeaderCell else { return HeaderCell()}
             cell.updateUI()
+            cell.selectionStyle = .none
+            return cell
+        }
+        
+        // Urgent noti
+        if indexPath.row == 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UrgenNotiCell", for: indexPath) as? UrgenNotiCell else { return UrgenNotiCell()}
+            cell.selectionStyle = .none
+            cell.updateUI()
             return cell
         }
         
         // Popular Feature
-        if indexPath.row == 1 {
+        if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PopularFeatureCell", for: indexPath) as? PopularFeatureCell else { return PopularFeatureCell()}
             cell.updateUI()
+            cell.selectionStyle = .none
             return cell
         }
         
         // Schedule
-        if indexPath.row == 2 {
+        if indexPath.row == 3 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as? ScheduleCell else { return ScheduleCell()}
             cell.updateUI()
+            cell.selectionStyle = .none
             cell.rxChooseDay.accept(.Current)
             return cell
         }
         
+        // Hot news
+        if indexPath.row == 4 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "HotNewsCell", for: indexPath) as? HotNewsCell else { return HotNewsCell()}
+            cell.selectionStyle = .none
+            return cell
+        }
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultHomeTableViewCell", for: indexPath) as? DefaultHomeTableViewCell else { return DefaultHomeTableViewCell()}
-        cell.lblContent.text        = self.dumbData[indexPath.row]
-        cell.lblContent.textColor   = Constant.Color.dark_blue
-        cell.selectionStyle         = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        // Header
         if indexPath.row == 0 {
             return self.tbvContent.frame.height * (130 / 663)
         }
         
+        // Urgent noti
         if indexPath.row == 1 {
+            return self.tbvContent.frame.height * (110 / 490)
+        }
+        
+        // Popular Feature
+        if indexPath.row == 2 {
             return self.tbvContent.frame.height * (140 / 490)
+        }
+        
+        // Hot news
+        if indexPath.row == 4 {
+            return self.tbvContent.frame.height * (160 / 490)
         }
         
         return UITableView.automaticDimension

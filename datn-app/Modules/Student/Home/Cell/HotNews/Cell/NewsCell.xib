@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewsCell" customModule="datn_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="242" height="172"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="242" height="172"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="seS-f1-BM9">
+                        <rect key="frame" x="0.0" y="0.0" width="242" height="172"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Yie-Nr-QE5">
+                                <rect key="frame" x="4" y="4" width="234" height="164"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notification_demo" translatesAutoresizingMaskIntoConstraints="NO" id="HPv-jX-gt8" userLabel="imgContent">
+                                        <rect key="frame" x="0.0" y="0.0" width="234" height="114.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Thông báo] Lịch thi chuẩn tiếng anh đầu ra đợt 3 năm 2022" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjI-Wc-WIP" userLabel="lblDescription">
+                                        <rect key="frame" x="0.0" y="118.5" width="234" height="45.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="FjI-Wc-WIP" firstAttribute="height" secondItem="Yie-Nr-QE5" secondAttribute="height" multiplier="35 / 126" id="Iqq-Da-iNa"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Yie-Nr-QE5" secondAttribute="trailing" constant="4" id="BGa-MW-oVC"/>
+                            <constraint firstItem="Yie-Nr-QE5" firstAttribute="leading" secondItem="seS-f1-BM9" secondAttribute="leading" constant="4" id="fRJ-bJ-SHs"/>
+                            <constraint firstAttribute="bottom" secondItem="Yie-Nr-QE5" secondAttribute="bottom" constant="4" id="gHb-Pj-4g8"/>
+                            <constraint firstItem="Yie-Nr-QE5" firstAttribute="top" secondItem="seS-f1-BM9" secondAttribute="top" constant="4" id="omG-An-GfL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="242" height="172"/>
+            <connections>
+                <outlet property="imgContent" destination="HPv-jX-gt8" id="RTL-hU-CMa"/>
+                <outlet property="lblDescription" destination="FjI-Wc-WIP" id="WgP-kM-qdF"/>
+                <outlet property="stvContent" destination="Yie-Nr-QE5" id="jWa-rd-KIN"/>
+                <outlet property="vContentView" destination="seS-f1-BM9" id="Ujo-EE-r53"/>
+            </connections>
+            <point key="canvasLocation" x="269.56521739130437" y="64.955357142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="notification_demo" width="1025" height="684"/>
+    </resources>
+</document>
