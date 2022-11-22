@@ -89,7 +89,7 @@ struct Constant {
         static let gray_9EB6C3 = UIColor(red: 158/255, green: 182/255, blue: 195/255, alpha: 1)
         
         // One meme 2.0
-        static let app_background = UIColor(red: 241/255, green: 245/255, blue: 252/255, alpha: 1)
+        static let app_background = UIColor(red: 235/255, green: 240/255, blue: 246/255, alpha: 1)
         static let dark_blue = UIColor(red: 22/255, green: 50/255, blue: 85/255, alpha: 1)
         static let btn_on_color = UIColor(red: 161/255, green: 190/255, blue: 228/255, alpha: 1)
         static let btn_off_color = UIColor(red: 211/255, green: 222/255, blue: 228/255, alpha: 1)

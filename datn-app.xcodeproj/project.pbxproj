@@ -122,6 +122,8 @@
 		F8AC1D7C292B8D79005D36D5 /* UrgenNotiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D7A292B8D79005D36D5 /* UrgenNotiCell.xib */; };
 		F8AC1D82292C723A005D36D5 /* OverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D80292C723A005D36D5 /* OverviewCell.swift */; };
 		F8AC1D83292C723A005D36D5 /* OverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D81292C723A005D36D5 /* OverviewCell.xib */; };
+		F8AC1D86292C7BE0005D36D5 /* NavRowCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D85292C7BE0005D36D5 /* NavRowCustom.swift */; };
+		F8AC1D88292C7C16005D36D5 /* NavRowCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D87292C7C16005D36D5 /* NavRowCustom.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -244,6 +246,8 @@
 		F8AC1D7A292B8D79005D36D5 /* UrgenNotiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UrgenNotiCell.xib; sourceTree = "<group>"; };
 		F8AC1D80292C723A005D36D5 /* OverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCell.swift; sourceTree = "<group>"; };
 		F8AC1D81292C723A005D36D5 /* OverviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewCell.xib; sourceTree = "<group>"; };
+		F8AC1D85292C7BE0005D36D5 /* NavRowCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRowCustom.swift; sourceTree = "<group>"; };
+		F8AC1D87292C7C16005D36D5 /* NavRowCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavRowCustom.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +423,7 @@
 		F8258F1629223A6B004F81D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F8AC1D84292C7BC5005D36D5 /* NavRowCustom */,
 				F8312DAC2926348300FC6073 /* PopupCustom */,
 				F8312DA329260E2800FC6073 /* TextFieldCustom */,
 			);
@@ -671,6 +676,15 @@
 			path = Overview;
 			sourceTree = "<group>";
 		};
+		F8AC1D84292C7BC5005D36D5 /* NavRowCustom */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC1D85292C7BE0005D36D5 /* NavRowCustom.swift */,
+				F8AC1D87292C7C16005D36D5 /* NavRowCustom.xib */,
+			);
+			path = NavRowCustom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -782,6 +796,7 @@
 				F8258F05292231ED004F81D9 /* Assets.xcassets in Resources */,
 				F8312D8B29260CA000FC6073 /* Roboto-MediumItalic.ttf in Resources */,
 				F8312DCE292726B100FC6073 /* SplashViewController.xib in Resources */,
+				F8AC1D88292C7C16005D36D5 /* NavRowCustom.xib in Resources */,
 				F8258F03292231E3004F81D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -847,6 +862,7 @@
 				F8258F5729223BF2004F81D9 /* Constant.swift in Sources */,
 				F8258F5C29223C11004F81D9 /* TimeConvert.swift in Sources */,
 				F8258F6129223C4E004F81D9 /* AppLogger.swift in Sources */,
+				F8AC1D86292C7BE0005D36D5 /* NavRowCustom.swift in Sources */,
 				F8312DE92928814700FC6073 /* ScheduleCell.swift in Sources */,
 				F8258F6729223C81004F81D9 /* QRCodeGenerate.swift in Sources */,
 				F8258F3629223AE2004F81D9 /* UIScrollView+Extension.swift in Sources */,

@@ -38,8 +38,10 @@ class IndividualViewController: UIViewController {
         self.navigationController?.isToolbarHidden      = true
         self.tbvContent.delegate                        = self
         self.tbvContent.dataSource                      = self
+        self.tbvContent.separatorStyle                  = .none
         self.tbvContent.register(UINib(nibName: "IndivitualHeaderCell", bundle: nil), forCellReuseIdentifier: "IndivitualHeaderCell")
         self.tbvContent.register(UINib(nibName: "OverviewCell", bundle: nil), forCellReuseIdentifier: "OverviewCell")
+        self.tbvContent.register(UINib(nibName: "IndivitualBodyCell", bundle: nil), forCellReuseIdentifier: "IndivitualBodyCell")
     }
     
     private func setupBinding() {
@@ -53,7 +55,7 @@ class IndividualViewController: UIViewController {
 
 extension IndividualViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,6 +71,11 @@ extension IndividualViewController : UITableViewDelegate, UITableViewDataSource 
             return cell
         }
         
+        if indexPath.row == 2 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "IndivitualBodyCell", for: indexPath) as? IndivitualBodyCell else { return UITableViewCell() }
+            cell.updateUI()
+            return cell
+        }
         return UITableViewCell()
     }
     
@@ -80,6 +87,11 @@ extension IndividualViewController : UITableViewDelegate, UITableViewDataSource 
         if indexPath.row == 1 {
             return self.tbvContent.frame.height * (80 / 538)
         }
+        
+        if indexPath.row == 2 {
+            return self.tbvContent.frame.height * (438 / 765)
+        }
+        
         return UITableView.automaticDimension
     }
 }
