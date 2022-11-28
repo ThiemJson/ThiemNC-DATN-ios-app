@@ -88,7 +88,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="stvContent" destination="ZL2-Ib-Bnt" id="EPC-eo-APd"/>
-                <outlet property="vContentView" destination="H2p-sc-9uM" id="OI2-h9-lBr"/>
+                <outlet property="vContentView" destination="H2p-sc-9uM" id="mRz-fA-MR7"/>
                 <outlet property="vContentWrapper" destination="LFV-l5-Nlh" id="bQC-21-GsD"/>
                 <outlet property="vEventSchedule" destination="Z2l-M9-qnT" id="XE7-ed-bBJ"/>
                 <outlet property="vFaceID" destination="fJj-ye-anq" id="LqV-mU-XIB"/>

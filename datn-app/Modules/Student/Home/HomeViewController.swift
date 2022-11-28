@@ -47,10 +47,20 @@ class HomeViewController: UIViewController {
         heightConstraint.isActive   = true
         widthConstraint.isActive    = true
         self.navigationItem.leftBarButtonItem =  imageItem
+        
+        let notification                        = UIImage(named: "icon_notification")
+        let notificationImgView                 = UIImageView(image: notification)
+        notificationImgView.frame               = CGRect(x:0.0,y:0.0, width:35,height:35)
+        notificationImgView.contentMode         = .scaleAspectFit
+        let imgRightItem                        = UIBarButtonItem(customView: notificationImgView)
+        let widthConstraintRight                = notificationImgView.widthAnchor.constraint(equalToConstant: 35)
+        let heightConstraintRight               = notificationImgView.heightAnchor.constraint(equalToConstant: 35)
+        heightConstraintRight.isActive          = true
+        widthConstraintRight.isActive           = true
+        self.navigationItem.rightBarButtonItem  =  imgRightItem
     }
     
     private func setupTableView() {
-        self.tbvContent.alwaysBounceVertical    = false
         self.tbvContent.delegate        = self
         self.tbvContent.dataSource      = self
         self.tbvContent.separatorStyle  = .none

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeatureViewController" customModule="datn_app" customModuleProvider="target">
+            <connections>
+                <outlet property="tbvContent" destination="WJB-p3-0Te" id="Tjm-NI-m0W"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="mFQ-ym-Ihk">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="bcF-pe-VN3">
+                    <rect key="frame" x="0.0" y="696" width="414" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Ly2-nw-2Nh"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background_top" translatesAutoresizingMaskIntoConstraints="NO" id="Wcm-is-VbS">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="D7B-ZI-07V"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WJB-p3-0Te" userLabel="tbvContent">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bcF-pe-VN3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0mY-BK-XSV"/>
+                <constraint firstAttribute="bottom" secondItem="bcF-pe-VN3" secondAttribute="bottom" id="1Sc-Hn-zcE"/>
+                <constraint firstItem="bcF-pe-VN3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4Q1-xA-Dud"/>
+                <constraint firstItem="Wcm-is-VbS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="58d-pM-xe4"/>
+                <constraint firstItem="Wcm-is-VbS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6lm-oz-Zeo"/>
+                <constraint firstItem="WJB-p3-0Te" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="80c-W5-wk5"/>
+                <constraint firstItem="WJB-p3-0Te" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Cod-n4-A1e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WJB-p3-0Te" secondAttribute="bottom" id="R7d-a3-Q0E"/>
+                <constraint firstAttribute="trailing" secondItem="mFQ-ym-Ihk" secondAttribute="trailing" id="W5w-db-Thh"/>
+                <constraint firstItem="WJB-p3-0Te" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jmw-TE-9tR"/>
+                <constraint firstItem="mFQ-ym-Ihk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qSq-ei-V94"/>
+                <constraint firstAttribute="trailing" secondItem="Wcm-is-VbS" secondAttribute="trailing" id="tfS-gM-Mvx"/>
+                <constraint firstItem="mFQ-ym-Ihk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vL2-2G-l0H"/>
+                <constraint firstAttribute="bottom" secondItem="mFQ-ym-Ihk" secondAttribute="bottom" id="x2y-3c-1Hx"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="57.589285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_splash_background" width="1125" height="2436"/>
+        <image name="icon_splash_background_bottom" width="1125" height="641"/>
+        <image name="icon_splash_background_top" width="1058" height="420"/>
+    </resources>
+</document>

@@ -21,6 +21,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="X0h-Rf-QiO">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="38F-sr-HV1">
                     <rect key="frame" x="0.0" y="696" width="414" height="200"/>

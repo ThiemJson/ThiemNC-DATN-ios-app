@@ -37,10 +37,10 @@ class RootTabBarViewController: UITabBarController {
         learningVC.tabBarItem.selectedImage     = UIImage(named: "tabbar_learning_select")
         learningVC.title                        = "Góc học tập"
         
-        let notiVC                              = UINavigationController(rootViewController: NotificationViewController())
-        notiVC.tabBarItem.image                 = UIImage(named: "tabbar_notification_unselect")
-        notiVC.tabBarItem.selectedImage         = UIImage(named: "tabbar_notification_select")
-        notiVC.title                            = "Thông báo"
+        let notiVC                              = UINavigationController(rootViewController: FeatureViewController())
+        notiVC.tabBarItem.image                 = UIImage(named: "tabbar_feature_unselect")
+        notiVC.tabBarItem.selectedImage         = UIImage(named: "tabbar_feature_select")
+        notiVC.title                            = "Tiện ích"
         
         let individualVC                        = UINavigationController(rootViewController: IndividualViewController())
         individualVC.tabBarItem.image           = UIImage(named: "tabbar_user_unselect")

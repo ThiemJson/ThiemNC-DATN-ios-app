@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="635" id="kpU-W1-MRh" userLabel="Table View Cell" customClass="FeatureBodyCell" customModule="datn_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="635"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kpU-W1-MRh" id="Izg-MU-6lW">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="635"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQm-qJ-Cd2" userLabel="vContentWrapper">
+                        <rect key="frame" x="20" y="0.0" width="280" height="254"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="oxg-SO-diZ" userLabel="stvContent">
+                                <rect key="frame" x="15" y="0.0" width="250" height="254"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nQ-w4-kGi" userLabel="vNews" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="OQ0-Jn-vn9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNJ-EG-SUT" userLabel="vGioithieu" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="51" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tm-P1-TGD" userLabel="vVanbanHD" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="102" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YD-Vx-5sm" userLabel="vDichvumotcua" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="153" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEL-qB-Wzl" userLabel="vThongtincongno" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="204" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oxg-SO-diZ" secondAttribute="trailing" constant="15" id="4Ow-QI-hlK"/>
+                            <constraint firstAttribute="bottom" secondItem="oxg-SO-diZ" secondAttribute="bottom" id="YfN-3m-Uda"/>
+                            <constraint firstItem="oxg-SO-diZ" firstAttribute="leading" secondItem="CQm-qJ-Cd2" secondAttribute="leading" constant="15" id="n81-Tz-HHa"/>
+                            <constraint firstItem="oxg-SO-diZ" firstAttribute="top" secondItem="CQm-qJ-Cd2" secondAttribute="top" id="wZc-Jb-Tvw"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvC-8A-VRM" userLabel="vBottomContent">
+                        <rect key="frame" x="20" y="279" width="280" height="254"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="MZO-Dn-yiu" userLabel="stvBottomContent">
+                                <rect key="frame" x="15" y="0.0" width="250" height="254"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73G-zB-iu6" userLabel="vPhanhoi" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hll-iK-ixe" userLabel="vKhaosat" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="51" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6L-tY-Oam" userLabel="vKhaibaosuckhoe" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="102" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mL-b3-N4L" userLabel="vCSEMap" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="153" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeH-as-oHj" userLabel="vDangkyTA" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="204" width="250" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="MZO-Dn-yiu" secondAttribute="bottom" id="0qZ-Nw-seh"/>
+                            <constraint firstItem="MZO-Dn-yiu" firstAttribute="leading" secondItem="UvC-8A-VRM" secondAttribute="leading" constant="15" id="Itd-wL-iu6"/>
+                            <constraint firstItem="MZO-Dn-yiu" firstAttribute="top" secondItem="UvC-8A-VRM" secondAttribute="top" id="iTR-4R-KMM"/>
+                            <constraint firstAttribute="trailing" secondItem="MZO-Dn-yiu" secondAttribute="trailing" constant="15" id="jLf-m1-Bbb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UvC-8A-VRM" firstAttribute="leading" secondItem="CQm-qJ-Cd2" secondAttribute="leading" id="135-dA-smv"/>
+                    <constraint firstItem="CQm-qJ-Cd2" firstAttribute="leading" secondItem="Izg-MU-6lW" secondAttribute="leading" constant="20" id="AF7-WF-iVb"/>
+                    <constraint firstItem="73G-zB-iu6" firstAttribute="height" secondItem="6nQ-w4-kGi" secondAttribute="height" id="CVh-hW-4FK"/>
+                    <constraint firstItem="UvC-8A-VRM" firstAttribute="trailing" secondItem="CQm-qJ-Cd2" secondAttribute="trailing" id="MQ7-sX-dte"/>
+                    <constraint firstItem="CQm-qJ-Cd2" firstAttribute="top" secondItem="Izg-MU-6lW" secondAttribute="top" id="WpB-Ax-Whp"/>
+                    <constraint firstItem="UvC-8A-VRM" firstAttribute="top" secondItem="CQm-qJ-Cd2" secondAttribute="bottom" constant="25" id="dp3-ZI-hQ0"/>
+                    <constraint firstAttribute="trailing" secondItem="CQm-qJ-Cd2" secondAttribute="trailing" constant="20" id="jE9-DI-pTA"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UvC-8A-VRM" secondAttribute="bottom" constant="30" id="nYY-fU-84J"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="yM2-3K-aTz"/>
+            <connections>
+                <outlet property="constRowHeight" destination="OQ0-Jn-vn9" id="rH5-wA-vw1"/>
+                <outlet property="stvBottomContent" destination="MZO-Dn-yiu" id="CSV-0S-XJP"/>
+                <outlet property="stvContent" destination="oxg-SO-diZ" id="AdX-5I-Ujb"/>
+                <outlet property="vBottomContent" destination="UvC-8A-VRM" id="dzE-ha-nXV"/>
+                <outlet property="vCSMap" destination="2mL-b3-N4L" id="9MI-0j-r3M"/>
+                <outlet property="vContentView" destination="Izg-MU-6lW" id="X5E-YG-W3E"/>
+                <outlet property="vContentWrapper" destination="CQm-qJ-Cd2" id="v6A-4p-m9e"/>
+                <outlet property="vDangkyTA" destination="DeH-as-oHj" id="9CO-0A-BE0"/>
+                <outlet property="vDichvumotcua" destination="8YD-Vx-5sm" id="Ej6-Mv-QTf"/>
+                <outlet property="vGioithieu" destination="WNJ-EG-SUT" id="OC1-KQ-ond"/>
+                <outlet property="vKhaibaosuckhoe" destination="c6L-tY-Oam" id="kE7-Ce-3aB"/>
+                <outlet property="vKhaosat" destination="hll-iK-ixe" id="RxR-rw-fQ7"/>
+                <outlet property="vNews" destination="6nQ-w4-kGi" id="Lx6-tG-ebb"/>
+                <outlet property="vPhanhoi" destination="73G-zB-iu6" id="bcg-ix-vzy"/>
+                <outlet property="vThongtincongno" destination="CEL-qB-Wzl" id="Jea-jO-aFO"/>
+                <outlet property="vVanbanHD" destination="2tm-P1-TGD" id="ftK-Vj-LUz"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="304.35267857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

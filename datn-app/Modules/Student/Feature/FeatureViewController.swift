@@ -1,16 +1,16 @@
 //
-//  LearningViewController.swift
+//  FeatureViewController.swift
 //  datn-app
 //
-//  Created by ThiemJason on 11/18/22.
+//  Created by ThiemJason on 28/11/2022.
 //
 
 import UIKit
 import RxCocoa
 import RxSwift
 
-class LearningViewController: UIViewController {
-    @IBOutlet weak var tbvContent       : UITableView!
+class FeatureViewController: UIViewController {
+    @IBOutlet weak var tbvContent           : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class LearningViewController: UIViewController {
     private func setupNavigation() {
         let label = UILabel()
         label.textColor     = UIColor.white
-        label.text          = "Góc học tập";
+        label.text          = "Tiện ích số";
         label.font          = UIFont.getOpenSansSemiBoldFontTitle()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
         
@@ -60,12 +60,8 @@ class LearningViewController: UIViewController {
         self.tbvContent.dataSource      = self
         self.tbvContent.separatorStyle  = .none
         self.tbvContent.alwaysBounceVertical    = false
-        self.tbvContent.register(UINib(nibName: "PopularFeatureCell", bundle: nil), forCellReuseIdentifier: "PopularFeatureCell")
-        self.tbvContent.register(UINib(nibName: "DefaultHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "DefaultHomeTableViewCell")
-        self.tbvContent.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "HeaderCell")
-        self.tbvContent.register(UINib(nibName: "ScheduleCell", bundle: nil), forCellReuseIdentifier: "ScheduleCell")
         self.tbvContent.register(UINib(nibName: "HotNewsCell", bundle: nil), forCellReuseIdentifier: "HotNewsCell")
-        self.tbvContent.register(UINib(nibName: "UrgenNotiCell", bundle: nil), forCellReuseIdentifier: "UrgenNotiCell")
+        self.tbvContent.register(UINib(nibName: "FeatureBodyCell", bundle: nil), forCellReuseIdentifier: "FeatureBodyCell")
     }
     
     private func handlerAction() {
@@ -77,12 +73,36 @@ class LearningViewController: UIViewController {
     }
 }
 
-extension LearningViewController : UITableViewDelegate, UITableViewDataSource {
+extension FeatureViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "HotNewsCell", for: indexPath) as? HotNewsCell else { return HotNewsCell()}
+            cell.selectionStyle = .none
+            return cell
+        }
+        
+        if indexPath.row == 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureBodyCell", for: indexPath) as? FeatureBodyCell else { return FeatureBodyCell()}
+            cell.selectionStyle             = .none
+            cell.constRowHeight.constant    = self.tbvContent.frame.height * ( 43 / 514 )
+            cell.updateUI()
+            return cell
+        }
+        
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        // Hot news
+        if indexPath.row == 0 {
+            return self.tbvContent.frame.height * (160 / 490)
+        }
+        
+        return UITableView.automaticDimension
     }
 }
