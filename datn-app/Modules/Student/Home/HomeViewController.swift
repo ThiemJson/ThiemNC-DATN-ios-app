@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         self.setupNavigation()
         self.setupTableView()
         
-        self.navigationItem.title                                       = "CSE Attendance"
+        self.navigationItem.title                                       = "CSE E-link"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes    = textAttributes
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "icon_splash_background"), for: .top, barMetrics: .default)
@@ -64,6 +64,8 @@ class HomeViewController: UIViewController {
         self.tbvContent.delegate        = self
         self.tbvContent.dataSource      = self
         self.tbvContent.separatorStyle  = .none
+        self.tbvContent.bounces         = false
+        self.tbvContent.alwaysBounceHorizontal  = false
         self.tbvContent.alwaysBounceVertical    = false
         self.tbvContent.register(UINib(nibName: "PopularFeatureCell", bundle: nil), forCellReuseIdentifier: "PopularFeatureCell")
         self.tbvContent.register(UINib(nibName: "DefaultHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "DefaultHomeTableViewCell")

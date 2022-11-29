@@ -38,6 +38,8 @@ class IndividualViewController: UIViewController {
         self.navigationController?.isToolbarHidden      = true
         self.tbvContent.delegate                        = self
         self.tbvContent.dataSource                      = self
+        self.tbvContent.bounces                         = false
+        self.tbvContent.alwaysBounceHorizontal          = false
         self.tbvContent.separatorStyle                  = .none
         self.tbvContent.register(UINib(nibName: "IndivitualHeaderCell", bundle: nil), forCellReuseIdentifier: "IndivitualHeaderCell")
         self.tbvContent.register(UINib(nibName: "OverviewCell", bundle: nil), forCellReuseIdentifier: "OverviewCell")
@@ -74,6 +76,11 @@ extension IndividualViewController : UITableViewDelegate, UITableViewDataSource 
         if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "IndivitualBodyCell", for: indexPath) as? IndivitualBodyCell else { return UITableViewCell() }
             cell.updateUI()
+            
+            let topInset    = UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0
+            let navHeight   = self.navigationController?.navigationBar.frame.height ?? 0
+            let tbvHeight   = self.tbvContent.frame.height - topInset - navHeight
+            cell.constRowHeight.constant    = tbvHeight * ( 43 / 514 )
             return cell
         }
         return UITableViewCell()

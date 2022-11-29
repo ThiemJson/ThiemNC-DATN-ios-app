@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tripod.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

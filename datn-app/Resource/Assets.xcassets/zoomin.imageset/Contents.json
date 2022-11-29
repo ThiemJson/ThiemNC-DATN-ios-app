@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "zoomin.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

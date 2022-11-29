@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "travelerbag.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

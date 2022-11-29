@@ -45,34 +45,34 @@ class FeatureBodyCell: UITableViewCell {
         self.stvBottomContent.backgroundColor   = Constant.Color.app_background
         
         self.vNews.lblContent.text              = "Tin tức"
-        self.vNews.imgLeftIcon.image            = UIImage(named: "teacher")
+        self.vNews.imgLeftIcon.image            = UIImage(named: "globe")
         
         self.vGioithieu.lblContent.text         = "Giới thiệu về Khoa CNTT"
-        self.vGioithieu.imgLeftIcon.image       = UIImage(named: "teacher")
+        self.vGioithieu.imgLeftIcon.image       = UIImage(named: "flag")
         
         self.vVanbanHD.lblContent.text          = "Văn bản hướng dẫn"
-        self.vVanbanHD.imgLeftIcon.image        = UIImage(named: "teacher")
+        self.vVanbanHD.imgLeftIcon.image        = UIImage(named: "stack")
         
         self.vDichvumotcua.lblContent.text      = "Dịch vụ một cửa"
-        self.vDichvumotcua.imgLeftIcon.image    = UIImage(named: "teacher")
+        self.vDichvumotcua.imgLeftIcon.image    = UIImage(named: "pie-chart")
         
         self.vThongtincongno.lblContent.text    = "Thông tin công nợ"
-        self.vThongtincongno.imgLeftIcon.image  = UIImage(named: "teacher")
+        self.vThongtincongno.imgLeftIcon.image  = UIImage(named: "money")
         
         self.vPhanhoi.lblContent.text           = "Phản hồi"
-        self.vPhanhoi.imgLeftIcon.image         = UIImage(named: "teacher")
+        self.vPhanhoi.imgLeftIcon.image         = UIImage(named: "mail")
         
         self.vKhaosat.lblContent.text           = "Khảo sát"
-        self.vKhaosat.imgLeftIcon.image         = UIImage(named: "teacher")
+        self.vKhaosat.imgLeftIcon.image         = UIImage(named: "document")
         
         self.vKhaibaosuckhoe.lblContent.text    = "Khai báo sức khoẻ"
-        self.vKhaibaosuckhoe.imgLeftIcon.image  = UIImage(named: "teacher")
+        self.vKhaibaosuckhoe.imgLeftIcon.image  = UIImage(named: "compose")
         
         self.vCSMap.lblContent.text             = "CSE Map"
-        self.vCSMap.imgLeftIcon.image           = UIImage(named: "teacher")
+        self.vCSMap.imgLeftIcon.image           = UIImage(named: "location")
         
         self.vDangkyTA.lblContent.text          = "Đăng ký Tiếng anh"
-        self.vDangkyTA.imgLeftIcon.image        = UIImage(named: "teacher")
+        self.vDangkyTA.imgLeftIcon.image        = UIImage(named: "megaphone2")
     }
     
     func updateUI() {

@@ -58,14 +58,11 @@ class LearningViewController: UIViewController {
         self.tbvContent.alwaysBounceVertical    = false
         self.tbvContent.delegate        = self
         self.tbvContent.dataSource      = self
+        self.tbvContent.bounces         = false
+        self.tbvContent.alwaysBounceHorizontal  = false
         self.tbvContent.separatorStyle  = .none
         self.tbvContent.alwaysBounceVertical    = false
-        self.tbvContent.register(UINib(nibName: "PopularFeatureCell", bundle: nil), forCellReuseIdentifier: "PopularFeatureCell")
-        self.tbvContent.register(UINib(nibName: "DefaultHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "DefaultHomeTableViewCell")
-        self.tbvContent.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "HeaderCell")
-        self.tbvContent.register(UINib(nibName: "ScheduleCell", bundle: nil), forCellReuseIdentifier: "ScheduleCell")
-        self.tbvContent.register(UINib(nibName: "HotNewsCell", bundle: nil), forCellReuseIdentifier: "HotNewsCell")
-        self.tbvContent.register(UINib(nibName: "UrgenNotiCell", bundle: nil), forCellReuseIdentifier: "UrgenNotiCell")
+        self.tbvContent.register(UINib(nibName: "LearningCell", bundle: nil), forCellReuseIdentifier: "LearningCell")
     }
     
     private func handlerAction() {
@@ -79,10 +76,29 @@ class LearningViewController: UIViewController {
 
 extension LearningViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "LearningCell", for: indexPath) as? LearningCell else { return LearningCell()}
+            cell.selectionStyle             = .none
+            cell.constRowHeight.constant    = self.tbvContent.frame.height * ( 43 / 514 )
+            cell.updateUI()
+            return cell
+        }
+        
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        // Hot news
+        if indexPath.row == 0 {
+            return self.tbvContent.frame.height
+        }
+        
+        return UITableView.automaticDimension
     }
 }

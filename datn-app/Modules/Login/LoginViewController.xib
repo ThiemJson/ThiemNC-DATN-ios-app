@@ -57,10 +57,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="338.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="thY-h9-fG3">
-                            <rect key="frame" x="116" y="84" width="182" height="170.5"/>
+                            <rect key="frame" x="149.5" y="84" width="115" height="170.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcQ-L5-MGt">
-                                    <rect key="frame" x="33.5" y="0.0" width="115" height="136.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="115" height="136.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_circle_png" translatesAutoresizingMaskIntoConstraints="NO" id="AQo-hI-Jem">
                                             <rect key="frame" x="0.0" y="11" width="115" height="115"/>
@@ -78,8 +78,8 @@
                                         <constraint firstItem="AQo-hI-Jem" firstAttribute="centerX" secondItem="xcQ-L5-MGt" secondAttribute="centerX" id="zTJ-4h-DIL"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CSE ATTENDANCE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1t-Zl-PhX">
-                                    <rect key="frame" x="0.0" y="146.5" width="182" height="24"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CSE E-Link" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1t-Zl-PhX">
+                                    <rect key="frame" x="3.5" y="146.5" width="108" height="24"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>

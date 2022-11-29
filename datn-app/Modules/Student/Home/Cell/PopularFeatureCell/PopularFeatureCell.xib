@@ -43,7 +43,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SY-Km-Lbs">
                                                         <rect key="frame" x="10" y="10" width="109.5" height="109"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teacher" translatesAutoresizingMaskIntoConstraints="NO" id="CTi-Aa-Shx" userLabel="imgF1">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pie-chart" translatesAutoresizingMaskIntoConstraints="NO" id="CTi-Aa-Shx" userLabel="imgF1">
                                                                 <rect key="frame" x="5" y="5" width="99.5" height="99"/>
                                                             </imageView>
                                                         </subviews>
@@ -80,7 +80,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqx-np-rba">
                                                         <rect key="frame" x="10" y="10" width="109.5" height="109"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="student" translatesAutoresizingMaskIntoConstraints="NO" id="cnA-Sl-kJ3" userLabel="imgF1">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="cnA-Sl-kJ3" userLabel="imgF1">
                                                                 <rect key="frame" x="5" y="5" width="99.5" height="99"/>
                                                             </imageView>
                                                         </subviews>
@@ -93,7 +93,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="cnA-Sl-kJ3" secondAttribute="trailing" constant="5" id="dpu-6l-da6"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dịch vụ một cửa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnX-Yl-gL6">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thời khoá biểu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnX-Yl-gL6">
                                                         <rect key="frame" x="124.5" y="54.5" width="14" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -122,7 +122,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqc-MH-g8i">
                                                         <rect key="frame" x="10" y="10" width="109.5" height="109.5"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="student" translatesAutoresizingMaskIntoConstraints="NO" id="oxQ-RT-b4b" userLabel="imgF1">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" translatesAutoresizingMaskIntoConstraints="NO" id="oxQ-RT-b4b" userLabel="imgF1">
                                                                 <rect key="frame" x="5" y="5" width="99.5" height="99.5"/>
                                                             </imageView>
                                                         </subviews>
@@ -135,7 +135,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="oxQ-RT-b4b" secondAttribute="trailing" constant="5" id="tPh-dN-5j6"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dịch vụ một cửa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwJ-zm-UxJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lớp tín chỉ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwJ-zm-UxJ">
                                                         <rect key="frame" x="124.5" y="54.5" width="14" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -159,7 +159,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHb-5P-NZh">
                                                         <rect key="frame" x="10" y="10" width="109.5" height="109.5"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teacher" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-UM-MXn" userLabel="imgF1">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-UM-MXn" userLabel="imgF1">
                                                                 <rect key="frame" x="5" y="5" width="99.5" height="99.5"/>
                                                             </imageView>
                                                         </subviews>
@@ -172,7 +172,7 @@
                                                             <constraint firstItem="H3l-UM-MXn" firstAttribute="top" secondItem="GHb-5P-NZh" secondAttribute="top" constant="5" id="uJ2-SE-zcs"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dịch vụ một cửa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYE-s8-UHB">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kết quả học tập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYE-s8-UHB">
                                                         <rect key="frame" x="124.5" y="54.5" width="14" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -230,8 +230,10 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="student" width="35" height="35"/>
-        <image name="teacher" width="35" height="35"/>
+        <image name="calendar" width="128" height="128"/>
+        <image name="news" width="128" height="128"/>
+        <image name="pie-chart" width="128" height="128"/>
+        <image name="trophy" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

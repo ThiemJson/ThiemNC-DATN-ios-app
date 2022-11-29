@@ -58,6 +58,8 @@ class FeatureViewController: UIViewController {
         self.tbvContent.alwaysBounceVertical    = false
         self.tbvContent.delegate        = self
         self.tbvContent.dataSource      = self
+        self.tbvContent.bounces         = false
+        self.tbvContent.alwaysBounceHorizontal  = false
         self.tbvContent.separatorStyle  = .none
         self.tbvContent.alwaysBounceVertical    = false
         self.tbvContent.register(UINib(nibName: "HotNewsCell", bundle: nil), forCellReuseIdentifier: "HotNewsCell")

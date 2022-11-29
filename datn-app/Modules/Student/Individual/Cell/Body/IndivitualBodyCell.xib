@@ -19,29 +19,32 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFV-l5-Nlh" userLabel="vContentWrapper">
-                        <rect key="frame" x="20" y="0.0" width="280" height="336"/>
+                        <rect key="frame" x="20" y="0.0" width="280" height="254"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZL2-Ib-Bnt" userLabel="stvContent">
-                                <rect key="frame" x="15" y="0.0" width="250" height="336"/>
+                                <rect key="frame" x="15" y="0.0" width="250" height="254"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTr-nS-dJi" userLabel="vUserInfo" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7Yx-uk-rUp"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2l-M9-qnT" userLabel="vEventSchedule" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="67.5" width="250" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="51" width="250" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ye8-FG-U8z" userLabel="vResponse" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="135" width="250" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="102" width="250" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJj-ye-anq" userLabel="vFaceID" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="202.5" width="250" height="66"/>
+                                        <rect key="frame" x="0.0" y="153" width="250" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-cY-Lsi" userLabel="vSocialNetwork" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="269.5" width="250" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="204" width="250" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -57,10 +60,10 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWA-gy-RoH" userLabel="vLogoutWrapper">
-                        <rect key="frame" x="20" y="383.5" width="280" height="66.5"/>
+                        <rect key="frame" x="20" y="400" width="280" height="50"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSK-lB-veM" userLabel="vLogout" customClass="NavRowCustom" customModule="datn_app" customModuleProvider="target">
-                                <rect key="frame" x="15" y="0.0" width="250" height="66.5"/>
+                                <rect key="frame" x="15" y="0.0" width="250" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -76,17 +79,17 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="LFV-l5-Nlh" secondAttribute="trailing" constant="20" id="1xb-CR-LvX"/>
                     <constraint firstAttribute="bottom" secondItem="eWA-gy-RoH" secondAttribute="bottom" constant="30" id="2NM-tH-gim"/>
-                    <constraint firstItem="RSK-lB-veM" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="62 / 448" id="FcI-iA-nh4"/>
                     <constraint firstItem="LFV-l5-Nlh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HwU-fC-50a"/>
-                    <constraint firstItem="JTr-nS-dJi" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="62 / 448" id="Zvq-tL-ocl"/>
                     <constraint firstItem="LFV-l5-Nlh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="b4k-eT-clF"/>
                     <constraint firstItem="eWA-gy-RoH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="rgb-G9-6CM"/>
                     <constraint firstItem="eWA-gy-RoH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LFV-l5-Nlh" secondAttribute="bottom" constant="25" id="ujq-r5-q6f"/>
                     <constraint firstAttribute="trailing" secondItem="eWA-gy-RoH" secondAttribute="trailing" constant="20" id="ySz-WW-lTF"/>
+                    <constraint firstItem="RSK-lB-veM" firstAttribute="height" secondItem="JTr-nS-dJi" secondAttribute="height" id="z0D-KH-Dd9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="constRowHeight" destination="7Yx-uk-rUp" id="Zzq-uN-1xe"/>
                 <outlet property="stvContent" destination="ZL2-Ib-Bnt" id="EPC-eo-APd"/>
                 <outlet property="vContentView" destination="H2p-sc-9uM" id="mRz-fA-MR7"/>
                 <outlet property="vContentWrapper" destination="LFV-l5-Nlh" id="bQC-21-GsD"/>

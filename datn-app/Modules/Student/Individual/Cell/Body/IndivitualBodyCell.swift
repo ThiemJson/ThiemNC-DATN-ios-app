@@ -20,6 +20,7 @@ class IndivitualBodyCell: UITableViewCell {
     @IBOutlet weak var vLogout              : NavRowCustom!
     @IBOutlet weak var vLogoutWrapepr       : UIView!
     
+    @IBOutlet weak var constRowHeight       : NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initializedContent()
@@ -34,27 +35,27 @@ class IndivitualBodyCell: UITableViewCell {
         
         // User info
         self.vUserInfo.lblContent.text          = "Thông tin cá nhân"
-        self.vUserInfo.imgLeftIcon.image        = UIImage(named: "teacher")
+        self.vUserInfo.imgLeftIcon.image        = UIImage(named: "profle")
         
         // Event schedule
         self.vEventSchedule.lblContent.text     = "Lịch thi, sự kiện sắp tới"
-        self.vEventSchedule.imgLeftIcon.image   = UIImage(named: "teacher")
+        self.vEventSchedule.imgLeftIcon.image   = UIImage(named: "calendar")
         
         // Response
         self.vResponse.lblContent.text          = "Đang chờ phản hồi"
-        self.vResponse.imgLeftIcon.image        = UIImage(named: "teacher")
+        self.vResponse.imgLeftIcon.image        = UIImage(named: "rocket")
         
         // FaceID
         self.vFaceID.lblContent.text            = "Cài đặt vân tay/ Face ID"
-        self.vFaceID.imgLeftIcon.image          = UIImage(named: "teacher")
+        self.vFaceID.imgLeftIcon.image          = UIImage(named: "locked")
         
         // Mạng xã hội
         self.vSocialNetword.lblContent.text     = "Mạng xã hội"
-        self.vSocialNetword.imgLeftIcon.image   = UIImage(named: "teacher")
+        self.vSocialNetword.imgLeftIcon.image   = UIImage(named: "heart")
         
         // Logout
         self.vLogout.lblContent.text            = "Đăng xuất"
-        self.vLogout.imgLeftIcon.image          = UIImage(named: "teacher")
+        self.vLogout.imgLeftIcon.image          = UIImage(named: "power")
     }
     
     func updateUI() {

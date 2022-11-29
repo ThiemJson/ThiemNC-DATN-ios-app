@@ -15,6 +15,8 @@
 		01A535712934FD9700202BC1 /* FeatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5356F2934FD9700202BC1 /* FeatureViewController.xib */; };
 		01A5357529350E6E00202BC1 /* FeatureBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5357329350E6E00202BC1 /* FeatureBodyCell.swift */; };
 		01A5357629350E6E00202BC1 /* FeatureBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5357429350E6E00202BC1 /* FeatureBodyCell.xib */; };
+		01D3032E2936528200BCA295 /* LearningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D3032C2936528200BCA295 /* LearningCell.swift */; };
+		01D3032F2936528200BCA295 /* LearningCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D3032D2936528200BCA295 /* LearningCell.xib */; };
 		6D060D1465623CCD19318B69 /* Pods_datn_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C89562E6BC4AE74F9CFE79 /* Pods_datn_app.framework */; };
 		F8258F03292231E3004F81D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8258F01292231E3004F81D9 /* Main.storyboard */; };
 		F8258F05292231ED004F81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8258F04292231ED004F81D9 /* Assets.xcassets */; };
@@ -139,6 +141,8 @@
 		01A5356F2934FD9700202BC1 /* FeatureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureViewController.xib; sourceTree = "<group>"; };
 		01A5357329350E6E00202BC1 /* FeatureBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureBodyCell.swift; sourceTree = "<group>"; };
 		01A5357429350E6E00202BC1 /* FeatureBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureBodyCell.xib; sourceTree = "<group>"; };
+		01D3032C2936528200BCA295 /* LearningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCell.swift; sourceTree = "<group>"; };
+		01D3032D2936528200BCA295 /* LearningCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearningCell.xib; sourceTree = "<group>"; };
 		3F8B446687BD2A76E3C9EE67 /* Pods-datn-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datn-app.release.xcconfig"; path = "Target Support Files/Pods-datn-app/Pods-datn-app.release.xcconfig"; sourceTree = "<group>"; };
 		65C89562E6BC4AE74F9CFE79 /* Pods_datn_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_datn_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267E7EEB3F002C59F250738 /* Pods-datn-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datn-app.debug.xcconfig"; path = "Target Support Files/Pods-datn-app/Pods-datn-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +299,15 @@
 			children = (
 				01A5357329350E6E00202BC1 /* FeatureBodyCell.swift */,
 				01A5357429350E6E00202BC1 /* FeatureBodyCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		01D3032B2936524B00BCA295 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				01D3032C2936528200BCA295 /* LearningCell.swift */,
+				01D3032D2936528200BCA295 /* LearningCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -569,6 +582,7 @@
 		F8312DB9292718D300FC6073 /* Learning */ = {
 			isa = PBXGroup;
 			children = (
+				01D3032B2936524B00BCA295 /* Cell */,
 				F8312DC62927198E00FC6073 /* LearningViewController.swift */,
 				F8312DC72927198E00FC6073 /* LearningViewController.xib */,
 			);
@@ -815,6 +829,7 @@
 				F8312D9929260CA000FC6073 /* Roboto-LightItalic.ttf in Resources */,
 				F8312D9C29260CA000FC6073 /* LICENSE.txt in Resources */,
 				F8312D9729260CA000FC6073 /* Roboto-BoldItalic.ttf in Resources */,
+				01D3032F2936528200BCA295 /* LearningCell.xib in Resources */,
 				F8312DA129260CA000FC6073 /* Roboto-Thin.ttf in Resources */,
 				F8312D8629260CA000FC6073 /* Roboto-Light.ttf in Resources */,
 				F8312DA929260E7A00FC6073 /* TextFieldCustom.xib in Resources */,
@@ -930,6 +945,7 @@
 				F8258F5F29223C11004F81D9 /* UserDefaultUtils.swift in Sources */,
 				F8258F4D29223AE2004F81D9 /* AVPlayer+Ext.swift in Sources */,
 				F8258F5329223BA0004F81D9 /* PingManager.swift in Sources */,
+				01D3032E2936528200BCA295 /* LearningCell.swift in Sources */,
 				F8AC1D7B292B8D79005D36D5 /* UrgenNotiCell.swift in Sources */,
 				F8258F3A29223AE2004F81D9 /* UIBarButtonItem+Extension.swift in Sources */,
 				F8258F4B29223AE2004F81D9 /* Switch+Extension.swift in Sources */,
@@ -1096,7 +1112,7 @@
 				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "CSE Attendance";
+				INFOPLIST_KEY_CFBundleDisplayName = "CSE E-link";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1128,7 +1144,7 @@
 				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "CSE Attendance";
+				INFOPLIST_KEY_CFBundleDisplayName = "CSE E-link";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
