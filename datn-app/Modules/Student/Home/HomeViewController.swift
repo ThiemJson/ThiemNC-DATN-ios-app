@@ -8,7 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var tbvContent       : UITableView!
+    @IBOutlet weak var tbvContent           : UITableView!
+    var selectedScheduleDate : ScheduleMode = .Current
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initalizedContent()
@@ -119,9 +121,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         // Schedule
         if indexPath.row == 3 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as? ScheduleCell else { return ScheduleCell()}
+            cell.selectionStyle     = .none
             cell.updateUI()
-            cell.selectionStyle = .none
-            cell.rxChooseDay.accept(.Current)
+            //            cell.heightForTbvRow    = self.tbvContent.bounds.size.height * (38/348)
+            cell.setupButton()
+            cell.rxChooseDay.accept(self.selectedScheduleDate)
+            cell.reRenderTBV()
+            cell.delegate           = self
             return cell
         }
         
@@ -159,5 +165,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return UITableView.automaticDimension
+    }
+}
+
+extension HomeViewController : ScheduleCellDelegate {
+    func onScheduleChange(mode: ScheduleMode) {
+        self.selectedScheduleDate   = mode
+        self.tbvContent.reloadData()
     }
 }

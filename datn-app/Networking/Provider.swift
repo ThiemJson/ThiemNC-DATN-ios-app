@@ -14,13 +14,15 @@ import Photos
 typealias RequestCompletion = ((_ success: Bool, _ IsFailResponseError: Bool, _ data: Any?) -> (Void))?
 
 class Provider {
+    static let shared  = Provider()
+    
     var alamofireManager: Alamofire.Session?
     
     fileprivate var request: Request?
     
     fileprivate let networkTimeout: TimeInterval = 60.0
     
-    init() {
+    private init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = networkTimeout
         configuration.timeoutIntervalForResource = networkTimeout

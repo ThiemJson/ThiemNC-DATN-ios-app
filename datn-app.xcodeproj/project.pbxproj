@@ -17,6 +17,9 @@
 		01A5357629350E6E00202BC1 /* FeatureBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5357429350E6E00202BC1 /* FeatureBodyCell.xib */; };
 		01D3032E2936528200BCA295 /* LearningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D3032C2936528200BCA295 /* LearningCell.swift */; };
 		01D3032F2936528200BCA295 /* LearningCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D3032D2936528200BCA295 /* LearningCell.xib */; };
+		01D854082937A13E00DC6E97 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D854072937A13E00DC6E97 /* HomeViewModel.swift */; };
+		01D8540B2937A4A100DC6E97 /* ScheduleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D854092937A4A100DC6E97 /* ScheduleTableCell.swift */; };
+		01D8540C2937A4A100DC6E97 /* ScheduleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D8540A2937A4A100DC6E97 /* ScheduleTableCell.xib */; };
 		6D060D1465623CCD19318B69 /* Pods_datn_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C89562E6BC4AE74F9CFE79 /* Pods_datn_app.framework */; };
 		F8258F03292231E3004F81D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8258F01292231E3004F81D9 /* Main.storyboard */; };
 		F8258F05292231ED004F81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8258F04292231ED004F81D9 /* Assets.xcassets */; };
@@ -143,6 +146,9 @@
 		01A5357429350E6E00202BC1 /* FeatureBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureBodyCell.xib; sourceTree = "<group>"; };
 		01D3032C2936528200BCA295 /* LearningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCell.swift; sourceTree = "<group>"; };
 		01D3032D2936528200BCA295 /* LearningCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearningCell.xib; sourceTree = "<group>"; };
+		01D854072937A13E00DC6E97 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		01D854092937A4A100DC6E97 /* ScheduleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableCell.swift; sourceTree = "<group>"; };
+		01D8540A2937A4A100DC6E97 /* ScheduleTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableCell.xib; sourceTree = "<group>"; };
 		3F8B446687BD2A76E3C9EE67 /* Pods-datn-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datn-app.release.xcconfig"; path = "Target Support Files/Pods-datn-app/Pods-datn-app.release.xcconfig"; sourceTree = "<group>"; };
 		65C89562E6BC4AE74F9CFE79 /* Pods_datn_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_datn_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267E7EEB3F002C59F250738 /* Pods-datn-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datn-app.debug.xcconfig"; path = "Target Support Files/Pods-datn-app/Pods-datn-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -556,6 +562,7 @@
 				F8312DCF2927445B00FC6073 /* Cell */,
 				F8312DBA292718EE00FC6073 /* HomeViewController.swift */,
 				F8312DBB292718EE00FC6073 /* HomeViewController.xib */,
+				01D854072937A13E00DC6E97 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -667,6 +674,8 @@
 			children = (
 				F8312DE72928814700FC6073 /* ScheduleCell.swift */,
 				F8312DE82928814700FC6073 /* ScheduleCell.xib */,
+				01D854092937A4A100DC6E97 /* ScheduleTableCell.swift */,
+				01D8540A2937A4A100DC6E97 /* ScheduleTableCell.xib */,
 			);
 			path = ScheduleCell;
 			sourceTree = "<group>";
@@ -820,6 +829,7 @@
 				F8312D9529260CA000FC6073 /* RobotoCondensed-Regular.ttf in Resources */,
 				F8312DE3292765D200FC6073 /* HeaderCell.xib in Resources */,
 				01910EBC292BC97B00C705B5 /* IndivitualHeaderCell.xib in Resources */,
+				01D8540C2937A4A100DC6E97 /* ScheduleTableCell.xib in Resources */,
 				F8312DC52927196400FC6073 /* IndividualViewController.xib in Resources */,
 				F8312D632925D43600FC6073 /* LoginViewController.xib in Resources */,
 				F8312D8829260CA000FC6073 /* RobotoCondensed-Bold.ttf in Resources */,
@@ -913,6 +923,7 @@
 				F8312DE92928814700FC6073 /* ScheduleCell.swift in Sources */,
 				F8258F6729223C81004F81D9 /* QRCodeGenerate.swift in Sources */,
 				F8258F3629223AE2004F81D9 /* UIScrollView+Extension.swift in Sources */,
+				01D854082937A13E00DC6E97 /* HomeViewModel.swift in Sources */,
 				F8258F5129223B8D004F81D9 /* Provider.swift in Sources */,
 				F8258F3B29223AE2004F81D9 /* Collection+Extension.swift in Sources */,
 				F8258F7129224143004F81D9 /* AppDelegate.swift in Sources */,
@@ -950,6 +961,7 @@
 				F8258F3A29223AE2004F81D9 /* UIBarButtonItem+Extension.swift in Sources */,
 				F8258F4B29223AE2004F81D9 /* Switch+Extension.swift in Sources */,
 				F8258F3429223AE2004F81D9 /* Data+Extension.swift in Sources */,
+				01D8540B2937A4A100DC6E97 /* ScheduleTableCell.swift in Sources */,
 				F8312DD8292744CE00FC6073 /* PopularFeatureCell.swift in Sources */,
 				F8258F3329223AE2004F81D9 /* UIImageView+Extension.swift in Sources */,
 				F8258F4429223AE2004F81D9 /* ReactiveTextfield+Extension.swift in Sources */,

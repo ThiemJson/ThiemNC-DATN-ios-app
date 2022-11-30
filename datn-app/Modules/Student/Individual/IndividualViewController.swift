@@ -96,7 +96,7 @@ extension IndividualViewController : UITableViewDelegate, UITableViewDataSource 
         }
         
         if indexPath.row == 2 {
-            return self.tbvContent.frame.height * (438 / 765)
+            return self.tbvContent.frame.height * (410 / 765)
         }
         
         return UITableView.automaticDimension
