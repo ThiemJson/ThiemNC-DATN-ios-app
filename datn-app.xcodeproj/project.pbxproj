@@ -133,6 +133,29 @@
 		F8AC1D83292C723A005D36D5 /* OverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D81292C723A005D36D5 /* OverviewCell.xib */; };
 		F8AC1D86292C7BE0005D36D5 /* NavRowCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D85292C7BE0005D36D5 /* NavRowCustom.swift */; };
 		F8AC1D88292C7C16005D36D5 /* NavRowCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D87292C7C16005D36D5 /* NavRowCustom.xib */; };
+		F8D6DDD62941CD070074EB9E /* StudentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDD52941CD070074EB9E /* StudentResponse.swift */; };
+		F8D6DDD82941CD170074EB9E /* StudentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDD72941CD170074EB9E /* StudentRequest.swift */; };
+		F8D6DDDA2941CD2C0074EB9E /* LectureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDD92941CD2C0074EB9E /* LectureResponse.swift */; };
+		F8D6DDDC2941CD350074EB9E /* LectureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDDB2941CD350074EB9E /* LectureRequest.swift */; };
+		F8D6DDDE2941CDE30074EB9E /* DetailAttendanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDDD2941CDE30074EB9E /* DetailAttendanceResponse.swift */; };
+		F8D6DDE02941CDEA0074EB9E /* DetailAttendanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDDF2941CDEA0074EB9E /* DetailAttendanceRequest.swift */; };
+		F8D6DDE22941CE1C0074EB9E /* LectureAttendanceStudentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDE12941CE1C0074EB9E /* LectureAttendanceStudentResponse.swift */; };
+		F8D6DDE42941CE240074EB9E /* LectureAttendanceStudentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDE32941CE240074EB9E /* LectureAttendanceStudentRequest.swift */; };
+		F8D6DDE62941CE350074EB9E /* LessionRoomSubjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDE52941CE350074EB9E /* LessionRoomSubjectResponse.swift */; };
+		F8D6DDE82941CE3D0074EB9E /* LessionRoomSubjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDE72941CE3D0074EB9E /* LessionRoomSubjectRequest.swift */; };
+		F8D6DDEA2941CE6A0074EB9E /* LessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDE92941CE6A0074EB9E /* LessionResponse.swift */; };
+		F8D6DDEC2941CE730074EB9E /* LessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDEB2941CE730074EB9E /* LessionRequest.swift */; };
+		F8D6DDEE2941CE840074EB9E /* RoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDED2941CE840074EB9E /* RoomResponse.swift */; };
+		F8D6DDF02941CE8C0074EB9E /* RoomRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDEF2941CE8C0074EB9E /* RoomRequest.swift */; };
+		F8D6DDF22941CE990074EB9E /* StudentClassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDF12941CE990074EB9E /* StudentClassResponse.swift */; };
+		F8D6DDF42941CEA10074EB9E /* StudentClassRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDF32941CEA10074EB9E /* StudentClassRequest.swift */; };
+		F8D6DDF62941CEAC0074EB9E /* SubjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDF52941CEAC0074EB9E /* SubjectsResponse.swift */; };
+		F8D6DDF82941CEB60074EB9E /* SubjectsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDF72941CEB50074EB9E /* SubjectsRequest.swift */; };
+		F8D6DDFA2941CEC50074EB9E /* SubjectClassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDF92941CEC50074EB9E /* SubjectClassResponse.swift */; };
+		F8D6DDFC2941CECF0074EB9E /* SubjectClassRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDFB2941CECF0074EB9E /* SubjectClassRequest.swift */; };
+		F8D6DDFE2941D3510074EB9E /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDFD2941D3510074EB9E /* LoginResponse.swift */; };
+		F8D6DE002941D35C0074EB9E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDFF2941D35C0074EB9E /* LoginRequest.swift */; };
+		F8D6DE022941E2C90074EB9E /* StudentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE012941E2C90074EB9E /* StudentRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -266,6 +289,29 @@
 		F8AC1D81292C723A005D36D5 /* OverviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewCell.xib; sourceTree = "<group>"; };
 		F8AC1D85292C7BE0005D36D5 /* NavRowCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRowCustom.swift; sourceTree = "<group>"; };
 		F8AC1D87292C7C16005D36D5 /* NavRowCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavRowCustom.xib; sourceTree = "<group>"; };
+		F8D6DDD52941CD070074EB9E /* StudentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResponse.swift; sourceTree = "<group>"; };
+		F8D6DDD72941CD170074EB9E /* StudentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRequest.swift; sourceTree = "<group>"; };
+		F8D6DDD92941CD2C0074EB9E /* LectureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureResponse.swift; sourceTree = "<group>"; };
+		F8D6DDDB2941CD350074EB9E /* LectureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRequest.swift; sourceTree = "<group>"; };
+		F8D6DDDD2941CDE30074EB9E /* DetailAttendanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttendanceResponse.swift; sourceTree = "<group>"; };
+		F8D6DDDF2941CDEA0074EB9E /* DetailAttendanceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttendanceRequest.swift; sourceTree = "<group>"; };
+		F8D6DDE12941CE1C0074EB9E /* LectureAttendanceStudentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureAttendanceStudentResponse.swift; sourceTree = "<group>"; };
+		F8D6DDE32941CE240074EB9E /* LectureAttendanceStudentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureAttendanceStudentRequest.swift; sourceTree = "<group>"; };
+		F8D6DDE52941CE350074EB9E /* LessionRoomSubjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessionRoomSubjectResponse.swift; sourceTree = "<group>"; };
+		F8D6DDE72941CE3D0074EB9E /* LessionRoomSubjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessionRoomSubjectRequest.swift; sourceTree = "<group>"; };
+		F8D6DDE92941CE6A0074EB9E /* LessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessionResponse.swift; sourceTree = "<group>"; };
+		F8D6DDEB2941CE730074EB9E /* LessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessionRequest.swift; sourceTree = "<group>"; };
+		F8D6DDED2941CE840074EB9E /* RoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomResponse.swift; sourceTree = "<group>"; };
+		F8D6DDEF2941CE8C0074EB9E /* RoomRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequest.swift; sourceTree = "<group>"; };
+		F8D6DDF12941CE990074EB9E /* StudentClassResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassResponse.swift; sourceTree = "<group>"; };
+		F8D6DDF32941CEA10074EB9E /* StudentClassRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassRequest.swift; sourceTree = "<group>"; };
+		F8D6DDF52941CEAC0074EB9E /* SubjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsResponse.swift; sourceTree = "<group>"; };
+		F8D6DDF72941CEB50074EB9E /* SubjectsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsRequest.swift; sourceTree = "<group>"; };
+		F8D6DDF92941CEC50074EB9E /* SubjectClassResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectClassResponse.swift; sourceTree = "<group>"; };
+		F8D6DDFB2941CECF0074EB9E /* SubjectClassRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectClassRequest.swift; sourceTree = "<group>"; };
+		F8D6DDFD2941D3510074EB9E /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		F8D6DDFF2941D35C0074EB9E /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		F8D6DE012941E2C90074EB9E /* StudentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +461,8 @@
 		F8258F1329223A53004F81D9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F8D6DDD42941CBFA0074EB9E /* Response */,
+				F8D6DDD32941CBEB0074EB9E /* Request */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -427,6 +475,7 @@
 				F8258F6229223C62004F81D9 /* TargetType.swift */,
 				F8258F5229223BA0004F81D9 /* PingManager.swift */,
 				F8258F5029223B8D004F81D9 /* Provider.swift */,
+				F8D6DE012941E2C90074EB9E /* StudentRepository.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -736,6 +785,42 @@
 			path = NavRowCustom;
 			sourceTree = "<group>";
 		};
+		F8D6DDD32941CBEB0074EB9E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F8D6DDD72941CD170074EB9E /* StudentRequest.swift */,
+				F8D6DDDB2941CD350074EB9E /* LectureRequest.swift */,
+				F8D6DDDF2941CDEA0074EB9E /* DetailAttendanceRequest.swift */,
+				F8D6DDE32941CE240074EB9E /* LectureAttendanceStudentRequest.swift */,
+				F8D6DDE72941CE3D0074EB9E /* LessionRoomSubjectRequest.swift */,
+				F8D6DDEB2941CE730074EB9E /* LessionRequest.swift */,
+				F8D6DDEF2941CE8C0074EB9E /* RoomRequest.swift */,
+				F8D6DDF32941CEA10074EB9E /* StudentClassRequest.swift */,
+				F8D6DDF72941CEB50074EB9E /* SubjectsRequest.swift */,
+				F8D6DDFB2941CECF0074EB9E /* SubjectClassRequest.swift */,
+				F8D6DDFF2941D35C0074EB9E /* LoginRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F8D6DDD42941CBFA0074EB9E /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				F8D6DDD52941CD070074EB9E /* StudentResponse.swift */,
+				F8D6DDD92941CD2C0074EB9E /* LectureResponse.swift */,
+				F8D6DDDD2941CDE30074EB9E /* DetailAttendanceResponse.swift */,
+				F8D6DDE12941CE1C0074EB9E /* LectureAttendanceStudentResponse.swift */,
+				F8D6DDE52941CE350074EB9E /* LessionRoomSubjectResponse.swift */,
+				F8D6DDE92941CE6A0074EB9E /* LessionResponse.swift */,
+				F8D6DDED2941CE840074EB9E /* RoomResponse.swift */,
+				F8D6DDF12941CE990074EB9E /* StudentClassResponse.swift */,
+				F8D6DDF52941CEAC0074EB9E /* SubjectsResponse.swift */,
+				F8D6DDF92941CEC50074EB9E /* SubjectClassResponse.swift */,
+				F8D6DDFD2941D3510074EB9E /* LoginResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -910,37 +995,51 @@
 				01A535702934FD9700202BC1 /* FeatureViewController.swift in Sources */,
 				F8312DC42927196400FC6073 /* IndividualViewController.swift in Sources */,
 				01910EBF292BC99600C705B5 /* IndivitualBodyCell.swift in Sources */,
+				F8D6DDDC2941CD350074EB9E /* LectureRequest.swift in Sources */,
 				F8258F4C29223AE2004F81D9 /* Textfield+Extension.swift in Sources */,
 				F8312DCD292726B100FC6073 /* SplashViewController.swift in Sources */,
 				F8AC1D72292B7904005D36D5 /* NewsCell.swift in Sources */,
 				F8312DC02927193C00FC6073 /* NotificationViewController.swift in Sources */,
+				F8D6DDE02941CDEA0074EB9E /* DetailAttendanceRequest.swift in Sources */,
 				F8312DB5292717DC00FC6073 /* RootTabBarViewController.swift in Sources */,
 				F8312DA729260E5D00FC6073 /* TextFieldCustom.swift in Sources */,
+				F8D6DDF62941CEAC0074EB9E /* SubjectsResponse.swift in Sources */,
+				F8D6DDDA2941CD2C0074EB9E /* LectureResponse.swift in Sources */,
 				F8258F5729223BF2004F81D9 /* Constant.swift in Sources */,
 				F8258F5C29223C11004F81D9 /* TimeConvert.swift in Sources */,
+				F8D6DDF82941CEB60074EB9E /* SubjectsRequest.swift in Sources */,
 				F8258F6129223C4E004F81D9 /* AppLogger.swift in Sources */,
+				F8D6DDD82941CD170074EB9E /* StudentRequest.swift in Sources */,
 				F8AC1D86292C7BE0005D36D5 /* NavRowCustom.swift in Sources */,
 				F8312DE92928814700FC6073 /* ScheduleCell.swift in Sources */,
 				F8258F6729223C81004F81D9 /* QRCodeGenerate.swift in Sources */,
+				F8D6DDF22941CE990074EB9E /* StudentClassResponse.swift in Sources */,
 				F8258F3629223AE2004F81D9 /* UIScrollView+Extension.swift in Sources */,
 				01D854082937A13E00DC6E97 /* HomeViewModel.swift in Sources */,
+				F8D6DDF02941CE8C0074EB9E /* RoomRequest.swift in Sources */,
 				F8258F5129223B8D004F81D9 /* Provider.swift in Sources */,
 				F8258F3B29223AE2004F81D9 /* Collection+Extension.swift in Sources */,
+				F8D6DDFE2941D3510074EB9E /* LoginResponse.swift in Sources */,
 				F8258F7129224143004F81D9 /* AppDelegate.swift in Sources */,
 				F8258F3C29223AE2004F81D9 /* UIButton+Extension.swift in Sources */,
 				F8258F4029223AE2004F81D9 /* CIImage+Extension.swift in Sources */,
 				F8258F4829223AE2004F81D9 /* Observable+Operators.swift in Sources */,
+				F8D6DDF42941CEA10074EB9E /* StudentClassRequest.swift in Sources */,
 				F8312DAB2926272D00FC6073 /* LAContext+Extension.swift in Sources */,
 				F8258F3729223AE2004F81D9 /* PaddingLabelExtension.swift in Sources */,
 				F8312DDD292745A500FC6073 /* HotNewsCell.swift in Sources */,
 				F8258F4629223AE2004F81D9 /* Date+Extension.swift in Sources */,
+				F8D6DE022941E2C90074EB9E /* StudentRepository.swift in Sources */,
 				F8258F4129223AE2004F81D9 /* UIFont+Extension.swift in Sources */,
 				F8312DD22927448300FC6073 /* DefaultHomeTableViewCell.swift in Sources */,
+				F8D6DDEA2941CE6A0074EB9E /* LessionResponse.swift in Sources */,
+				F8D6DDE62941CE350074EB9E /* LessionRoomSubjectResponse.swift in Sources */,
 				F8312DBC292718EE00FC6073 /* HomeViewController.swift in Sources */,
 				F8312DC82927198E00FC6073 /* LearningViewController.swift in Sources */,
 				F8258F3829223AE2004F81D9 /* ReactiveUIControl+Extension.swift in Sources */,
 				F8258F4929223AE2004F81D9 /* Doule+Extension.swift in Sources */,
 				F8258F4A29223AE2004F81D9 /* UIView+Extension.swift in Sources */,
+				F8D6DDE42941CE240074EB9E /* LectureAttendanceStudentRequest.swift in Sources */,
 				F8258F6A29223D41004F81D9 /* ReachabilityService.swift in Sources */,
 				F8258F3D29223AE2004F81D9 /* NavigationController+Extension.swift in Sources */,
 				F8312DE2292765D200FC6073 /* HeaderCell.swift in Sources */,
@@ -952,26 +1051,35 @@
 				F8258F6529223C6D004F81D9 /* ClientAPI.swift in Sources */,
 				F8258F4529223AE2004F81D9 /* String+Extension.swift in Sources */,
 				F8258F3E29223AE2004F81D9 /* ViewController+Extension.swift in Sources */,
+				F8D6DDEC2941CE730074EB9E /* LessionRequest.swift in Sources */,
+				F8D6DDFA2941CEC50074EB9E /* SubjectClassResponse.swift in Sources */,
 				F8258F5D29223C11004F81D9 /* Validation.swift in Sources */,
+				F8D6DDE82941CE3D0074EB9E /* LessionRoomSubjectRequest.swift in Sources */,
+				F8D6DE002941D35C0074EB9E /* LoginRequest.swift in Sources */,
 				F8258F5F29223C11004F81D9 /* UserDefaultUtils.swift in Sources */,
 				F8258F4D29223AE2004F81D9 /* AVPlayer+Ext.swift in Sources */,
 				F8258F5329223BA0004F81D9 /* PingManager.swift in Sources */,
 				01D3032E2936528200BCA295 /* LearningCell.swift in Sources */,
 				F8AC1D7B292B8D79005D36D5 /* UrgenNotiCell.swift in Sources */,
+				F8D6DDDE2941CDE30074EB9E /* DetailAttendanceResponse.swift in Sources */,
 				F8258F3A29223AE2004F81D9 /* UIBarButtonItem+Extension.swift in Sources */,
 				F8258F4B29223AE2004F81D9 /* Switch+Extension.swift in Sources */,
 				F8258F3429223AE2004F81D9 /* Data+Extension.swift in Sources */,
 				01D8540B2937A4A100DC6E97 /* ScheduleTableCell.swift in Sources */,
 				F8312DD8292744CE00FC6073 /* PopularFeatureCell.swift in Sources */,
+				F8D6DDEE2941CE840074EB9E /* RoomResponse.swift in Sources */,
 				F8258F3329223AE2004F81D9 /* UIImageView+Extension.swift in Sources */,
 				F8258F4429223AE2004F81D9 /* ReactiveTextfield+Extension.swift in Sources */,
 				F8258F4229223AE2004F81D9 /* Int64+Extension.swift in Sources */,
 				F8258F7229224143004F81D9 /* SceneDelegate.swift in Sources */,
+				F8D6DDE22941CE1C0074EB9E /* LectureAttendanceStudentResponse.swift in Sources */,
 				F8258F4729223AE2004F81D9 /* NSLayoutConstraint+Extension.swift in Sources */,
 				01910EBB292BC97B00C705B5 /* IndivitualHeaderCell.swift in Sources */,
 				F8258F5529223BE6004F81D9 /* AppMessagesManager.swift in Sources */,
 				01A5357529350E6E00202BC1 /* FeatureBodyCell.swift in Sources */,
+				F8D6DDFC2941CECF0074EB9E /* SubjectClassRequest.swift in Sources */,
 				F8258F3929223AE2004F81D9 /* TabbarController+Extension.swift in Sources */,
+				F8D6DDD62941CD070074EB9E /* StudentResponse.swift in Sources */,
 				F8258F3529223AE2004F81D9 /* NSObject+Extension.swift in Sources */,
 				F8312DAF2926352B00FC6073 /* PopupCustom.swift in Sources */,
 			);
@@ -1120,11 +1228,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A7Q5J9K3AS;
+				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CSE SLink";
@@ -1142,7 +1248,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "vn.cse-tlu.CSESlink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CSESlink Apple Distribution Certificate";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1156,11 +1261,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A7Q5J9K3AS;
+				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CSE SLink";
@@ -1178,7 +1281,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "vn.cse-tlu.CSESlink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CSESlink Apple Distribution Certificate";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

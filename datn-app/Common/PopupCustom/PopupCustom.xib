@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -44,13 +44,13 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-ww-Ynt" userLabel="vContent">
-                    <rect key="frame" x="72.5" y="342" width="269" height="222.5"/>
+                    <rect key="frame" x="72.5" y="348.5" width="269" height="213"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g4P-QL-LDk" userLabel="stvContent">
-                            <rect key="frame" x="10" y="10" width="249" height="192.5"/>
+                            <rect key="frame" x="10" y="10" width="249" height="183"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ehO-Ap-UXk" userLabel="stvTop">
-                                    <rect key="frame" x="0.0" y="0.0" width="249" height="192.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="249" height="183"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-pJ-Fly" userLabel="vLottieWrapper">
                                             <rect key="frame" x="0.0" y="0.0" width="249" height="104"/>
@@ -63,7 +63,7 @@
                                                         <constraint firstAttribute="width" secondItem="zcp-8g-kJA" secondAttribute="height" id="Yip-aH-Viv"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lottie_loading"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lottie_error"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -75,7 +75,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng nhập trên thiết bị lạ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSB-0u-PQV" userLabel="lblTitle">
-                                            <rect key="frame" x="0.0" y="114" width="249" height="22"/>
+                                            <rect key="frame" x="0.0" y="114" width="249" height="19"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng liên hệ với Quản lý để được hỗ trợ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-M8-ZE6" userLabel="lblContent">
-                                            <rect key="frame" x="0.0" y="146" width="249" height="46.5"/>
+                                            <rect key="frame" x="0.0" y="143" width="249" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="taG-eg-KeW"/>
                                             </constraints>

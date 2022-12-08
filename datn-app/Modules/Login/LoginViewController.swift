@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 import RxGesture
 import LocalAuthentication
+import SVProgressHUD
 import Hero
 
 enum LoginViewControllerMode {
@@ -107,7 +108,40 @@ class LoginViewController: UIViewController {
     private func handlerAction() {
         self.btnLogin.rx.tap.asDriver().drive(onNext: { [weak self] (_) in
             guard let `self` = self else { return }
-            self.navigationController?.pushViewController(SplashViewController(), animated: true)
+            
+            var loginRequest                = LoginRequest()
+            loginRequest.username           = self.vUserName.tfTextField.text ?? ""
+            loginRequest.password           = self.vPassword.tfTextField.text ?? ""
+            loginRequest.type               = (self.rxLoginMode.value == .Student) ? 1 : 0
+            StudentRepository.shared.getUserByMSV(loginRequest: loginRequest) { [weak self] (studentResponse) in
+                guard let `self` = self else { return }
+                SVProgressHUD.dismiss()
+                guard let studentResponse = studentResponse else {
+                    DispatchQueue.main.async {
+                        AppMessagesManager.shared.showMessage(messageType: .error, message: "Đăng nhập thất bại, vui lòng liên hệ Quản lý")
+                    }
+                    return
+                }
+                
+                /// `Kiểm tra UUID`
+                if let deviceUUID = studentResponse.deviceCode,
+                   let currentDeviceUUID   = UIDevice.current.identifierForVendor?.uuidString {
+                    
+                    ///  `Đăng nhập trên thiết bị mới`
+                    if deviceUUID != currentDeviceUUID {
+                        let loadingPopup                        = PopupCustom()
+                        loadingPopup.modalPresentationStyle     = .overFullScreen
+                        loadingPopup.modalTransitionStyle       = .crossDissolve
+                        loadingPopup.isAutoDissmis              = 10
+                        self.present(loadingPopup, animated: true)
+                    }
+                    
+                    /// `Thành công`
+                    self.onLoginSuccess(studentResponse: studentResponse)
+                }
+                
+                self.onLoginSuccess(studentResponse: studentResponse)
+            }
         }).disposed(by: self.disposeBag)
         
         self.vImgFastLogin.rx.tap().asObservable().observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
@@ -132,6 +166,19 @@ class LoginViewController: UIViewController {
             guard let `self` = self else { return }
             self.rxLoginMode.accept(.Lecture)
         }).disposed(by: self.disposeBag)
+        
+        Provider.shared.rxLoading.observe(on: MainScheduler.instance).subscribe(onNext: {(isLoading) in
+            if (isLoading ?? false) {
+                DispatchQueue.main.async {
+                    SVProgressHUD.show()
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+            }
+        }).disposed(by: self.disposeBag)
     }
     
     private func setupBinding() {
@@ -147,7 +194,7 @@ class LoginViewController: UIViewController {
                 self.vPerson.isHidden       = true
                 self.vBotomImage.isHidden   = true
                 self.imgUserMode.image      = UIImage(named: "teacher")
-
+                
             case .Student:
                 self.vLoginSite.isHidden    = false
                 self.vPerson.isHidden       = true
@@ -160,5 +207,11 @@ class LoginViewController: UIViewController {
             self.vPassword.tfTextField.text = ""
             self.vPassword.rxIsShowContent.accept(false)
         }).disposed(by: self.disposeBag)
+    }
+}
+
+extension LoginViewController {
+    private func onLoginSuccess( studentResponse: StudentResponse? ) {
+        
     }
 }

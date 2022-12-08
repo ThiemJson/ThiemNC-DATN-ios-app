@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import Photos
+import RxCocoa
+import RxSwift
 
 typealias RequestCompletion = ((_ success: Bool, _ IsFailResponseError: Bool, _ data: Any?) -> (Void))?
 
@@ -17,6 +19,7 @@ class Provider {
     static let shared  = Provider()
     
     var alamofireManager: Alamofire.Session?
+    let rxLoading: PublishSubject<Bool?> = PublishSubject()
     
     fileprivate var request: Request?
     
@@ -88,6 +91,9 @@ extension Provider {
             return JSONEncoding.prettyPrinted
         }()
         
+        /// Show loading
+        self.rxLoading.onNext(true)
+        
         alamofireManager?.request(url,
                                   method: api.method,
                                   parameters: parameters,
@@ -98,6 +104,10 @@ extension Provider {
         })
         .responseJSON(completionHandler: { (response) in
             print("---------------------------------")
+            
+            /// Dismiss Loading
+            self.rxLoading.onNext(false)
+            
             let statusCode = response.response?.statusCode
             
             switch response.result {

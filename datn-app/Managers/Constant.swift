@@ -43,9 +43,30 @@ struct Constant {
     }
     
     struct Router {
-        static let domainConstant = "localhost"
-        static let domain = "https://\(domainConstant)/"
-        static let apiPrefix = "\(domain)api/"
+        
+        // MARK: Local host
+        /// localhost
+        
+        // MARK: Production
+        // thiemnc-datn-server.herokuapp.com
+        // localhost:3306
+        static let domainConstant           = "thiemnc-datn-server.herokuapp.com"
+        static let domain                   = "https://\(domainConstant)/"
+        static let apiPrefix                = "\(domain)api/v1/"
+        
+        /// `API Route`
+        static let Login                    = "auth/token"
+        static let Student                  = "students"
+        static let Lecture                  = "lecture"
+        static let DetailAttendance         = "detail-attendance"
+        static let LectureAttendanceStudent = "lecture-attendance-student"
+        static let LessionRoomSubject       = "lession-room-subject"
+        static let Lession                  = "lession"
+        static let Notification             = "notification"
+        static let Room                     = "room"
+        static let StudentClass             = "student-class"
+        static let Subjects                 = "subjects"
+        static let SubjectClass             = "subject-class"
     }
     
     struct Font {

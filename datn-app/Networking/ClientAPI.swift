@@ -10,7 +10,8 @@ import Foundation
 import Alamofire
 
 enum ClientApi {
-    
+    case login
+    case student
 }
 
 extension ClientApi: TargetType {
@@ -22,12 +23,22 @@ extension ClientApi: TargetType {
     
     /// The path to be appended to `baseURL` to form the full `URL`.
     var path: String {
-        return ""
+        switch self {
+        case .login:
+            return Constant.Router.Login
+        case .student:
+            return Constant.Router.Student
+        }
     }
     
     /// The HTTP method used in the request.
     var method: HTTPMethod {
-        return .post
+        switch self {
+        case .login:
+            return .post
+        case .student:
+            return .get
+        }
     }
     
     /// The type of HTTP task to be performed.

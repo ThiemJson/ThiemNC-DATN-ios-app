@@ -36,6 +36,7 @@ class PopupCustom: UIViewController {
     @IBOutlet weak var vRightBtn        : UIView!
     @IBOutlet weak var btnLeft          : UIButton!
     @IBOutlet weak var btnRight         : UIButton!
+    var isAutoDissmis: Int?             = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,12 @@ class PopupCustom: UIViewController {
         self.vLeftBtn.clipsToBounds         = true
         self.vRightBtn.clipsToBounds        = true
         self.vLeftBtn.layer.borderColor = Constant.Color.hex_2D74E7.cgColor
+        
+        if let isAutoDissmis = self.isAutoDissmis {
+            DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(isAutoDissmis)) {
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     private func handlerAction() {
