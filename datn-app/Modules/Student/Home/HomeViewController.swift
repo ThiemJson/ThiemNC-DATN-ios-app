@@ -60,6 +60,8 @@ class HomeViewController: UIViewController {
         heightConstraintRight.isActive          = true
         widthConstraintRight.isActive           = true
         self.navigationItem.rightBarButtonItem  =  imgRightItem
+        self.navigationItem.rightBarButtonItem?.setBadge(text: "5+")
+        bagdeCount                              = 5
     }
     
     private func setupTableView() {

@@ -17,6 +17,7 @@
 		01A5357629350E6E00202BC1 /* FeatureBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5357429350E6E00202BC1 /* FeatureBodyCell.xib */; };
 		01D3032E2936528200BCA295 /* LearningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D3032C2936528200BCA295 /* LearningCell.swift */; };
 		01D3032F2936528200BCA295 /* LearningCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D3032D2936528200BCA295 /* LearningCell.xib */; };
+		01D787D62937CEB500008936 /* UIBarButtonItem+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D787D52937CEB500008936 /* UIBarButtonItem+Badge.swift */; };
 		01D854082937A13E00DC6E97 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D854072937A13E00DC6E97 /* HomeViewModel.swift */; };
 		01D8540B2937A4A100DC6E97 /* ScheduleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D854092937A4A100DC6E97 /* ScheduleTableCell.swift */; };
 		01D8540C2937A4A100DC6E97 /* ScheduleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D8540A2937A4A100DC6E97 /* ScheduleTableCell.xib */; };
@@ -169,6 +170,7 @@
 		01A5357429350E6E00202BC1 /* FeatureBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureBodyCell.xib; sourceTree = "<group>"; };
 		01D3032C2936528200BCA295 /* LearningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCell.swift; sourceTree = "<group>"; };
 		01D3032D2936528200BCA295 /* LearningCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearningCell.xib; sourceTree = "<group>"; };
+		01D787D52937CEB500008936 /* UIBarButtonItem+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Badge.swift"; sourceTree = "<group>"; };
 		01D854072937A13E00DC6E97 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		01D854092937A4A100DC6E97 /* ScheduleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableCell.swift; sourceTree = "<group>"; };
 		01D8540A2937A4A100DC6E97 /* ScheduleTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableCell.xib; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				F8258F2F29223AE1004F81D9 /* UIView+Extension.swift */,
 				F8258F2329223ADF004F81D9 /* ViewController+Extension.swift */,
 				F8312DAA2926272D00FC6073 /* LAContext+Extension.swift */,
+				01D787D52937CEB500008936 /* UIBarButtonItem+Badge.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1047,6 +1050,7 @@
 				F8AC1D82292C723A005D36D5 /* OverviewCell.swift in Sources */,
 				F8AC1D6E292B6ADC005D36D5 /* HotNewsCollectionViewCell.swift in Sources */,
 				F8258F3F29223AE2004F81D9 /* CollectionView+Extension.swift in Sources */,
+				01D787D62937CEB500008936 /* UIBarButtonItem+Badge.swift in Sources */,
 				F8258F4329223AE2004F81D9 /* Array+Extension.swift in Sources */,
 				F8258F6529223C6D004F81D9 /* ClientAPI.swift in Sources */,
 				F8258F4529223AE2004F81D9 /* String+Extension.swift in Sources */,
