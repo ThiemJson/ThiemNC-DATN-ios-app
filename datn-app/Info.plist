@@ -9,6 +9,8 @@
 		<string>OpenSans-SemiBold.ttf</string>
 		<string>OpenSans-Bold.ttf</string>
 	</array>
+    <key>NSCalendarsUsageDescription</key>
+    <string>$(PRODUCT_NAME) use your calendar.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -28,7 +30,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>

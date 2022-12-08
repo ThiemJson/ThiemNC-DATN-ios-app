@@ -20,10 +20,8 @@ target 'datn-app' do
   pod 'SwiftMessages'
   pod 'RxGesture'
   pod 'RxDataSources'
-  pod 'RealmSwift', '~> 5.5.1'
 
   pod 'SideMenu'
-  pod 'CocoaAsyncSocket'
   pod 'KDCalendar'
   pod 'FSCalendar'
   pod 'FGRoute'
