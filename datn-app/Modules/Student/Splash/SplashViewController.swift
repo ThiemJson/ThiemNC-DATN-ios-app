@@ -13,6 +13,7 @@ class SplashViewController: UIViewController {
     @IBOutlet weak var lblName          : UILabel!
     @IBOutlet weak var lblHello         : UILabel!
     @IBOutlet weak var vLottie          : AnimationView!
+    var username                         = "Sinh viên"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class SplashViewController: UIViewController {
         self.vLottie.loopMode           = .playOnce
         self.vLottie.animationSpeed     = 1.0
         self.vLottie.play()
+        self.lblName.text           = self.username
     }
     
     override func viewWillAppear(_ animated: Bool) {

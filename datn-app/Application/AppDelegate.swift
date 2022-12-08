@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginVC = LoginViewController()
         let navViewController = UINavigationController(rootViewController: loginVC)
         window?.rootViewController = navViewController
+        
+        /// `Request location permission`
+        CoreLocationService.shared.requestAlwaysAuth()
         return true
     }
 

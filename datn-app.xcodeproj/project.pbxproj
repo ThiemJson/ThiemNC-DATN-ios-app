@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0190C6B52942393000B9095D /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190C6B42942393000B9095D /* CoreLocationService.swift */; };
 		01910EBB292BC97B00C705B5 /* IndivitualHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01910EB9292BC97B00C705B5 /* IndivitualHeaderCell.swift */; };
 		01910EBC292BC97B00C705B5 /* IndivitualHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01910EBA292BC97B00C705B5 /* IndivitualHeaderCell.xib */; };
 		01910EBF292BC99600C705B5 /* IndivitualBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01910EBD292BC99600C705B5 /* IndivitualBodyCell.swift */; };
@@ -160,6 +161,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0190C6B42942393000B9095D /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
 		01910EB9292BC97B00C705B5 /* IndivitualHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndivitualHeaderCell.swift; sourceTree = "<group>"; };
 		01910EBA292BC97B00C705B5 /* IndivitualHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndivitualHeaderCell.xib; sourceTree = "<group>"; };
 		01910EBD292BC99600C705B5 /* IndivitualBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndivitualBodyCell.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				F8258F5929223C11004F81D9 /* Validation.swift */,
 				F8258F5629223BF2004F81D9 /* Constant.swift */,
 				F8258F5429223BE6004F81D9 /* AppMessagesManager.swift */,
+				0190C6B42942393000B9095D /* CoreLocationService.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1084,6 +1087,7 @@
 				F8D6DDFC2941CECF0074EB9E /* SubjectClassRequest.swift in Sources */,
 				F8258F3929223AE2004F81D9 /* TabbarController+Extension.swift in Sources */,
 				F8D6DDD62941CD070074EB9E /* StudentResponse.swift in Sources */,
+				0190C6B52942393000B9095D /* CoreLocationService.swift in Sources */,
 				F8258F3529223AE2004F81D9 /* NSObject+Extension.swift in Sources */,
 				F8312DAF2926352B00FC6073 /* PopupCustom.swift in Sources */,
 			);
@@ -1233,14 +1237,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CSE SLink";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "CSE S-Link uses your FaceID/TouchdID for verification";
+				INFOPLIST_KEY_NSLocationUsageDescription = "CSE E-Link uses your location for class attendance";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CSE E-Link uses your location for class attendance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "location-services";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1266,14 +1275,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CSE SLink";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "CSE S-Link uses your FaceID/TouchdID for verification";
+				INFOPLIST_KEY_NSLocationUsageDescription = "CSE E-Link uses your location for class attendance";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CSE E-Link uses your location for class attendance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "location-services";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

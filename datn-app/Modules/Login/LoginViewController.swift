@@ -103,53 +103,36 @@ class LoginViewController: UIViewController {
         self.vStudent.hero.modifiers = [.translate(y:100)]
         self.vLecture.hero.modifiers = [.translate(y:100)]
         self.imgUserMode.hero.modifiers = [.translate(x:100)]
+        
+        /// Lấy ra Tài khoản trước đó
+        let previousUsername = UserDefaultUtils.shared.getPreviousUsername().deCryptoData()
+        if !previousUsername.isEmpty {
+            self.vUserName.tfTextField.text    = previousUsername
+        }
     }
     
     private func handlerAction() {
         self.btnLogin.rx.tap.asDriver().drive(onNext: { [weak self] (_) in
             guard let `self` = self else { return }
             
-            var loginRequest                = LoginRequest()
-            loginRequest.username           = self.vUserName.tfTextField.text ?? ""
-            loginRequest.password           = self.vPassword.tfTextField.text ?? ""
-            loginRequest.type               = (self.rxLoginMode.value == .Student) ? 1 : 0
-            StudentRepository.shared.getUserByMSV(loginRequest: loginRequest) { [weak self] (studentResponse) in
-                guard let `self` = self else { return }
-                SVProgressHUD.dismiss()
-                guard let studentResponse = studentResponse else {
-                    DispatchQueue.main.async {
-                        AppMessagesManager.shared.showMessage(messageType: .error, message: "Đăng nhập thất bại, vui lòng liên hệ Quản lý")
-                    }
-                    return
-                }
-                
-                /// `Kiểm tra UUID`
-                if let deviceUUID = studentResponse.deviceCode,
-                   let currentDeviceUUID   = UIDevice.current.identifierForVendor?.uuidString {
-                    
-                    ///  `Đăng nhập trên thiết bị mới`
-                    if deviceUUID != currentDeviceUUID {
-                        let loadingPopup                        = PopupCustom()
-                        loadingPopup.modalPresentationStyle     = .overFullScreen
-                        loadingPopup.modalTransitionStyle       = .crossDissolve
-                        loadingPopup.isAutoDissmis              = 10
-                        self.present(loadingPopup, animated: true)
-                    }
-                    
-                    /// `Thành công`
-                    self.onLoginSuccess(studentResponse: studentResponse)
-                }
-                
-                self.onLoginSuccess(studentResponse: studentResponse)
+            let isValidUsername = (self.vUserName.tfTextField.text ?? "").isEmpty == false
+            let isValidPass     = (self.vPassword.tfTextField.text ?? "").isEmpty == false
+            if !(isValidPass && isValidUsername) {
+                AppMessagesManager.shared.showMessage(messageType: .error, message: "Vui lòng điền đầy đủ thông tin")
+                return
             }
+            
+            self.startLogin()
         }).disposed(by: self.disposeBag)
         
         self.vImgFastLogin.rx.tap().asObservable().observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
             guard let `self` = self else { return }
-            let loadingPopup                        = PopupCustom()
-            loadingPopup.modalPresentationStyle     = .overFullScreen
-            loadingPopup.modalTransitionStyle       = .crossDissolve
-            self.present(loadingPopup, animated: true)
+            guard let currentUserName = self.vUserName.tfTextField.text, !currentUserName.isEmpty else {
+                AppMessagesManager.shared.showMessage(messageType: .error, message: "Vui lòng điền đầy đủ thông tin")
+                return
+            }
+            
+            self.startAuthentication()
         }).disposed(by: self.disposeBag)
         
         self.btnBack.rx.tap.asDriver().drive(onNext: { [weak self] _ in
@@ -181,6 +164,77 @@ class LoginViewController: UIViewController {
         }).disposed(by: self.disposeBag)
     }
     
+    private func startLogin() {
+        var loginRequest                = LoginRequest()
+        loginRequest.username           = self.vUserName.tfTextField.text ?? ""
+        loginRequest.password           = self.vPassword.tfTextField.text ?? ""
+        loginRequest.type               = (self.rxLoginMode.value == .Student) ? 1 : 0
+        StudentRepository.shared.getUserByMSV(loginRequest: loginRequest) { [weak self] (studentResponse) in
+            guard let `self` = self else { return }
+            SVProgressHUD.dismiss()
+            guard let studentResponse = studentResponse else {
+                DispatchQueue.main.async {
+                    AppMessagesManager.shared.showMessage(messageType: .error, message: "Đăng nhập thất bại, vui lòng liên hệ Quản lý")
+                }
+                return
+            }
+            
+            /// `Kiểm tra UUID`
+            if let deviceUUID = studentResponse.deviceCode,
+               let currentDeviceUUID   = UIDevice.current.identifierForVendor?.uuidString {
+                
+                ///  `Đăng nhập trên thiết bị mới`
+                if deviceUUID != currentDeviceUUID {
+                    let loadingPopup                        = PopupCustom()
+                    loadingPopup.modalPresentationStyle     = .overFullScreen
+                    loadingPopup.modalTransitionStyle       = .crossDissolve
+                    loadingPopup.isAutoDissmis              = 10
+                    self.present(loadingPopup, animated: true)
+                    return
+                }
+                
+                /// `Thành công`
+                self.onLoginSuccess(studentResponse: studentResponse)
+                return
+            }
+            
+            self.onLoginSuccess(studentResponse: studentResponse)
+        }
+    }
+    
+    private func startAuthentication() {
+        let myContext = LAContext()
+        let reason = "Ứng dụng sử dụng FaceID / TouchID để đăng nhập"
+        var authError: NSError?
+        
+        /// If biometric avaiable, setup authen biometric
+        if myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+            /// Set title cho các button của giao diện xác thực
+            myContext.localizedCancelTitle = "Huỷ"
+            
+            /// Bắt đầu xác thực vân tay, nếu xác thực sai 3 lần liên tiếp hoặc tổng cộng 5 lần, show màn hình passcode của thiết bị.
+            /// reason là message của giao diện xác thực. Ví dụ: "Sử dụng vân tay để đăng nhập vào app"
+            myContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, evaluateError in
+                DispatchQueue.main.async {
+                    switch success {
+                    case true:
+                        let username    = (self.vUserName.tfTextField.text ?? "").enCryptoData()
+                        let password    = UserDefaultUtils.shared.getAccountPassword(userName: username).deCryptoData()
+                        
+                        if password.isEmpty {
+                            AppMessagesManager.shared.showMessage(messageType: .error, message: "Bạn cần đăng nhập lại để sử dụng được tính năng này")
+                            return
+                        }
+                        self.vPassword.tfTextField.text = password
+                        self.startLogin()
+                    case false:
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
     private func setupBinding() {
         self.rxLoginMode.asDriver().drive(onNext: { [weak self] (mode) in
             guard let `self` = self else { return }
@@ -203,7 +257,6 @@ class LoginViewController: UIViewController {
             }
             
             /// `Clear input`
-            self.vUserName.tfTextField.text = ""
             self.vPassword.tfTextField.text = ""
             self.vPassword.rxIsShowContent.accept(false)
         }).disposed(by: self.disposeBag)
@@ -212,6 +265,23 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func onLoginSuccess( studentResponse: StudentResponse? ) {
+        guard let studentResponse = studentResponse else { return }
         
+        /// `Save local`
+        if let userName = studentResponse.studentCode,
+           let password = studentResponse.password {
+            print("Save: \(userName)        | \(password)")
+            print("Save local: \(userName.enCryptoData())        | \(password.enCryptoData())")
+            /// `Lưu lại tài khoản cũ`
+            UserDefaultUtils.shared.setPreviousUsername(value: userName.enCryptoData())
+            UserDefaultUtils.shared.setAccountPassword(userName: userName.enCryptoData(), password: password.enCryptoData())
+        }
+        
+        /// `Cập nhật lại trường UIUD`
+        
+        /// `Chuyển sang màn splash`
+        let splashVC        = SplashViewController()
+        splashVC.username   = studentResponse.name ?? "Sinh viên"
+        self.navigationController?.pushViewController(splashVC, animated: true)
     }
 }

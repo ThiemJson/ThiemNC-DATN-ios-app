@@ -32,6 +32,9 @@ enum UserDefaultsKey: String {
     case sharing = "sharing"
     case shareType = "shareType"
     case cameraGalleryMode = "cameraGalleryMode"
+    /// `Tăng trải nghiệm`
+    case localAuth = "localAuth"
+    case previousUsername = "previousUsername"
 }
 
 class UserDefaultUtils {
@@ -340,5 +343,21 @@ class UserDefaultUtils {
     
     func setCameraGalleryMode(value: Int) {
         save(key: .cameraGalleryMode, value: value)
+    }
+    
+    func getPreviousUsername() -> String {
+        return get(key: .previousUsername) as? String ?? ""
+    }
+    
+    func setPreviousUsername(value: String) {
+        save(key: .previousUsername, value: value)
+    }
+    
+    func getAccountPassword(userName: String) -> String {
+        return get(key: userName) as? String ?? ""
+    }
+    
+    func setAccountPassword( userName: String, password: String) {
+        save(key: userName, value: password)
     }
 }
