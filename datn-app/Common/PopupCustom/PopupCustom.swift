@@ -37,6 +37,7 @@ class PopupCustom: UIViewController {
     @IBOutlet weak var btnLeft          : UIButton!
     @IBOutlet weak var btnRight         : UIButton!
     var isAutoDissmis: Int?             = nil
+    var isDismissable: Bool?            = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +87,13 @@ class PopupCustom: UIViewController {
     }
     
     private func setupBinding() {
+        self.vBlackBackground.rx.tap().asObservable().subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            if self.isDismissable ?? false {
+                self.dismiss(animated: true)
+            }
+        }).disposed(by: self.disposeBag)
+        
         self.rxPopupCustomMode.asDriver().drive(onNext: { [weak self] (mode) in
             guard let `self` = self else { return }
             switch mode {

@@ -166,40 +166,73 @@ class LoginViewController: UIViewController {
     
     private func startLogin() {
         var loginRequest                = LoginRequest()
-        loginRequest.username           = self.vUserName.tfTextField.text ?? ""
-        loginRequest.password           = self.vPassword.tfTextField.text ?? ""
+        loginRequest.username           = self.vUserName.tfTextField.text
+        loginRequest.password           = self.vPassword.tfTextField.text
+        loginRequest.deviceCode         = UIDevice.current.identifierForVendor?.uuidString
         loginRequest.type               = (self.rxLoginMode.value == .Student) ? 1 : 0
-        StudentRepository.shared.getUserByMSV(loginRequest: loginRequest) { [weak self] (studentResponse) in
+        
+        let isValidUsername = (self.vUserName.tfTextField.text ?? "").isEmpty == false
+        let isValidPass     = (self.vPassword.tfTextField.text ?? "").isEmpty == false
+        if !(isValidPass && isValidUsername) {
+            AppMessagesManager.shared.showMessage(messageType: .error, message: "Vui lòng điền đầy đủ thông tin")
+            return
+        }
+        
+        AuthRepository.shared.login(loginRequest: loginRequest) { [weak self] (studentResponse, errorCode) in
             guard let `self` = self else { return }
             SVProgressHUD.dismiss()
-            guard let studentResponse = studentResponse else {
-                DispatchQueue.main.async {
-                    AppMessagesManager.shared.showMessage(messageType: .error, message: "Đăng nhập thất bại, vui lòng liên hệ Quản lý")
+            
+            /// `ERROR`
+            if let errorCode = errorCode {
+                switch errorCode {
+                case .DeviceInuse:
+                    self.showPopup(type: .Error,
+                                   title: "Thiết bị đang được sử dụng cho tài khoản khác",
+                                   content: "Vui lòng liên hệ Quản lý để được hỗ trợ",
+                                   isAutoDissmiss: 10,
+                                   isDismissable: true)
+                case .PasswordIncorrect:
+                    self.showPopup(type: .Error,
+                                   title: "Đăng nhập không thành công",
+                                   content: "Thông tin đăng nhập chưa chính xác, liên hệ Quản lý để được hỗ trợ",
+                                   isAutoDissmiss: 10,
+                                   isDismissable: true)
+                case .AccountInuse:
+                    self.showPopup(type: .Error,
+                                   title: "Đăng nhập trên thiết bị lạ",
+                                   content: "Vui lòng liên hệ Quản lý để được hỗ trợ",
+                                   isAutoDissmiss: 10,
+                                   isDismissable: true)
+                case .IDNotfound:
+                    self.showPopup(type: .Error,
+                                   title: "Đăng nhập không thành công",
+                                   content: "Thông tin đăng nhập chưa chính xác, liên hệ Quản lý để được hỗ trợ",
+                                   isAutoDissmiss: 10,
+                                   isDismissable: true)
+                default:
+                    self.showPopup(type: .Error,
+                                   title: "Kết nối hệ thống thất bại",
+                                   content: "Đã có lỗi xảy ra, xin vui lòng thử lại sau",
+                                   isAutoDissmiss: 10,
+                                   isDismissable: true)
                 }
-                return
+                return;
             }
             
-            /// `Kiểm tra UUID`
-            if let deviceUUID = studentResponse.deviceCode,
-               let currentDeviceUUID   = UIDevice.current.identifierForVendor?.uuidString {
-                
-                ///  `Đăng nhập trên thiết bị mới`
-                if deviceUUID != currentDeviceUUID {
-                    let loadingPopup                        = PopupCustom()
-                    loadingPopup.modalPresentationStyle     = .overFullScreen
-                    loadingPopup.modalTransitionStyle       = .crossDissolve
-                    loadingPopup.isAutoDissmis              = 10
-                    self.present(loadingPopup, animated: true)
-                    return
-                }
-                
-                /// `Thành công`
-                self.onLoginSuccess(studentResponse: studentResponse)
-                return
-            }
-            
+            /// `Thành công` + `Đăng nhập lần đầu`
             self.onLoginSuccess(studentResponse: studentResponse)
         }
+    }
+    
+    private func showPopup(type: PopupCustomType, title : String, content: String, isAutoDissmiss: Int? = nil, isDismissable: Bool? = nil) {
+        let loadingPopup                        = PopupCustom()
+        loadingPopup.modalPresentationStyle     = .overFullScreen
+        loadingPopup.modalTransitionStyle       = .crossDissolve
+        loadingPopup.isAutoDissmis              = isAutoDissmiss
+        loadingPopup.isDismissable              = isDismissable
+        self.present(loadingPopup, animated: true)
+        loadingPopup.lblTitle.text              = title
+        loadingPopup.lblContent.text            = content
     }
     
     private func startAuthentication() {
@@ -265,7 +298,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func onLoginSuccess( studentResponse: StudentResponse? ) {
-        guard let studentResponse = studentResponse else { return }
+        guard var studentResponse = studentResponse else { return }
         
         /// `Save local`
         if let userName = studentResponse.studentCode,
@@ -278,6 +311,12 @@ extension LoginViewController {
         }
         
         /// `Cập nhật lại trường UIUD`
+        studentResponse.deviceCode  = UIDevice.current.identifierForVendor?.uuidString ?? ""
+        var studentUpdate           = StudentResponse()
+        studentUpdate.id            = studentResponse.id
+        studentUpdate.studentCode   = studentResponse.studentCode
+        studentUpdate.deviceCode    = studentResponse.deviceCode
+        StudentRepository.shared.updateStudent(studentRequest: studentUpdate) { _ in }
         
         /// `Chuyển sang màn splash`
         let splashVC        = SplashViewController()

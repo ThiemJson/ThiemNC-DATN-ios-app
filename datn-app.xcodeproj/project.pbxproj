@@ -158,6 +158,7 @@
 		F8D6DDFE2941D3510074EB9E /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDFD2941D3510074EB9E /* LoginResponse.swift */; };
 		F8D6DE002941D35C0074EB9E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDFF2941D35C0074EB9E /* LoginRequest.swift */; };
 		F8D6DE022941E2C90074EB9E /* StudentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE012941E2C90074EB9E /* StudentRepository.swift */; };
+		F8D6DE0429430A530074EB9E /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE0329430A530074EB9E /* AuthRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -316,6 +317,7 @@
 		F8D6DDFD2941D3510074EB9E /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		F8D6DDFF2941D35C0074EB9E /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		F8D6DE012941E2C90074EB9E /* StudentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRepository.swift; sourceTree = "<group>"; };
+		F8D6DE0329430A530074EB9E /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +483,7 @@
 				F8258F5229223BA0004F81D9 /* PingManager.swift */,
 				F8258F5029223B8D004F81D9 /* Provider.swift */,
 				F8D6DE012941E2C90074EB9E /* StudentRepository.swift */,
+				F8D6DE0329430A530074EB9E /* AuthRepository.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1080,6 +1083,7 @@
 				F8258F4229223AE2004F81D9 /* Int64+Extension.swift in Sources */,
 				F8258F7229224143004F81D9 /* SceneDelegate.swift in Sources */,
 				F8D6DDE22941CE1C0074EB9E /* LectureAttendanceStudentResponse.swift in Sources */,
+				F8D6DE0429430A530074EB9E /* AuthRepository.swift in Sources */,
 				F8258F4729223AE2004F81D9 /* NSLayoutConstraint+Extension.swift in Sources */,
 				01910EBB292BC97B00C705B5 /* IndivitualHeaderCell.swift in Sources */,
 				F8258F5529223BE6004F81D9 /* AppMessagesManager.swift in Sources */,
@@ -1236,13 +1240,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = A7Q5J9K3AS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CSE SLink";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "CSE S-Link uses your Calendar for class attendance time";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "CSE S-Link uses your FaceID/TouchdID for verification";
 				INFOPLIST_KEY_NSLocationUsageDescription = "CSE E-Link uses your location for class attendance";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CSE E-Link uses your location for class attendance";
@@ -1261,6 +1268,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "vn.cse-tlu.CSESlink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CSESlink Apple Distribution Certificate";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1274,13 +1282,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = A7Q5J9K3AS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CSE SLink";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "CSE S-Link uses your Calendar for class attendance time";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "CSE S-Link uses your FaceID/TouchdID for verification";
 				INFOPLIST_KEY_NSLocationUsageDescription = "CSE E-Link uses your location for class attendance";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CSE E-Link uses your location for class attendance";
@@ -1299,6 +1310,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "vn.cse-tlu.CSESlink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CSESlink Apple Distribution Certificate";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

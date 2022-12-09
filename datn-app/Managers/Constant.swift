@@ -52,12 +52,13 @@ struct Constant {
         // MARK: Production
         // https://thiemnc-datn-server.herokuapp.com/
         // http://localhost:3306/
-        static let domainConstant           = "thiemnc-datn-server.herokuapp.com"
+//        static let domainConstant           = "thiemnc-datn-server.herokuapp.com"
         static let domain                   = "https://thiemnc-datn-server.herokuapp.com/"
         static let apiPrefix                = "\(domain)api/v1/"
         
         /// `API Route`
         static let Login                    = "auth/token"
+        static let Auth                     = "auth"
         static let Student                  = "students"
         static let Lecture                  = "lecture"
         static let DetailAttendance         = "detail-attendance"

@@ -12,6 +12,8 @@ import Alamofire
 enum ClientApi {
     case login
     case student
+    case updateStudent
+    case auth
 }
 
 extension ClientApi: TargetType {
@@ -28,6 +30,10 @@ extension ClientApi: TargetType {
             return Constant.Router.Login
         case .student:
             return Constant.Router.Student
+        case .updateStudent:
+            return Constant.Router.Student
+        case .auth:
+            return Constant.Router.Auth
         }
     }
     
@@ -38,6 +44,10 @@ extension ClientApi: TargetType {
             return .post
         case .student:
             return .get
+        case .updateStudent:
+            return .put
+        case .auth:
+            return .post
         }
     }
     

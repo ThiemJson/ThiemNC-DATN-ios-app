@@ -15,6 +15,31 @@ import RxSwift
 
 typealias RequestCompletion = ((_ success: Bool, _ IsFailResponseError: Bool, _ data: Any?) -> (Void))?
 
+enum ProviderError: String {
+    case IDNotfound = "error.auth.IDNotfound"
+    case PasswordIncorrect = "error.auth.passwordIncorrect"
+    case DeviceInuse = "error.auth.deviceInUse"
+    case AccountInuse = "error.auth.accountInUse"
+    case NetworkError = "error.network.error"
+    
+    static func getErrorCode(_ errorCode: String) -> ProviderError {
+        switch errorCode {
+        case ProviderError.IDNotfound.rawValue:
+            return ProviderError.IDNotfound
+        case ProviderError.PasswordIncorrect.rawValue:
+            return ProviderError.PasswordIncorrect
+        case ProviderError.DeviceInuse.rawValue:
+            return ProviderError.DeviceInuse
+        case ProviderError.AccountInuse.rawValue:
+            return ProviderError.AccountInuse
+        case ProviderError.NetworkError.rawValue:
+            return ProviderError.NetworkError
+        default:
+            return ProviderError.NetworkError
+        }
+    }
+}
+
 class Provider {
     static let shared  = Provider()
     
