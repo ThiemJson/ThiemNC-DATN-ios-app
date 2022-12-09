@@ -40,7 +40,7 @@ class HeaderCell: UITableViewCell {
     }
     
     func updateUI() {
-        self.imgAvatar.image                = UIImage(named: "user_placeholder")?.circleMask
+        self.imgAvatar.image                = UIImage(named: "logo_circle_png")?.circleMask
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

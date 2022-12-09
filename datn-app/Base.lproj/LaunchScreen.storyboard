@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -32,19 +37,28 @@
                                     <constraint firstAttribute="height" constant="200" id="cvy-rj-NjD"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CSE E-Link" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-2t-uX2" userLabel="lblName">
+                                <rect key="frame" x="41.5" y="433.5" width="331" height="27.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="kjD-pj-Frb" secondAttribute="bottom" id="9dg-Z1-HrU"/>
+                            <constraint firstItem="fcv-2t-uX2" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="2/3" constant="55" id="AUz-27-q9R"/>
                             <constraint firstItem="kjD-pj-Frb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="EwI-2u-fLi"/>
                             <constraint firstItem="Eon-JJ-IfV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="GEZ-ME-pXo"/>
                             <constraint firstAttribute="trailing" secondItem="Eon-JJ-IfV" secondAttribute="trailing" id="KWj-7I-rst"/>
                             <constraint firstItem="RWq-GE-uKq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="KgG-Gx-r5u"/>
                             <constraint firstItem="Eon-JJ-IfV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="MdN-s4-psZ"/>
                             <constraint firstAttribute="trailing" secondItem="kjD-pj-Frb" secondAttribute="trailing" id="XCX-iA-rRE"/>
+                            <constraint firstItem="fcv-2t-uX2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-5.75" id="cLO-MO-XAG"/>
                             <constraint firstAttribute="bottom" secondItem="RWq-GE-uKq" secondAttribute="bottom" id="dvV-mJ-jME"/>
                             <constraint firstAttribute="trailing" secondItem="RWq-GE-uKq" secondAttribute="trailing" id="iz0-d1-FBU"/>
+                            <constraint firstItem="fcv-2t-uX2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y97-EQ-552"/>
                             <constraint firstItem="kjD-pj-Frb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="yQq-Mh-PaP"/>
                         </constraints>
                     </view>

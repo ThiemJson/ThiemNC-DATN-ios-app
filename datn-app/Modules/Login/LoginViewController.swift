@@ -107,6 +107,7 @@ class LoginViewController: UIViewController {
         /// Lấy ra Tài khoản trước đó
         let previousUsername = UserDefaultUtils.shared.getPreviousUsername().deCryptoData()
         if !previousUsername.isEmpty {
+            self.rxLoginMode.accept(.Student)
             self.vUserName.tfTextField.text    = previousUsername
         }
     }
@@ -297,7 +298,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
-    private func onLoginSuccess( studentResponse: StudentResponse? ) {
+    private func onLoginSuccess( studentResponse: StudentModel? ) {
         guard var studentResponse = studentResponse else { return }
         
         /// `Save local`
@@ -312,7 +313,7 @@ extension LoginViewController {
         
         /// `Cập nhật lại trường UIUD`
         studentResponse.deviceCode  = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        var studentUpdate           = StudentResponse()
+        var studentUpdate           = StudentModel()
         studentUpdate.id            = studentResponse.id
         studentUpdate.studentCode   = studentResponse.studentCode
         studentUpdate.deviceCode    = studentResponse.deviceCode

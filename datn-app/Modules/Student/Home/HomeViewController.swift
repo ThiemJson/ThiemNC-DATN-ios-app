@@ -6,14 +6,32 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import SVProgressHUD
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var tbvContent           : UITableView!
-    var selectedScheduleDate : ScheduleMode = .Current
+    @IBOutlet weak var tbvContent               : UITableView!
+    
+    var selectedScheduleDate : ScheduleMode     = .Current
+    let disposeBag                              = DisposeBag()
+    
+    /// `Reactive`
+    let rxUserdata                              = BehaviorRelay<StudentModel?>(value: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initalizedContent()
+        /// `Call API`
+        let currentUserID   = UserDefaultUtils.shared.getPreviousUsername().deCryptoData()
+        if let username     = Int(currentUserID) {
+            StudentRepository.shared.getUserByMSV(id: username) { [weak self] (studentModel, error) in
+                SVProgressHUD.dismiss()
+                guard let `self` = self else { return }
+                if error != nil { return }
+                self.rxUserdata.accept(studentModel)
+            }
+        }
     }
     
     private func initalizedContent() {
@@ -85,7 +103,10 @@ class HomeViewController: UIViewController {
     }
     
     private func setupBinding() {
-        
+        self.rxUserdata.asDriver().drive(onNext: { [weak self] (studentModel) in
+            guard let `self` = self else { return }
+            self.tbvContent.reloadData()
+        }).disposed(by: self.disposeBag)
     }
 }
 
@@ -102,6 +123,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as? HeaderCell else { return HeaderCell()}
             cell.updateUI()
             cell.selectionStyle = .none
+            cell.lblUsername.text   = self.rxUserdata.value?.name ?? "Sinh viên"
+            cell.lblUsercode.text   = "Mã sinh viên: \(self.rxUserdata.value?.studentCode ?? "1851061743")"
             return cell
         }
         

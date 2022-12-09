@@ -38,7 +38,7 @@ class ScheduleCell: UITableViewCell {
     
     let rxChooseDay                             = BehaviorRelay<ScheduleMode>(value: .Current)
     let disposeBag                              = DisposeBag()
-    var heightForTbvRow : CGFloat               = 70
+    var heightForTbvRow : CGFloat               = 80
     var listSchedule                            = [1,2,3,4,5,6]
     weak var delegate                           : ScheduleCellDelegate?
     @IBOutlet weak var constTbvHeight           : NSLayoutConstraint!

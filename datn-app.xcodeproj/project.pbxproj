@@ -135,8 +135,7 @@
 		F8AC1D83292C723A005D36D5 /* OverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D81292C723A005D36D5 /* OverviewCell.xib */; };
 		F8AC1D86292C7BE0005D36D5 /* NavRowCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC1D85292C7BE0005D36D5 /* NavRowCustom.swift */; };
 		F8AC1D88292C7C16005D36D5 /* NavRowCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AC1D87292C7C16005D36D5 /* NavRowCustom.xib */; };
-		F8D6DDD62941CD070074EB9E /* StudentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDD52941CD070074EB9E /* StudentResponse.swift */; };
-		F8D6DDD82941CD170074EB9E /* StudentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDD72941CD170074EB9E /* StudentRequest.swift */; };
+		F8D6DDD62941CD070074EB9E /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDD52941CD070074EB9E /* StudentModel.swift */; };
 		F8D6DDDA2941CD2C0074EB9E /* LectureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDD92941CD2C0074EB9E /* LectureResponse.swift */; };
 		F8D6DDDC2941CD350074EB9E /* LectureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDDB2941CD350074EB9E /* LectureRequest.swift */; };
 		F8D6DDDE2941CDE30074EB9E /* DetailAttendanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDDD2941CDE30074EB9E /* DetailAttendanceResponse.swift */; };
@@ -294,8 +293,7 @@
 		F8AC1D81292C723A005D36D5 /* OverviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewCell.xib; sourceTree = "<group>"; };
 		F8AC1D85292C7BE0005D36D5 /* NavRowCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRowCustom.swift; sourceTree = "<group>"; };
 		F8AC1D87292C7C16005D36D5 /* NavRowCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavRowCustom.xib; sourceTree = "<group>"; };
-		F8D6DDD52941CD070074EB9E /* StudentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResponse.swift; sourceTree = "<group>"; };
-		F8D6DDD72941CD170074EB9E /* StudentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRequest.swift; sourceTree = "<group>"; };
+		F8D6DDD52941CD070074EB9E /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		F8D6DDD92941CD2C0074EB9E /* LectureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureResponse.swift; sourceTree = "<group>"; };
 		F8D6DDDB2941CD350074EB9E /* LectureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRequest.swift; sourceTree = "<group>"; };
 		F8D6DDDD2941CDE30074EB9E /* DetailAttendanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttendanceResponse.swift; sourceTree = "<group>"; };
@@ -797,7 +795,6 @@
 		F8D6DDD32941CBEB0074EB9E /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				F8D6DDD72941CD170074EB9E /* StudentRequest.swift */,
 				F8D6DDDB2941CD350074EB9E /* LectureRequest.swift */,
 				F8D6DDDF2941CDEA0074EB9E /* DetailAttendanceRequest.swift */,
 				F8D6DDE32941CE240074EB9E /* LectureAttendanceStudentRequest.swift */,
@@ -815,7 +812,7 @@
 		F8D6DDD42941CBFA0074EB9E /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				F8D6DDD52941CD070074EB9E /* StudentResponse.swift */,
+				F8D6DDD52941CD070074EB9E /* StudentModel.swift */,
 				F8D6DDD92941CD2C0074EB9E /* LectureResponse.swift */,
 				F8D6DDDD2941CDE30074EB9E /* DetailAttendanceResponse.swift */,
 				F8D6DDE12941CE1C0074EB9E /* LectureAttendanceStudentResponse.swift */,
@@ -1018,7 +1015,6 @@
 				F8258F5C29223C11004F81D9 /* TimeConvert.swift in Sources */,
 				F8D6DDF82941CEB60074EB9E /* SubjectsRequest.swift in Sources */,
 				F8258F6129223C4E004F81D9 /* AppLogger.swift in Sources */,
-				F8D6DDD82941CD170074EB9E /* StudentRequest.swift in Sources */,
 				F8AC1D86292C7BE0005D36D5 /* NavRowCustom.swift in Sources */,
 				F8312DE92928814700FC6073 /* ScheduleCell.swift in Sources */,
 				F8258F6729223C81004F81D9 /* QRCodeGenerate.swift in Sources */,
@@ -1090,7 +1086,7 @@
 				01A5357529350E6E00202BC1 /* FeatureBodyCell.swift in Sources */,
 				F8D6DDFC2941CECF0074EB9E /* SubjectClassRequest.swift in Sources */,
 				F8258F3929223AE2004F81D9 /* TabbarController+Extension.swift in Sources */,
-				F8D6DDD62941CD070074EB9E /* StudentResponse.swift in Sources */,
+				F8D6DDD62941CD070074EB9E /* StudentModel.swift in Sources */,
 				0190C6B52942393000B9095D /* CoreLocationService.swift in Sources */,
 				F8258F3529223AE2004F81D9 /* NSObject+Extension.swift in Sources */,
 				F8312DAF2926352B00FC6073 /* PopupCustom.swift in Sources */,
@@ -1240,8 +1236,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A7Q5J9K3AS;
@@ -1268,7 +1264,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "vn.cse-tlu.CSESlink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CSESlink Apple Distribution Certificate";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1282,10 +1278,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
@@ -1310,7 +1306,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "vn.cse-tlu.CSESlink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CSESlink Apple Distribution Certificate";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,5 +1,5 @@
 //
-//  StudentResponse.swift
+//  StudentModel.swift
 //  datn-app
 //
 //  Created by ThiemJason on 12/8/22.
@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct StudentResponse : Codable {
+struct StudentModel : Codable {
     //    `UPDATE ${TABLE_SV} ` +
     //          ` SET MaSV = '${student_id}', ` +
     //          ` Hoten = '${name}',` +

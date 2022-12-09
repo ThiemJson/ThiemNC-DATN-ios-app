@@ -14,11 +14,11 @@ class AuthRepository {
     let decoder         = JSONDecoder()
     private init() {}
     
-    public func login( loginRequest: LoginRequest, completion: @escaping (StudentResponse?, ProviderError?) -> Void = { (_,_) in } ) {
+    public func login( loginRequest: LoginRequest, completion: @escaping (StudentModel?, ProviderError?) -> Void = { (_,_) in } ) {
         Provider.shared.requestAPI(api: .auth, parameters: loginRequest.setParams()) {(success, IsFailResponseError, data) -> (Void) in
             if success && !IsFailResponseError , let data = data {
                 let studentJson = JSON(data)["data"][0]
-                completion(StudentResponse(from: studentJson), nil)
+                completion(StudentModel(from: studentJson), nil)
                 return
             }
             

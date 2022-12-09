@@ -42,7 +42,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-zS-Uq5" userLabel="vAvatar">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-K3-DIB" userLabel="imgAvatar">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_circle_png" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-K3-DIB" userLabel="imgAvatar">
                                                 <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="uy6-K3-DIB" secondAttribute="height" id="HFL-ph-aPg"/>
@@ -132,7 +132,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="user_placeholder" width="200" height="200"/>
+        <image name="logo_circle_png" width="3333" height="3333"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
