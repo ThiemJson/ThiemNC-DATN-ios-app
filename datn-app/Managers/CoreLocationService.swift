@@ -29,6 +29,14 @@ class CoreLocationService : NSObject {
     func requestLocation() {
         self.locationManager.requestLocation()
     }
+    
+    func startScanningLocation() {
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    func stopScanningLocation() {
+        self.locationManager.stopUpdatingLocation()
+    }
 }
 
 extension CoreLocationService : CLLocationManagerDelegate {

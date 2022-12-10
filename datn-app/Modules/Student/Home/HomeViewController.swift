@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
         self.initalizedContent()
         /// `Call API`
         let currentUserID   = UserDefaultUtils.shared.getPreviousUsername().deCryptoData()
@@ -54,7 +56,6 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CoreLocationService.shared.requestLocation()
     }
     
     private func setupNavigation() {
@@ -198,5 +199,12 @@ extension HomeViewController : ScheduleCellDelegate {
     func onScheduleChange(mode: ScheduleMode) {
         self.selectedScheduleDate   = mode
         self.tbvContent.reloadData()
+    }
+    
+    func onScheduleSelected() {
+        let checkVC = CheckinViewController()
+        checkVC.modalTransitionStyle    = .coverVertical
+        checkVC.modalPresentationStyle  = .pageSheet
+        self.present(checkVC, animated: true)
     }
 }

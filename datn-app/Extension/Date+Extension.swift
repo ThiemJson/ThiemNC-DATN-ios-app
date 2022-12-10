@@ -60,4 +60,33 @@ extension Date {
         let endTime     = _endTime.millisecondsSince1970
         return (startTime >= startday) && (endTime <= endday)
     }
+    
+    static func localToUTC(dateStr: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.calendar = Calendar.current
+        dateFormatter.timeZone = TimeZone.current
+        
+        if let date = dateFormatter.date(from: dateStr) {
+            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+            dateFormatter.dateFormat = "H:mm:ss"
+        
+            return dateFormatter.string(from: date)
+        }
+        return nil
+    }
+
+    static func utcToLocal(dateStr: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "H:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        if let date = dateFormatter.date(from: dateStr) {
+            dateFormatter.timeZone = TimeZone.current
+            dateFormatter.dateFormat = "h:mm a"
+        
+            return dateFormatter.string(from: date)
+        }
+        return nil
+    }
 }

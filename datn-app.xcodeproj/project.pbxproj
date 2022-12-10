@@ -158,6 +158,8 @@
 		F8D6DE002941D35C0074EB9E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DDFF2941D35C0074EB9E /* LoginRequest.swift */; };
 		F8D6DE022941E2C90074EB9E /* StudentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE012941E2C90074EB9E /* StudentRepository.swift */; };
 		F8D6DE0429430A530074EB9E /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE0329430A530074EB9E /* AuthRepository.swift */; };
+		F8D6DE0829445D3F0074EB9E /* CheckinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE0629445D3F0074EB9E /* CheckinViewController.swift */; };
+		F8D6DE0929445D3F0074EB9E /* CheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D6DE0729445D3F0074EB9E /* CheckinViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -316,6 +318,8 @@
 		F8D6DDFF2941D35C0074EB9E /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		F8D6DE012941E2C90074EB9E /* StudentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRepository.swift; sourceTree = "<group>"; };
 		F8D6DE0329430A530074EB9E /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		F8D6DE0629445D3F0074EB9E /* CheckinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinViewController.swift; sourceTree = "<group>"; };
+		F8D6DE0729445D3F0074EB9E /* CheckinViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckinViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -714,6 +718,7 @@
 		F8312DE52928810300FC6073 /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				F8D6DE0529445D2B0074EB9E /* Checkin */,
 				01A5356D2934FD5F00202BC1 /* Feature */,
 				F8312DCA2927261700FC6073 /* Splash */,
 				F8312DB9292718D300FC6073 /* Learning */,
@@ -827,6 +832,15 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		F8D6DE0529445D2B0074EB9E /* Checkin */ = {
+			isa = PBXGroup;
+			children = (
+				F8D6DE0629445D3F0074EB9E /* CheckinViewController.swift */,
+				F8D6DE0729445D3F0074EB9E /* CheckinViewController.xib */,
+			);
+			path = Checkin;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -920,6 +934,7 @@
 				F8312D9529260CA000FC6073 /* RobotoCondensed-Regular.ttf in Resources */,
 				F8312DE3292765D200FC6073 /* HeaderCell.xib in Resources */,
 				01910EBC292BC97B00C705B5 /* IndivitualHeaderCell.xib in Resources */,
+				F8D6DE0929445D3F0074EB9E /* CheckinViewController.xib in Resources */,
 				01D8540C2937A4A100DC6E97 /* ScheduleTableCell.xib in Resources */,
 				F8312DC52927196400FC6073 /* IndividualViewController.xib in Resources */,
 				F8312D632925D43600FC6073 /* LoginViewController.xib in Resources */,
@@ -1000,6 +1015,7 @@
 				F8312D622925D43600FC6073 /* LoginViewController.swift in Sources */,
 				01A535702934FD9700202BC1 /* FeatureViewController.swift in Sources */,
 				F8312DC42927196400FC6073 /* IndividualViewController.swift in Sources */,
+				F8D6DE0829445D3F0074EB9E /* CheckinViewController.swift in Sources */,
 				01910EBF292BC99600C705B5 /* IndivitualBodyCell.swift in Sources */,
 				F8D6DDDC2941CD350074EB9E /* LectureRequest.swift in Sources */,
 				F8258F4C29223AE2004F81D9 /* Textfield+Extension.swift in Sources */,
@@ -1239,16 +1255,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A7Q5J9K3AS;
+				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "datn-app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CSE SLink";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "CSE S-Link uses your Calendar for class attendance time";
+				INFOPLIST_KEY_NSCameraUsageDescription = "CSE S-Link uses your camera for class attendance";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "CSE S-Link uses your FaceID/TouchdID for verification";
 				INFOPLIST_KEY_NSLocationUsageDescription = "CSE E-Link uses your location for class attendance";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CSE E-Link uses your location for class attendance";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CSE S-Link uses your location for class attendance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1288,9 +1304,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "CSE SLink";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "CSE S-Link uses your Calendar for class attendance time";
+				INFOPLIST_KEY_NSCameraUsageDescription = "CSE S-Link uses your camera for class attendance";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "CSE S-Link uses your FaceID/TouchdID for verification";
 				INFOPLIST_KEY_NSLocationUsageDescription = "CSE E-Link uses your location for class attendance";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CSE E-Link uses your location for class attendance";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CSE S-Link uses your location for class attendance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

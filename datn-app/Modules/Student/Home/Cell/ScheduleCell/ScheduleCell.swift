@@ -17,6 +17,7 @@ enum ScheduleMode {
 
 protocol ScheduleCellDelegate : NSObjectProtocol {
     func onScheduleChange(mode: ScheduleMode)
+    func onScheduleSelected()
 }
 
 class ScheduleCell: UITableViewCell {
@@ -166,5 +167,9 @@ extension ScheduleCell : UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleTableCell", for: indexPath) as? ScheduleTableCell else
         { return UITableViewCell() }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.onScheduleSelected()
     }
 }
