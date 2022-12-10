@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import SVProgressHUD
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var tbvContent               : UITableView!
     
     var selectedScheduleDate : ScheduleMode     = .Current
