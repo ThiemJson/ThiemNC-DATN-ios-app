@@ -41,11 +41,11 @@ class AppMessagesManager {
 extension AppMessagesManager {
     func showMessage(messageType type: Theme, withTitle title: String = "", message: String, completion: (() -> Void)? = nil, duration: SwiftMessages.Duration = .seconds(seconds: 4)) {
         
-        if let topController = UIApplication.shared.keyWindow?.rootViewController {
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
             // Comment lại bởi vì dòng này gây ra lỗi khi hiện AppMessage
-            //            if let presentedViewController = topController.presentedViewController {
-            //                topController = presentedViewController
-            //            }
+            if let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
             topController.view.endEditing(true)
             topController.view.hideToast()
             topController.view.makeToast(message)

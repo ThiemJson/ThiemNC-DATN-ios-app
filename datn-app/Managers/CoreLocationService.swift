@@ -20,6 +20,17 @@ class CoreLocationService : NSObject {
     private override init(){
         super.init()
         self.locationManager.delegate       = self
+        /// `Background`
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onDeviceMoveToBackground),
+                                               name: UIApplication.didEnterBackgroundNotification,
+                                               object: nil)
+        
+        /// `Terminated`
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onDeviceTerminated),
+                                               name: UIApplication.willTerminateNotification,
+                                               object: nil)
     }
     
     func requestAlwaysAuth() {
@@ -66,3 +77,14 @@ extension CoreLocationService : CLLocationManagerDelegate {
         self.rxError.accept(error)
     }
 }
+
+/// `App delegate`
+extension CoreLocationService {
+    @objc func onDeviceMoveToBackground() {
+        self.stopScanningLocation()
+    }
+    @objc func onDeviceTerminated() {
+        self.stopScanningLocation()
+    }
+}
+

@@ -36,18 +36,25 @@ class CheckinViewController: UIViewController {
     
     @IBOutlet weak var lblSpeedTitle        : UILabel!
     @IBOutlet weak var lblSpeed             : UILabel!
-        
+    
     @IBOutlet weak var lblTimeTitle         : UILabel!
     @IBOutlet weak var lblTime              : UILabel!
     
-    var inputCLLocation                     = CLLocation(latitude: 21.046870, longitude: 05.787996)
+    @IBOutlet weak var lblLocationHelper    : UILabel!
+    @IBOutlet weak var lblDistance          : UILabel!
+    
+    var listInputLocation                   = [CLLocation(latitude: 21.046728, longitude: 105.786815), CLLocation(latitude: 21.046957759870452, longitude: 105.78854524881581), CLLocation(latitude: 21.046710, longitude: 105.788233)]
+    var inputCLLocation                     = CLLocation(latitude: 21.046728, longitude: 105.786815)
     let disposeBag                          = DisposeBag()
+    
+    deinit {
+        print("===> CheckinViewController init")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializedContent()
         CoreLocationService.shared.requestAlwaysAuth()
-        CoreLocationService.shared.startScanningLocation()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -86,6 +93,7 @@ class CheckinViewController: UIViewController {
         self.vLocationScanning.layer.cornerRadius   = CGFloat(Constant.Values.commonRadius)
         
         self.lblClassName.text              = "Công nghệ web"
+        self.lblDistance.text               = ""
         
         self.lblClassName.textColor         = Constant.Color.dark_blue
         self.lblRoomTitle.textColor         = Constant.Color.gray_text_placeholder_search_bar
@@ -94,8 +102,15 @@ class CheckinViewController: UIViewController {
         self.lblSpeedTitle.textColor        = Constant.Color.gray_text_placeholder_search_bar
         self.lblTimeTitle.textColor         = Constant.Color.gray_text_placeholder_search_bar
         self.lblLectureTitle.textColor      = Constant.Color.gray_text_placeholder_search_bar
+        self.lblLocationHelper.textColor    = Constant.Color.gray_text_placeholder_search_bar
+        self.lblDistance.textColor          = Constant.Color.hex_green_19C285
+        self.lblLocation.textColor          = Constant.Color.gray_light
+        self.lblSpeed.textColor             = Constant.Color.gray_light
+        self.lblTime.textColor              = Constant.Color.gray_light
         
         self.lblLectureTitle.font           = UIFont.getOpenSansBoldFont(size: 15)
+        self.lblDistance.font               = UIFont.getOpenSansBoldFont(size: 23)
+        self.lblLocationHelper.font         = UIFont.getOpenSansBoldFont(size: 14)
         self.lblLecture.font                = UIFont.getOpenSansBoldFont(size: 15)
         self.lblTimeTitle.font              = UIFont.getOpenSansBoldFont(size: 15)
         self.lblTime.font                   = UIFont.getOpenSansBoldFont(size: 14)
@@ -138,8 +153,7 @@ class CheckinViewController: UIViewController {
         
         self.vAnimationView.contentMode        = .scaleAspectFill
         self.vAnimationView.loopMode           = .loop
-        self.vAnimationView.animationSpeed     = 0.5
-        self.vAnimationView.play()
+        self.vAnimationView.animationSpeed     = 1.0
     }
     
     private func setupNavigation() {
@@ -170,10 +184,49 @@ class CheckinViewController: UIViewController {
     }
     
     private func setupBinding() {
+        self.lblSpeed.rx.tap().asObservable().observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            self.inputCLLocation = self.listInputLocation[0]
+        }).disposed(by: self.disposeBag)
+        
+        self.lblTime.rx.tap().asObservable().observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            self.inputCLLocation = self.listInputLocation[1]
+        }).disposed(by: self.disposeBag)
+        
+        self.lblLocation.rx.tap().asObservable().observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            self.inputCLLocation = self.listInputLocation[2]
+        }).disposed(by: self.disposeBag)
+        
+        self.vAnimationView.rx.tap().asObservable().observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            
+            /// `Dừng searching`
+            if self.vAnimationView.isAnimationPlaying {
+                CoreLocationService.shared.stopScanningLocation()
+                self.vAnimationView.stop()
+                DispatchQueue.main.async {
+                    AppMessagesManager.shared.showMessage(messageType: .success, message: "Dừng truy cập thông tin vị trí")
+                }
+                self.lblLocationHelper.text = "Chạm để truy cập thông tin vị trí"
+                return
+            }
+            
+            /// `Bắt đầu search`
+            CoreLocationService.shared.startScanningLocation()
+            self.lblLocationHelper.text = "Chạm để dừng truy cập thông tin vị trí"
+            self.vAnimationView.play()
+            DispatchQueue.main.async {
+                AppMessagesManager.shared.showMessage(messageType: .success, message: "Bắt đầu truy cập thông tin vị trí")
+            }
+        }).disposed(by: self.disposeBag)
+        
         CoreLocationService.shared.rxCLLocation.asDriver().drive(onNext: { [weak self] (location) in
             guard let `self` = self else { return }
             guard let location = location else {
                 self.lblLocation.text   = "( ... , ...)"
+                self.lblDistance.text   = ""
                 return
             }
             let latitude    = location.coordinate.latitude
@@ -182,9 +235,28 @@ class CheckinViewController: UIViewController {
             print(" CORE-Location latitude: \(latitude) | longitude \(longitude)")
             
             if CLLocationCoordinate2DIsValid(location.coordinate) {
-                self.lblLocation.text = "( \(round(latitude * 100000000) / 100000000.0) , \(round(longitude * 100000000) / 100000000.0) )"
+                self.lblLocation.text   = "( \(round(latitude * 100000000) / 100000000.0) , \(round(longitude * 100000000) / 100000000.0) )"
+                
+                let distance            = self.inputCLLocation.distance(from: location)
+                let distanceRounded     = round(distance * 100) / 100.0
+                self.lblDistance.text   = "\( (distanceRounded > 100) ? ">100m" : "\(distanceRounded)m" )"
+                
+                self.lblLocation.textColor      = Constant.Color.hex_245C83
+                self.lblSpeed.textColor         = Constant.Color.hex_245C83
+                self.lblTime.textColor          = Constant.Color.hex_245C83
+                
+                /// `Đổi màu chữ tương đương khoảng cách`
+                if distanceRounded > 100 {
+                    self.lblDistance.textColor  = Constant.Color.hex_red_F67280
+                } else if distanceRounded > 20 {
+                    self.lblDistance.textColor  = Constant.Color.hex_orange_F3AB1D
+                } else {
+                    self.lblDistance.textColor  = Constant.Color.hex_green_19C285
+                }
+                
             } else {
                 self.lblLocation.text   = "( ... , ...)"
+                self.lblDistance.text   = ""
             }
             
             self.lblSpeed.text          = "\(location.speed) mps"
