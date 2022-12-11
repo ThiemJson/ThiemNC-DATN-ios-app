@@ -12,7 +12,7 @@ class SplashViewController: UIViewController {
 
     @IBOutlet weak var lblName          : UILabel!
     @IBOutlet weak var lblHello         : UILabel!
-    @IBOutlet weak var vLottie          : AnimationView!
+    @IBOutlet weak var vLottie          : LottieAnimationView!
     var username                         = "Sinh viên"
     
     override func viewDidLoad() {

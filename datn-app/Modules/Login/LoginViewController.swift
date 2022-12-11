@@ -237,34 +237,18 @@ class LoginViewController: UIViewController {
     }
     
     private func startAuthentication() {
-        let myContext = LAContext()
-        let reason = "Ứng dụng sử dụng FaceID / TouchID để đăng nhập"
-        var authError: NSError?
-        
-        /// If biometric avaiable, setup authen biometric
-        if myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
-            /// Set title cho các button của giao diện xác thực
-            myContext.localizedCancelTitle = "Huỷ"
-            
-            /// Bắt đầu xác thực vân tay, nếu xác thực sai 3 lần liên tiếp hoặc tổng cộng 5 lần, show màn hình passcode của thiết bị.
-            /// reason là message của giao diện xác thực. Ví dụ: "Sử dụng vân tay để đăng nhập vào app"
-            myContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, evaluateError in
-                DispatchQueue.main.async {
-                    switch success {
-                    case true:
-                        let username    = (self.vUserName.tfTextField.text ?? "").enCryptoData()
-                        let password    = UserDefaultUtils.shared.getAccountPassword(userName: username).deCryptoData()
-                        
-                        if password.isEmpty {
-                            AppMessagesManager.shared.showMessage(messageType: .error, message: "Bạn cần đăng nhập lại để sử dụng được tính năng này")
-                            return
-                        }
-                        self.vPassword.tfTextField.text = password
-                        self.startLogin()
-                    case false:
-                        break
-                    }
+        LocalAuthenticationService.shared.startAuthentication(reason: "Ứng dụng sử dụng FaceID / TouchID để đăng nhập") { [weak self] (isSuccess) in
+            guard let `self` = self else { return }
+            if isSuccess {
+                let username    = (self.vUserName.tfTextField.text ?? "").enCryptoData()
+                let password    = UserDefaultUtils.shared.getAccountPassword(userName: username).deCryptoData()
+                
+                if password.isEmpty {
+                    AppMessagesManager.shared.showMessage(messageType: .error, message: "Bạn cần đăng nhập lại để sử dụng được tính năng này")
+                    return
                 }
+                self.vPassword.tfTextField.text = password
+                self.startLogin()
             }
         }
     }

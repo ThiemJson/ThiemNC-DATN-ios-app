@@ -11,12 +11,14 @@ import Lottie
 import RxCocoa
 import SVProgressHUD
 
-enum PopupCustomType {
-    case Loading
-    case Error
-    case Success
-    case Attention
-    case Noti
+enum PopupCustomType : String {
+    case Loading            = "lottie_loading"
+    case Error              = "lottie_error"
+    case Success            = "lottie_success"
+    case Attention          = "lottie_attention"
+    case Noti               = "lottie_noti"
+    case ScanningGreen      = "scanning_green"
+    case ScanningYellow     = "scanning_yellow"
 }
 
 class PopupCustom: UIViewController {
@@ -25,12 +27,14 @@ class PopupCustom: UIViewController {
     @IBOutlet weak var stvContent       : UIStackView!
     @IBOutlet weak var stvTop           : UIStackView!
     @IBOutlet weak var stvBot           : UIStackView!
-    @IBOutlet weak var vLottie          : AnimationView!
+    @IBOutlet weak var vLottie          : LottieAnimationView!
     
     @IBOutlet weak var lblTitle         : UILabel!
     @IBOutlet weak var lblContent       : UILabel!
     
     let rxPopupCustomMode               = BehaviorRelay<PopupCustomType>(value: .Loading)
+    let rxAnimationLoopMode             = BehaviorRelay<LottieLoopMode>(value: .loop)
+    
     let disposeBag                      = DisposeBag()
     @IBOutlet weak var vLeftBtn         : UIView!
     @IBOutlet weak var vRightBtn        : UIView!
@@ -38,6 +42,9 @@ class PopupCustom: UIViewController {
     @IBOutlet weak var btnRight         : UIButton!
     var isAutoDissmis: Int?             = nil
     var isDismissable: Bool?            = false
+    
+    var popupTitle                      : String?
+    var popupContent                    : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +56,30 @@ class PopupCustom: UIViewController {
         self.handlerAction()
         self.setupBinding()
         self.vLottie.contentMode        = .scaleAspectFill
-        self.vLottie.loopMode           = .loop
+        self.vLottie.loopMode           = self.rxAnimationLoopMode.value
         self.vLottie.animationSpeed     = 1.0
-        self.vLottie.play()
+        self.updateUI()
+    }
+    
+    func updateUI() {
+        if let popupTitle = self.popupTitle {
+            self.lblTitle?.text              = popupTitle
+        } else {
+            self.lblTitle?.isHidden          = true
+        }
+        
+        if let popupContent = self.popupContent {
+            self.lblContent?.text            = popupContent
+        } else {
+            self.lblContent?.isHidden        = true
+        }
+        
+        if self.vLottie?.isAnimationPlaying ?? false {
+            self.vLottie?.stop()
+        }
+        
+        self.vLottie?.animation             = LottieAnimation.named(self.rxPopupCustomMode.value.rawValue)
+        self.vLottie?.play()
     }
     
     private func setupView() {

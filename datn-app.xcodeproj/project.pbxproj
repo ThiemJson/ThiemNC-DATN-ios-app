@@ -160,6 +160,10 @@
 		F8D6DE0429430A530074EB9E /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE0329430A530074EB9E /* AuthRepository.swift */; };
 		F8D6DE0829445D3F0074EB9E /* CheckinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE0629445D3F0074EB9E /* CheckinViewController.swift */; };
 		F8D6DE0929445D3F0074EB9E /* CheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D6DE0729445D3F0074EB9E /* CheckinViewController.xib */; };
+		F8D6DE0D294597660074EB9E /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE0B294597660074EB9E /* QRCodeScannerViewController.swift */; };
+		F8D6DE0E294597660074EB9E /* QRCodeScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D6DE0C294597660074EB9E /* QRCodeScannerViewController.xib */; };
+		F8D6DE102945ADFB0074EB9E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE0F2945ADFB0074EB9E /* UIViewController+Extension.swift */; };
+		F8D6DE122945B37C0074EB9E /* LocalAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6DE112945B37C0074EB9E /* LocalAuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -320,6 +324,10 @@
 		F8D6DE0329430A530074EB9E /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		F8D6DE0629445D3F0074EB9E /* CheckinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinViewController.swift; sourceTree = "<group>"; };
 		F8D6DE0729445D3F0074EB9E /* CheckinViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckinViewController.xib; sourceTree = "<group>"; };
+		F8D6DE0B294597660074EB9E /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
+		F8D6DE0C294597660074EB9E /* QRCodeScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeScannerViewController.xib; sourceTree = "<group>"; };
+		F8D6DE0F2945ADFB0074EB9E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		F8D6DE112945B37C0074EB9E /* LocalAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,6 +471,7 @@
 				F8258F5629223BF2004F81D9 /* Constant.swift */,
 				F8258F5429223BE6004F81D9 /* AppMessagesManager.swift */,
 				0190C6B42942393000B9095D /* CoreLocationService.swift */,
+				F8D6DE112945B37C0074EB9E /* LocalAuthenticationService.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -522,6 +531,7 @@
 				F8258F2329223ADF004F81D9 /* ViewController+Extension.swift */,
 				F8312DAA2926272D00FC6073 /* LAContext+Extension.swift */,
 				01D787D52937CEB500008936 /* UIBarButtonItem+Badge.swift */,
+				F8D6DE0F2945ADFB0074EB9E /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -718,6 +728,7 @@
 		F8312DE52928810300FC6073 /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				F8D6DE0A2945974E0074EB9E /* QRCodeScanner */,
 				F8D6DE0529445D2B0074EB9E /* Checkin */,
 				01A5356D2934FD5F00202BC1 /* Feature */,
 				F8312DCA2927261700FC6073 /* Splash */,
@@ -841,6 +852,15 @@
 			path = Checkin;
 			sourceTree = "<group>";
 		};
+		F8D6DE0A2945974E0074EB9E /* QRCodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+				F8D6DE0B294597660074EB9E /* QRCodeScannerViewController.swift */,
+				F8D6DE0C294597660074EB9E /* QRCodeScannerViewController.xib */,
+			);
+			path = QRCodeScanner;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -950,6 +970,7 @@
 				F8312D8629260CA000FC6073 /* Roboto-Light.ttf in Resources */,
 				F8312DA929260E7A00FC6073 /* TextFieldCustom.xib in Resources */,
 				F8312DC92927198F00FC6073 /* LearningViewController.xib in Resources */,
+				F8D6DE0E294597660074EB9E /* QRCodeScannerViewController.xib in Resources */,
 				F8AC1D83292C723A005D36D5 /* OverviewCell.xib in Resources */,
 				F8258F08292231ED004F81D9 /* LaunchScreen.storyboard in Resources */,
 				F8AC1D73292B7904005D36D5 /* NewsCell.xib in Resources */,
@@ -1012,6 +1033,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D6DE102945ADFB0074EB9E /* UIViewController+Extension.swift in Sources */,
 				F8312D622925D43600FC6073 /* LoginViewController.swift in Sources */,
 				01A535702934FD9700202BC1 /* FeatureViewController.swift in Sources */,
 				F8312DC42927196400FC6073 /* IndividualViewController.swift in Sources */,
@@ -1019,6 +1041,7 @@
 				01910EBF292BC99600C705B5 /* IndivitualBodyCell.swift in Sources */,
 				F8D6DDDC2941CD350074EB9E /* LectureRequest.swift in Sources */,
 				F8258F4C29223AE2004F81D9 /* Textfield+Extension.swift in Sources */,
+				F8D6DE0D294597660074EB9E /* QRCodeScannerViewController.swift in Sources */,
 				F8312DCD292726B100FC6073 /* SplashViewController.swift in Sources */,
 				F8AC1D72292B7904005D36D5 /* NewsCell.swift in Sources */,
 				F8312DC02927193C00FC6073 /* NotificationViewController.swift in Sources */,
@@ -1087,6 +1110,7 @@
 				F8258F3A29223AE2004F81D9 /* UIBarButtonItem+Extension.swift in Sources */,
 				F8258F4B29223AE2004F81D9 /* Switch+Extension.swift in Sources */,
 				F8258F3429223AE2004F81D9 /* Data+Extension.swift in Sources */,
+				F8D6DE122945B37C0074EB9E /* LocalAuthenticationService.swift in Sources */,
 				01D8540B2937A4A100DC6E97 /* ScheduleTableCell.swift in Sources */,
 				F8312DD8292744CE00FC6073 /* PopularFeatureCell.swift in Sources */,
 				F8D6DDEE2941CE840074EB9E /* RoomResponse.swift in Sources */,

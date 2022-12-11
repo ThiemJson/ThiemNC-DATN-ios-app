@@ -11,11 +11,13 @@ import RxCocoa
 import RxSwift
 import Lottie
 import CoreLocation
+import VisionKit
+import LocalAuthentication
 
 class CheckinViewController: UIViewController {
     @IBOutlet weak var lblClassName         : UILabel!
     @IBOutlet weak var vContent             : UIView!
-    @IBOutlet weak var vAnimationView       : AnimationView!
+    @IBOutlet weak var vAnimationView       : LottieAnimationView!
     @IBOutlet weak var vLocationScanning    : UIView!
     @IBOutlet weak var scvContent           : UIScrollView!
     
@@ -46,6 +48,9 @@ class CheckinViewController: UIViewController {
     var listInputLocation                   = [CLLocation(latitude: 21.046728, longitude: 105.786815), CLLocation(latitude: 21.046957759870452, longitude: 105.78854524881581), CLLocation(latitude: 21.046710, longitude: 105.788233)]
     var inputCLLocation                     = CLLocation(latitude: 21.046728, longitude: 105.786815)
     let disposeBag                          = DisposeBag()
+    
+    /// `Popup`
+    var popupAlert                          : PopupCustom?
     
     deinit {
         print("===> CheckinViewController init")
@@ -180,7 +185,25 @@ class CheckinViewController: UIViewController {
     }
     
     private func handlerAction() {
+        self.btnQRCI.rx.tap.asDriver().drive(onNext: {[weak self] _ in
+            guard let `self` = self else { return }
+            self.startBioMetricVerify { [weak self] (isSuccess) in
+                guard let `self` = self else { return }
+                let qrCodeScanner                       = QRCodeScannerViewController()
+                qrCodeScanner.delegate                  = self
+                qrCodeScanner.modalTransitionStyle      = .coverVertical
+                qrCodeScanner.modalPresentationStyle    = .pageSheet
+                self.present(qrCodeScanner, animated: true)
+            }
+        }).disposed(by: self.disposeBag)
         
+        self.btnNormalCI.rx.tap.asDriver().drive(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            self.startBioMetricVerify { [weak self] (isSuccess) in
+                guard let `self` = self else { return }
+                self.startAttendance()
+            }
+        }).disposed(by: self.disposeBag)
     }
     
     private func setupBinding() {
@@ -202,24 +225,7 @@ class CheckinViewController: UIViewController {
         self.vAnimationView.rx.tap().asObservable().observe(on: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             
-            /// `Dừng searching`
-            if self.vAnimationView.isAnimationPlaying {
-                CoreLocationService.shared.stopScanningLocation()
-                self.vAnimationView.stop()
-                DispatchQueue.main.async {
-                    AppMessagesManager.shared.showMessage(messageType: .success, message: "Dừng truy cập thông tin vị trí")
-                }
-                self.lblLocationHelper.text = "Chạm để truy cập thông tin vị trí"
-                return
-            }
-            
-            /// `Bắt đầu search`
-            CoreLocationService.shared.startScanningLocation()
-            self.lblLocationHelper.text = "Chạm để dừng truy cập thông tin vị trí"
-            self.vAnimationView.play()
-            DispatchQueue.main.async {
-                AppMessagesManager.shared.showMessage(messageType: .success, message: "Bắt đầu truy cập thông tin vị trí")
-            }
+            self.toggleLocationTracking(isStart: !self.vAnimationView.isAnimationPlaying)
         }).disposed(by: self.disposeBag)
         
         CoreLocationService.shared.rxCLLocation.asDriver().drive(onNext: { [weak self] (location) in
@@ -263,5 +269,83 @@ class CheckinViewController: UIViewController {
             self.lblTime.text           = "\(location.timestamp.description(with: .current))"
             
         }).disposed(by: self.disposeBag)
+    }
+    
+    /// `Bật / Tắt location tracking`
+    private func toggleLocationTracking(isStart: Bool) {
+        /// `Searching`
+        if isStart {
+            /// `Bắt đầu search`
+            CoreLocationService.shared.startScanningLocation()
+            self.lblLocationHelper.text = "Chạm để dừng truy cập thông tin vị trí"
+            self.vAnimationView.play()
+            DispatchQueue.main.async {
+                AppMessagesManager.shared.showMessage(messageType: .success, message: "Bắt đầu truy cập thông tin vị trí")
+            }
+            return
+        }
+        
+        if self.vAnimationView.isAnimationPlaying == false { return }
+        CoreLocationService.shared.stopScanningLocation()
+        self.vAnimationView.stop()
+        DispatchQueue.main.async {
+            AppMessagesManager.shared.showMessage(messageType: .success, message: "Dừng truy cập thông tin vị trí")
+        }
+        self.lblLocationHelper.text = "Chạm để truy cập thông tin vị trí"
+    }
+    
+    ///  `Verify TouchID / FaceID`
+    private func startBioMetricVerify(completion: @escaping (Bool) -> Void) {
+        LocalAuthenticationService.shared.startAuthentication(reason: "Bạn cần xác minh thông tin cá nhân") { (isSuccess) in
+            completion(isSuccess)
+        }
+    }
+    
+    
+    ///  `Xử lý bắt đầu verify`
+    private func startAttendance() {
+        self.toggleLocationTracking(isStart: false)
+        self.showPopup(type: .Loading, title: "Đang xử lý", content: "Vui lòng đợi trong giây lát", isDismissable: false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.showPopup(type: .Success, title: nil, content: "Điểm danh thành công", isAutoDissmiss: 10, isDismissable: true, loopMode: .playOnce)
+        }
+    }
+}
+
+extension CheckinViewController : QRCodeScannerViewControllerDelegte {
+    func qrScanResponse(_ value: String?) {
+        guard let value = value else {
+            DispatchQueue.main.async {
+                AppMessagesManager.shared.showMessage(messageType: .success, message: "Đã có lỗi xảy ra, vui lòng thử lại")
+            }
+            return
+        }
+        self.startAttendance()
+    }
+    
+    private func showPopup(type: PopupCustomType, title : String?, content: String?, isAutoDissmiss: Int? = nil, isDismissable: Bool? = nil, loopMode: LottieLoopMode? = nil) {
+        if let popupAlert = self.popupAlert {
+            popupAlert.dismiss(animated: true)
+        }
+        
+        self.popupAlert                             = PopupCustom()
+        if let popupAlert = self.popupAlert {
+            popupAlert.modalPresentationStyle      = .overFullScreen
+            popupAlert.modalTransitionStyle        = .crossDissolve
+            popupAlert.rxPopupCustomMode.accept(type)
+            
+            /// `LoopMode`
+            if let loopMode = loopMode {
+                popupAlert.rxAnimationLoopMode.accept(loopMode)
+            }
+            
+            popupAlert.isAutoDissmis               = isAutoDissmiss
+            popupAlert.isDismissable               = isDismissable
+            popupAlert.popupTitle                  = title
+            popupAlert.popupContent                = content
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                self.present(popupAlert, animated: true)
+            }
+        }
     }
 }
