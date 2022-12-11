@@ -202,9 +202,9 @@ extension HomeViewController : ScheduleCellDelegate {
     }
     
     func onScheduleSelected() {
-        let checkVC = CheckinViewController()
-        checkVC.modalTransitionStyle    = .coverVertical
-        checkVC.modalPresentationStyle  = .pageSheet
-        self.present(checkVC, animated: true)
+        let navigationController    = UINavigationController(rootViewController: CheckinViewController())
+        navigationController.modalTransitionStyle    = .coverVertical
+        navigationController.modalPresentationStyle  = .pageSheet
+        self.present(navigationController, animated: true)
     }
 }

@@ -14,21 +14,28 @@ protocol QRCodeScannerViewControllerDelegte: NSObjectProtocol {
 }
 
 class QRCodeScannerViewController: UIViewController {
+    
+    @IBOutlet weak var vQRCodescanner   : UIView!
+    
     var captureSession                  = AVCaptureSession()
     var videoPreviewLayer               : AVCaptureVideoPreviewLayer?
     var qrCodeFrameView                 : UIView?
     weak var delegate                   : QRCodeScannerViewControllerDelegte?
-    @IBOutlet weak var vQRCodescanner   : UIView!
+    
+    deinit {
+        print("QRCodeScannerViewController deinit")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = .white;
         
         // Get the back-facing camera for capturing videos
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInDualWideCamera, .builtInTelephotoCamera], mediaType: AVMediaType.video, position: .back)
         
         guard let captureDevice = deviceDiscoverySession.devices.first else {
             self.delegate?.qrScanResponse(nil)
-            self.dismiss(animated: true)
+            self.navigationController?.popViewController(animated: true)
             return
         }
         
@@ -49,17 +56,8 @@ class QRCodeScannerViewController: UIViewController {
             
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-            self.videoPreviewLayer?.videoGravity        = AVLayerVideoGravity.resizeAspectFill
-            self.videoPreviewLayer?.frame               = self.vQRCodescanner.layer.bounds
-            
-            
-            if let videoPreviewLayer = self.videoPreviewLayer {
-                self.vQRCodescanner.layer.addSublayer(videoPreviewLayer)
-                self.vQRCodescanner.clipsToBounds       = true
-            }
-            
-            // Start video capture.
-            self.captureSession.startRunning()
+            self.videoPreviewLayer?.videoGravity        = .resizeAspectFill
+            self.videoPreviewLayer?.frame               = self.vQRCodescanner.bounds
             
             // Initialize QR Code Frame to highlight the QR code
             self.qrCodeFrameView = UIView()
@@ -70,11 +68,24 @@ class QRCodeScannerViewController: UIViewController {
                 view.addSubview(qrCodeFrameView)
                 view.bringSubviewToFront(qrCodeFrameView)
             }
+            
+            if let videoPreviewLayer = self.videoPreviewLayer {
+                self.vQRCodescanner.layer.insertSublayer(videoPreviewLayer, at: 0)
+            }
+            // Start video capture.
+            self.captureSession.startRunning()
+            
         } catch {
             self.delegate?.qrScanResponse(nil)
-            self.dismiss(animated: true)
+            self.navigationController?.popViewController(animated: true)
             return
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("Layout subview")
+        self.videoPreviewLayer?.frame               = self.vQRCodescanner.bounds
     }
 }
 
@@ -97,8 +108,11 @@ extension QRCodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             
             if metadataObj.stringValue != nil {
                 self.captureSession.stopRunning()
-                self.delegate?.qrScanResponse(metadataObj.stringValue)
-                self.dismiss(animated: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.navigationController?.popViewController(animated: true)
+                    self.delegate?.qrScanResponse(metadataObj.stringValue)
+                }
             }
         }
     }

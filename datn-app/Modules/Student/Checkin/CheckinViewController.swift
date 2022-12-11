@@ -60,6 +60,7 @@ class CheckinViewController: UIViewController {
         super.viewDidLoad()
         self.initializedContent()
         CoreLocationService.shared.requestAlwaysAuth()
+        self.navigationController?.setToolbarHidden(true, animated: false)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -100,7 +101,7 @@ class CheckinViewController: UIViewController {
         self.lblClassName.text              = "Công nghệ web"
         self.lblDistance.text               = ""
         
-        self.lblClassName.textColor         = Constant.Color.dark_blue
+        self.lblClassName.textColor         = .white
         self.lblRoomTitle.textColor         = Constant.Color.gray_text_placeholder_search_bar
         self.lblStartTimeTitle.textColor    = Constant.Color.gray_text_placeholder_search_bar
         self.lblLocationTitle.textColor     = Constant.Color.gray_text_placeholder_search_bar
@@ -189,11 +190,13 @@ class CheckinViewController: UIViewController {
             guard let `self` = self else { return }
             self.startBioMetricVerify { [weak self] (isSuccess) in
                 guard let `self` = self else { return }
-                let qrCodeScanner                       = QRCodeScannerViewController()
-                qrCodeScanner.delegate                  = self
-                qrCodeScanner.modalTransitionStyle      = .coverVertical
-                qrCodeScanner.modalPresentationStyle    = .pageSheet
-                self.present(qrCodeScanner, animated: true)
+                if isSuccess {
+                    let qrCodeScanner                       = QRCodeScannerViewController()
+                    qrCodeScanner.delegate                  = self
+                    qrCodeScanner.modalTransitionStyle      = .coverVertical
+                    qrCodeScanner.modalPresentationStyle    = .pageSheet
+                    self.navigationController?.pushViewController(qrCodeScanner, animated: true)
+                }
             }
         }).disposed(by: self.disposeBag)
         
@@ -201,7 +204,9 @@ class CheckinViewController: UIViewController {
             guard let `self` = self else { return }
             self.startBioMetricVerify { [weak self] (isSuccess) in
                 guard let `self` = self else { return }
-                self.startAttendance()
+                if isSuccess {
+                    self.startAttendance()
+                }
             }
         }).disposed(by: self.disposeBag)
     }

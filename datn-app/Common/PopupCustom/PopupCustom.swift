@@ -90,8 +90,8 @@ class PopupCustom: UIViewController {
         self.vContent.layer.shadowRadius    = 0.0
         self.vContent.layer.masksToBounds   = false
         self.vContent.layer.cornerRadius    = 20
-        self.lblTitle.textColor             = Constant.Color.dark_blue
-        self.lblContent.textColor           = Constant.Color.dark_blue
+        self.lblTitle.textColor             = Constant.Color.hex_245C83
+        self.lblContent.textColor           = Constant.Color.hex_245C83
         self.lblTitle.font                  = UIFont.getOpenSansSemiBoldFontTitle()
         self.lblContent.font                = UIFont.getOpenSansRegularFontDefault()
         

@@ -24,6 +24,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navViewController = UINavigationController(rootViewController: loginVC)
         window?.rootViewController = navViewController
         
+        /// `Sửa lỗi navigation bar đổi màu`
+        if #available(iOS 15, *) {
+            let navigationBarAppearance = UINavigationBarAppearance()
+            navigationBarAppearance.configureWithOpaqueBackground()
+            navigationBarAppearance.titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor : UIColor.white,
+                NSAttributedString.Key.font: UIFont.getOpenSansSemiBoldFontTitle()
+            ]
+            
+            navigationBarAppearance.backgroundColor             = .clear
+            navigationBarAppearance.shadowColor                 = .clear
+            UINavigationBar.appearance().standardAppearance     = navigationBarAppearance
+            UINavigationBar.appearance().compactAppearance      = navigationBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance   = navigationBarAppearance
+            
+            let tabBarApperance                         = UITabBarAppearance()
+            tabBarApperance.shadowColor                 = .clear
+            tabBarApperance.configureWithOpaqueBackground()
+            tabBarApperance.backgroundColor             = UIColor.clear
+            UITabBar.appearance().scrollEdgeAppearance  = tabBarApperance
+            UITabBar.appearance().standardAppearance    = tabBarApperance
+        }
+        
         /// `Request location permission`
         CoreLocationService.shared.requestAlwaysAuth()
         return true

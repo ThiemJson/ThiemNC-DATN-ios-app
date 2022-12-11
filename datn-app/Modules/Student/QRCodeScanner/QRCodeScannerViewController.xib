@@ -19,28 +19,58 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="zLZ-c2-4Qs">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background_top" translatesAutoresizingMaskIntoConstraints="NO" id="T6c-iP-nLE">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="Jjj-3V-YUq"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash_background_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="bxT-nL-YPE">
+                    <rect key="frame" x="0.0" y="652" width="393" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="ug0-4b-boz"/>
+                    </constraints>
+                </imageView>
                 <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUi-Ze-jaE" userLabel="vBlackBackground">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td9-9E-b43" userLabel="vQRCodeScanner">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="gdM-6c-hpZ"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="T6c-iP-nLE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1sx-58-my1"/>
                 <constraint firstItem="OUi-Ze-jaE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3YU-Mr-Vdi"/>
-                <constraint firstItem="Td9-9E-b43" firstAttribute="leading" secondItem="gdM-6c-hpZ" secondAttribute="leading" id="7Jb-eK-z5J"/>
+                <constraint firstAttribute="trailing" secondItem="OUi-Ze-jaE" secondAttribute="trailing" id="841-eB-2T0"/>
+                <constraint firstAttribute="trailing" secondItem="bxT-nL-YPE" secondAttribute="trailing" id="9iU-Td-bi3"/>
+                <constraint firstAttribute="trailing" secondItem="Td9-9E-b43" secondAttribute="trailing" id="B55-UV-a9i"/>
+                <constraint firstAttribute="trailing" secondItem="zLZ-c2-4Qs" secondAttribute="trailing" id="Bj9-r3-z4t"/>
+                <constraint firstItem="zLZ-c2-4Qs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Byb-Zy-6qn"/>
+                <constraint firstAttribute="bottom" secondItem="zLZ-c2-4Qs" secondAttribute="bottom" id="CHD-6H-96j"/>
                 <constraint firstAttribute="bottom" secondItem="OUi-Ze-jaE" secondAttribute="bottom" id="Dzn-Wk-6ED"/>
-                <constraint firstItem="OUi-Ze-jaE" firstAttribute="leading" secondItem="gdM-6c-hpZ" secondAttribute="leading" id="cNa-oD-9Q9"/>
-                <constraint firstItem="Td9-9E-b43" firstAttribute="trailing" secondItem="gdM-6c-hpZ" secondAttribute="trailing" id="cty-KW-OQ2"/>
-                <constraint firstItem="gdM-6c-hpZ" firstAttribute="bottom" secondItem="Td9-9E-b43" secondAttribute="bottom" id="iTi-6E-RIh"/>
+                <constraint firstAttribute="trailing" secondItem="T6c-iP-nLE" secondAttribute="trailing" id="NNR-qJ-Cdh"/>
+                <constraint firstItem="Td9-9E-b43" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="U7c-uM-uha"/>
+                <constraint firstItem="bxT-nL-YPE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aT4-Nc-qaz"/>
+                <constraint firstAttribute="bottom" secondItem="Td9-9E-b43" secondAttribute="bottom" id="bOd-dO-VFR"/>
+                <constraint firstItem="OUi-Ze-jaE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bPw-Sw-mlo"/>
+                <constraint firstItem="T6c-iP-nLE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jsa-o0-ejY"/>
+                <constraint firstItem="zLZ-c2-4Qs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kfF-RL-krB"/>
                 <constraint firstItem="Td9-9E-b43" firstAttribute="top" secondItem="gdM-6c-hpZ" secondAttribute="top" id="mHR-3m-Sax"/>
-                <constraint firstItem="OUi-Ze-jaE" firstAttribute="trailing" secondItem="gdM-6c-hpZ" secondAttribute="trailing" id="ryh-Wa-yXZ"/>
+                <constraint firstAttribute="bottom" secondItem="bxT-nL-YPE" secondAttribute="bottom" id="tmY-CB-3vW"/>
             </constraints>
-            <point key="canvasLocation" x="-1" y="-11"/>
+            <point key="canvasLocation" x="-2.2900763358778624" y="-11.267605633802818"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_splash_background" width="1125" height="2436"/>
+        <image name="icon_splash_background_bottom" width="1125" height="641"/>
+        <image name="icon_splash_background_top" width="1058" height="420"/>
+    </resources>
 </document>

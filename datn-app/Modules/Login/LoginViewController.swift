@@ -187,7 +187,7 @@ class LoginViewController: UIViewController {
             if let errorCode = errorCode {
                 switch errorCode {
                 case .DeviceInuse:
-                    self.showPopup(type: .Error,
+                    self.showPopup(type: .Attention,
                                    title: "Thiết bị đang được sử dụng cho tài khoản khác",
                                    content: "Vui lòng liên hệ Quản lý để được hỗ trợ",
                                    isAutoDissmiss: 10,
@@ -205,13 +205,13 @@ class LoginViewController: UIViewController {
                                    isAutoDissmiss: 10,
                                    isDismissable: true)
                 case .IDNotfound:
-                    self.showPopup(type: .Error,
+                    self.showPopup(type: .Attention,
                                    title: "Đăng nhập không thành công",
                                    content: "Thông tin đăng nhập chưa chính xác, liên hệ Quản lý để được hỗ trợ",
                                    isAutoDissmiss: 10,
                                    isDismissable: true)
                 default:
-                    self.showPopup(type: .Error,
+                    self.showPopup(type: .Attention,
                                    title: "Kết nối hệ thống thất bại",
                                    content: "Đã có lỗi xảy ra, xin vui lòng thử lại sau",
                                    isAutoDissmiss: 10,
@@ -231,9 +231,11 @@ class LoginViewController: UIViewController {
         loadingPopup.modalTransitionStyle       = .crossDissolve
         loadingPopup.isAutoDissmis              = isAutoDissmiss
         loadingPopup.isDismissable              = isDismissable
+        loadingPopup.popupTitle                 = title
+        loadingPopup.popupContent               = content
+        loadingPopup.rxPopupCustomMode.accept(type)
+        loadingPopup.rxAnimationLoopMode.accept(.playOnce)
         self.present(loadingPopup, animated: true)
-        loadingPopup.lblTitle.text              = title
-        loadingPopup.lblContent.text            = content
     }
     
     private func startAuthentication() {
